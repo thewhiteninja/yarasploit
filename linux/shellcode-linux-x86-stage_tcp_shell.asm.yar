@@ -6,8 +6,8 @@
     
         /*
             89FB                 | ..                   | mov ebx, edi
-        6A02                 | j.                   | push byte 0x2
-        59                   | Y                    | pop ecx
+            6A02                 | j.                   | push byte 0x2
+            59                   | Y                    | pop ecx
         */
     
         strings:
@@ -25,10 +25,10 @@
     
         /*
             6A3F                 | j?                   | push byte 0x3f
-        58                   | X                    | pop eax
-        CD80                 | ..                   | int 0x80
-        49                   | I                    | dec ecx
-        79F8                 | y.                   | jns dup_loop
+            58                   | X                    | pop eax
+            CD80                 | ..                   | int 0x80
+            49                   | I                    | dec ecx
+            79F8                 | y.                   | jns dup_loop
         */
     
         strings:
@@ -46,16 +46,16 @@
     
         /*
             6A0B                 | j.                   | push byte 0xb
-        58                   | X                    | pop eax
-        99                   | .                    | cdq
-        52                   | R                    | push edx
-        682F2F7368           | h//sh                | push dword 0x68732f2f
-        682F62696E           | h/bin                | push dword 0x6e69622f
-        89E3                 | ..                   | mov ebx, esp
-        52                   | R                    | push edx
-        53                   | S                    | push ebx
-        89E1                 | ..                   | mov ecx, esp
-        CD80                 | ..                   | int 0x80
+            58                   | X                    | pop eax
+            99                   | .                    | cdq
+            52                   | R                    | push edx
+            682F2F7368           | h//sh                | push dword 0x68732f2f
+            682F62696E           | h/bin                | push dword 0x6e69622f
+            89E3                 | ..                   | mov ebx, esp
+            52                   | R                    | push edx
+            53                   | S                    | push ebx
+            89E1                 | ..                   | mov ecx, esp
+            CD80                 | ..                   | int 0x80
         */
     
         strings:

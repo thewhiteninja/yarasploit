@@ -6,15 +6,15 @@
     
         /*
             31DB                 | 1.                   | xor ebx, ebx
-        F7E3                 | ..                   | mul ebx
-        53                   | S                    | push ebx
-        43                   | C                    | inc ebx
-        53                   | S                    | push ebx
-        6A02                 | j.                   | push byte 0x2
-        B066                 | .f                   | mov al, 0x66
-        89E1                 | ..                   | mov ecx, esp
-        CD80                 | ..                   | int 0x80
-        97                   | .                    | xchg eax, edi
+            F7E3                 | ..                   | mul ebx
+            53                   | S                    | push ebx
+            43                   | C                    | inc ebx
+            53                   | S                    | push ebx
+            6A02                 | j.                   | push byte 0x2
+            B066                 | .f                   | mov al, 0x66
+            89E1                 | ..                   | mov ecx, esp
+            CD80                 | ..                   | int 0x80
+            97                   | .                    | xchg eax, edi
         */
     
         strings:
@@ -32,9 +32,9 @@
     
         /*
             5B                   | [                    | pop ebx
-        68????????           | h....                | push dword 0x0100007f	; Host
-        680200BFBF           | h....                | push 0xbfbf0002
-        89E1                 | ..                   | mov ecx, esp
+            68????????           | h....                | push dword 0x0100007f	; Host
+            680200BFBF           | h....                | push 0xbfbf0002
+            89E1                 | ..                   | mov ecx, esp
         */
     
         strings:
@@ -52,15 +52,15 @@
     
         /*
             6A66                 | jf                   | push byte 0x66
-        58                   | X                    | pop eax
-        50                   | P                    | push eax
-        51                   | Q                    | push ecx
-        57                   | W                    | push edi
-        89E1                 | ..                   | mov ecx, esp
-        43                   | C                    | inc ebx
-        CD80                 | ..                   | int 0x80
-        85C0                 | ..                   | test eax, eax
-        7919                 | y.                   | jns mprotect
+            58                   | X                    | pop eax
+            50                   | P                    | push eax
+            51                   | Q                    | push ecx
+            57                   | W                    | push edi
+            89E1                 | ..                   | mov ecx, esp
+            43                   | C                    | inc ebx
+            CD80                 | ..                   | int 0x80
+            85C0                 | ..                   | test eax, eax
+            7919                 | y.                   | jns mprotect
         */
     
         strings:
@@ -78,17 +78,17 @@
     
         /*
             68A2000000           | h....                | push 0xa2
-        58                   | X                    | pop eax
-        6A00                 | j.                   | push 0x0
-        6A05                 | j.                   | push 0x5
-        89E3                 | ..                   | mov ebx, esp
-        31C9                 | 1.                   | xor ecx, ecx
-        CD80                 | ..                   | int 0x80
-        85C0                 | ..                   | test eax, eax
-        782C                 | x,                   | js failed
-        4E                   | N                    | dec esi
-        75BD                 | u.                   | jnz create_socket
-        EB27                 | .'                   | jmp failed
+            58                   | X                    | pop eax
+            6A00                 | j.                   | push 0x0
+            6A05                 | j.                   | push 0x5
+            89E3                 | ..                   | mov ebx, esp
+            31C9                 | 1.                   | xor ecx, ecx
+            CD80                 | ..                   | int 0x80
+            85C0                 | ..                   | test eax, eax
+            782C                 | x,                   | js failed
+            4E                   | N                    | dec esi
+            75BD                 | u.                   | jnz create_socket
+            EB27                 | .'                   | jmp failed
         */
     
         strings:
@@ -106,14 +106,14 @@
     
         /*
             B207                 | ..                   | mov dl, 0x7
-        B900100000           | .....                | mov ecx, 0x1000
-        89E3                 | ..                   | mov ebx, esp
-        C1EB0C               | ...                  | shr ebx, 12
-        C1E30C               | ...                  | shl ebx, 12
-        B07D                 | .}                   | mov al, 0x7d
-        CD80                 | ..                   | int 0x80
-        85C0                 | ..                   | test eax, eax
-        7810                 | x.                   | js failed
+            B900100000           | .....                | mov ecx, 0x1000
+            89E3                 | ..                   | mov ebx, esp
+            C1EB0C               | ...                  | shr ebx, 12
+            C1E30C               | ...                  | shl ebx, 12
+            B07D                 | .}                   | mov al, 0x7d
+            CD80                 | ..                   | int 0x80
+            85C0                 | ..                   | test eax, eax
+            7810                 | x.                   | js failed
         */
     
         strings:
@@ -131,14 +131,14 @@
     
         /*
             5B                   | [                    | pop ebx
-        89E1                 | ..                   | mov ecx, esp
-        99                   | .                    | cdq
-        B60C                 | ..                   | mov dh, 0xc
-        B003                 | ..                   | mov al, 0x3
-        CD80                 | ..                   | int 0x80
-        85C0                 | ..                   | test eax, eax
-        7802                 | x.                   | js failed
-        FFE1                 | ..                   | jmp ecx
+            89E1                 | ..                   | mov ecx, esp
+            99                   | .                    | cdq
+            B60C                 | ..                   | mov dh, 0xc
+            B003                 | ..                   | mov al, 0x3
+            CD80                 | ..                   | int 0x80
+            85C0                 | ..                   | test eax, eax
+            7802                 | x.                   | js failed
+            FFE1                 | ..                   | jmp ecx
         */
     
         strings:
@@ -156,8 +156,8 @@
     
         /*
             B801000000           | .....                | mov eax, 0x1
-        BB01000000           | .....                | mov ebx, 0x1
-        CD80                 | ..                   | int 0x80
+            BB01000000           | .....                | mov ebx, 0x1
+            CD80                 | ..                   | int 0x80
         */
     
         strings:

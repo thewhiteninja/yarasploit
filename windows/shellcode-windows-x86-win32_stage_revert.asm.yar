@@ -6,11 +6,11 @@
     
         /*
             616476617069333200   | advapi32.            | #ommited# db "advapi32", 0x00
-        FF5508               | .U.                  | call [ebp + 8]
-        50                   | P                    | push eax
-        682AC8DE50           | h*..P                | push 0x50dec82a
-        FF5504               | .U.                  | call [ebp + 4]
-        FFD0                 | ..                   | call eax
+            FF5508               | .U.                  | call [ebp + 8]
+            50                   | P                    | push eax
+            682AC8DE50           | h*..P                | push 0x50dec82a
+            FF5504               | .U.                  | call [ebp + 4]
+            FFD0                 | ..                   | call eax
         */
     
         strings:

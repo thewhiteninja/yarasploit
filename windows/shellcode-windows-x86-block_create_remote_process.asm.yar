@@ -6,40 +6,40 @@
     
         /*
             31FF                 | 1.                   | xor edi, edi
-        6A04                 | j.                   | push 0x00000004
-        6800100000           | h....                | push 0x00001000
-        6A54                 | jT                   | push 0x00000054
-        57                   | W                    | push edi
-        6858A453E5           | hX.S.                | push 0xe553a458	; VirtualAlloc
-        FFD5                 | ..                   | call ebp
-        C70044000000         | ..D...               | mov dword [eax], 0x44
-        8D7044               | .pD                  | lea esi, [eax+0x44]
-        57                   | W                    | push edi
-        682E657865           | h.exe                | push 0x6578652e
-        686C6C3332           | hll32                | push 0x32336c6c
-        6872756E64           | hrund                | push 0x646e7572
-        89E1                 | ..                   | mov ecx, esp
-        56                   | V                    | push esi
-        50                   | P                    | push eax
-        57                   | W                    | push edi
-        57                   | W                    | push edi
-        6A44                 | jD                   | push 0x00000044
-        57                   | W                    | push edi
-        57                   | W                    | push edi
-        57                   | W                    | push edi
-        51                   | Q                    | push ecx
-        57                   | W                    | push edi
-        6879CC3F86           | hy.?.                | push 0x863fcc79	; CreateProcessA
-        FFD5                 | ..                   | call ebp
-        8B0E                 | ..                   | mov ecx, [esi]
-        6A40                 | j@                   | push 0x00000040
-        6800100000           | h....                | push 0x00001000
-        6800100000           | h....                | push 0x00001000
-        57                   | W                    | push edi
-        51                   | Q                    | push ecx
-        68AE87923F           | h...?                | push 0x3f9287ae	; VirtualAllocEx
-        FFD5                 | ..                   | call ebp
-        E800000000           | .....                | call me2
+            6A04                 | j.                   | push 0x00000004
+            6800100000           | h....                | push 0x00001000
+            6A54                 | jT                   | push 0x00000054
+            57                   | W                    | push edi
+            6858A453E5           | hX.S.                | push 0xe553a458	; VirtualAlloc
+            FFD5                 | ..                   | call ebp
+            C70044000000         | ..D...               | mov dword [eax], 0x44
+            8D7044               | .pD                  | lea esi, [eax+0x44]
+            57                   | W                    | push edi
+            682E657865           | h.exe                | push 0x6578652e
+            686C6C3332           | hll32                | push 0x32336c6c
+            6872756E64           | hrund                | push 0x646e7572
+            89E1                 | ..                   | mov ecx, esp
+            56                   | V                    | push esi
+            50                   | P                    | push eax
+            57                   | W                    | push edi
+            57                   | W                    | push edi
+            6A44                 | jD                   | push 0x00000044
+            57                   | W                    | push edi
+            57                   | W                    | push edi
+            57                   | W                    | push edi
+            51                   | Q                    | push ecx
+            57                   | W                    | push edi
+            6879CC3F86           | hy.?.                | push 0x863fcc79	; CreateProcessA
+            FFD5                 | ..                   | call ebp
+            8B0E                 | ..                   | mov ecx, [esi]
+            6A40                 | j@                   | push 0x00000040
+            6800100000           | h....                | push 0x00001000
+            6800100000           | h....                | push 0x00001000
+            57                   | W                    | push edi
+            51                   | Q                    | push ecx
+            68AE87923F           | h...?                | push 0x3f9287ae	; VirtualAllocEx
+            FFD5                 | ..                   | call ebp
+            E800000000           | .....                | call me2
         */
     
         strings:
@@ -57,35 +57,35 @@
     
         /*
             5A                   | Z                    | pop edx
-        89C7                 | ..                   | mov edi, eax
-        8B0E                 | ..                   | mov ecx, [esi]
-        81C247221100         | ..G"..               | add dword edx, 0x112247
-        54                   | T                    | push esp
-        6800100000           | h....                | push 0x00001000
-        52                   | R                    | push edx
-        50                   | P                    | push eax
-        51                   | Q                    | push ecx
-        68C5D8BDE7           | h....                | push 0xe7bdd8c5	; WriteProcessMemory
-        FFD5                 | ..                   | call ebp
-        31C0                 | 1.                   | xor eax, eax
-        8B0E                 | ..                   | mov ecx, [esi]
-        50                   | P                    | push eax
-        50                   | P                    | push eax
-        50                   | P                    | push eax
-        57                   | W                    | push edi
-        50                   | P                    | push eax
-        50                   | P                    | push eax
-        51                   | Q                    | push ecx
-        68C6AC9A79           | h...y                | push 0x799aacc6	; CreateRemoteThread
-        FFD5                 | ..                   | call ebp
-        8B0E                 | ..                   | mov ecx, [esi]
-        51                   | Q                    | push ecx
-        68C6968752           | h...R                | push 0x528796c6	; CloseHandle
-        FFD5                 | ..                   | call ebp
-        8B4E04               | .N.                  | mov ecx, [esi+0x4]
-        51                   | Q                    | push ecx
-        68C6968752           | h...R                | push 0x528796c6	; CloseHandle
-        FFD5                 | ..                   | call ebp
+            89C7                 | ..                   | mov edi, eax
+            8B0E                 | ..                   | mov ecx, [esi]
+            81C247221100         | ..G"..               | add dword edx, 0x112247
+            54                   | T                    | push esp
+            6800100000           | h....                | push 0x00001000
+            52                   | R                    | push edx
+            50                   | P                    | push eax
+            51                   | Q                    | push ecx
+            68C5D8BDE7           | h....                | push 0xe7bdd8c5	; WriteProcessMemory
+            FFD5                 | ..                   | call ebp
+            31C0                 | 1.                   | xor eax, eax
+            8B0E                 | ..                   | mov ecx, [esi]
+            50                   | P                    | push eax
+            50                   | P                    | push eax
+            50                   | P                    | push eax
+            57                   | W                    | push edi
+            50                   | P                    | push eax
+            50                   | P                    | push eax
+            51                   | Q                    | push ecx
+            68C6AC9A79           | h...y                | push 0x799aacc6	; CreateRemoteThread
+            FFD5                 | ..                   | call ebp
+            8B0E                 | ..                   | mov ecx, [esi]
+            51                   | Q                    | push ecx
+            68C6968752           | h...R                | push 0x528796c6	; CloseHandle
+            FFD5                 | ..                   | call ebp
+            8B4E04               | .N.                  | mov ecx, [esi+0x4]
+            51                   | Q                    | push ecx
+            68C6968752           | h...R                | push 0x528796c6	; CloseHandle
+            FFD5                 | ..                   | call ebp
         */
     
         strings:

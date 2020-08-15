@@ -6,10 +6,10 @@
     
         /*
             686E657400           | hnet.                | push 0x0074656e
-        6877696E69           | hwini                | push 0x696e6977
-        54                   | T                    | push esp
-        684C772607           | hLw&.                | push 0x0726774c	; LoadLibraryA
-        FFD5                 | ..                   | call ebp
+            6877696E69           | hwini                | push 0x696e6977
+            54                   | T                    | push esp
+            684C772607           | hLw&.                | push 0x0726774c	; LoadLibraryA
+            FFD5                 | ..                   | call ebp
         */
     
         strings:
@@ -27,9 +27,9 @@
     
         /*
             6A08                 | j.                   | push byte 8
-        5F                   | _                    | pop edi
-        31DB                 | 1.                   | xor ebx, ebx
-        89F9                 | ..                   | mov ecx, edi
+            5F                   | _                    | pop edi
+            31DB                 | 1.                   | xor ebx, ebx
+            89F9                 | ..                   | mov ecx, edi
         */
     
         strings:
@@ -47,7 +47,7 @@
     
         /*
             683A5679A7           | h:Vy.                | push 0xa779563a	; InternetOpenA
-        FFD5                 | ..                   | call ebp
+            FFD5                 | ..                   | call ebp
         */
     
         strings:
@@ -65,10 +65,10 @@
     
         /*
             6A03                 | j.                   | push byte 3
-        53                   | S                    | push ebx
-        53                   | S                    | push ebx
-        68????0000           | h\...                | push dword 4444	; Port
-        E872000000           | .r...                | call got_server_uri
+            53                   | S                    | push ebx
+            53                   | S                    | push ebx
+            68????0000           | h\...                | push dword 4444	; Port
+            E872000000           | .r...                | call got_server_uri
         */
     
         strings:
@@ -86,8 +86,8 @@
     
         /*
             50                   | P                    | push eax
-        6857899FC6           | hW...                | push 0xc69f8957	; InternetConnectA
-        FFD5                 | ..                   | call ebp
+            6857899FC6           | hW...                | push 0xc69f8957	; InternetConnectA
+            FFD5                 | ..                   | call ebp
         */
     
         strings:
@@ -105,15 +105,15 @@
     
         /*
             6800026084           | h..`.                | push ( 0x80000000 | 0x04000000 | 0x00400000 | 0x00200000 | 0x00000200 )
-        53                   | S                    | push ebx
-        53                   | S                    | push ebx
-        53                   | S                    | push ebx
-        57                   | W                    | push edi
-        53                   | S                    | push ebx
-        50                   | P                    | push eax
-        68EB552E3B           | h.U.;                | push 0x3b2e55eb	; HttpOpenRequestA
-        FFD5                 | ..                   | call ebp
-        96                   | .                    | xchg esi, eax
+            53                   | S                    | push ebx
+            53                   | S                    | push ebx
+            53                   | S                    | push ebx
+            57                   | W                    | push edi
+            53                   | S                    | push ebx
+            50                   | P                    | push eax
+            68EB552E3B           | h.U.;                | push 0x3b2e55eb	; HttpOpenRequestA
+            FFD5                 | ..                   | call ebp
+            96                   | .                    | xchg esi, eax
         */
     
         strings:
@@ -131,14 +131,14 @@
     
         /*
             53                   | S                    | push ebx
-        53                   | S                    | push ebx
-        53                   | S                    | push ebx
-        53                   | S                    | push ebx
-        56                   | V                    | push esi
-        682D06187B           | h-..{                | push 0x7b18062d	; HttpSendRequestA
-        FFD5                 | ..                   | call ebp
-        85C0                 | ..                   | test eax,eax
-        750A                 | u.                   | jnz short allocate_memory
+            53                   | S                    | push ebx
+            53                   | S                    | push ebx
+            53                   | S                    | push ebx
+            56                   | V                    | push esi
+            682D06187B           | h-..{                | push 0x7b18062d	; HttpSendRequestA
+            FFD5                 | ..                   | call ebp
+            85C0                 | ..                   | test eax,eax
+            750A                 | u.                   | jnz short allocate_memory
         */
     
         strings:
@@ -156,7 +156,7 @@
     
         /*
             68F0B5A256           | h...V                | push 0x56a2b5f0	; ExitProcess
-        FFD5                 | ..                   | call ebp
+            FFD5                 | ..                   | call ebp
         */
     
         strings:
@@ -174,11 +174,11 @@
     
         /*
             6A40                 | j@                   | push byte 0x40
-        6800100000           | h....                | push 0x1000
-        6800004000           | h..@.                | push 0x00400000
-        53                   | S                    | push ebx
-        6858A453E5           | hX.S.                | push 0xe553a458	; VirtualAlloc
-        FFD5                 | ..                   | call ebp
+            6800100000           | h....                | push 0x1000
+            6800004000           | h..@.                | push 0x00400000
+            53                   | S                    | push ebx
+            6858A453E5           | hX.S.                | push 0xe553a458	; VirtualAlloc
+            FFD5                 | ..                   | call ebp
         */
     
         strings:
@@ -196,9 +196,9 @@
     
         /*
             93                   | .                    | xchg eax, ebx
-        53                   | S                    | push ebx
-        53                   | S                    | push ebx
-        89E7                 | ..                   | mov edi, esp
+            53                   | S                    | push ebx
+            53                   | S                    | push ebx
+            89E7                 | ..                   | mov edi, esp
         */
     
         strings:
@@ -216,18 +216,18 @@
     
         /*
             57                   | W                    | push edi
-        6800200000           | h. ..                | push 8192
-        53                   | S                    | push ebx
-        56                   | V                    | push esi
-        68129689E2           | h....                | push 0xe2899612	; InternetReadFile
-        FFD5                 | ..                   | call ebp
-        85C0                 | ..                   | test eax,eax
-        74CD                 | t.                   | jz failure
-        8B07                 | ..                   | mov eax, [edi]
-        01C3                 | ..                   | add ebx, eax
-        85C0                 | ..                   | test eax,eax
-        75E5                 | u.                   | jnz download_more
-        58                   | X                    | pop eax
+            6800200000           | h. ..                | push 8192
+            53                   | S                    | push ebx
+            56                   | V                    | push esi
+            68129689E2           | h....                | push 0xe2899612	; InternetReadFile
+            FFD5                 | ..                   | call ebp
+            85C0                 | ..                   | test eax,eax
+            74CD                 | t.                   | jz failure
+            8B07                 | ..                   | mov eax, [edi]
+            01C3                 | ..                   | add ebx, eax
+            85C0                 | ..                   | test eax,eax
+            75E5                 | u.                   | jnz download_more
+            58                   | X                    | pop eax
         */
     
         strings:
@@ -245,7 +245,7 @@
     
         /*
             5F                   | _                    | pop edi
-        E88FFFFFFF           | .....                | call got_server_host
+            E88FFFFFFF           | .....                | call got_server_host
         */
     
         strings:

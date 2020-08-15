@@ -6,20 +6,20 @@
     
         /*
             6A00                 | j.                   | push byte 0
-        6A04                 | j.                   | push byte 4
-        56                   | V                    | push esi
-        57                   | W                    | push edi
-        6802D9C85F           | h..._                | push 0x5fc8d902	; recv
-        FFD5                 | ..                   | call ebp
-        8B36                 | .6                   | mov esi, [esi]
-        6A40                 | j@                   | push byte 0x40
-        6800100000           | h....                | push 0x1000
-        56                   | V                    | push esi
-        6A00                 | j.                   | push byte 0
-        6858A453E5           | hX.S.                | push 0xe553a458	; VirtualAlloc
-        FFD5                 | ..                   | call ebp
-        93                   | .                    | xchg ebx, eax
-        53                   | S                    | push ebx
+            6A04                 | j.                   | push byte 4
+            56                   | V                    | push esi
+            57                   | W                    | push edi
+            6802D9C85F           | h..._                | push 0x5fc8d902	; recv
+            FFD5                 | ..                   | call ebp
+            8B36                 | .6                   | mov esi, [esi]
+            6A40                 | j@                   | push byte 0x40
+            6800100000           | h....                | push 0x1000
+            56                   | V                    | push esi
+            6A00                 | j.                   | push byte 0
+            6858A453E5           | hX.S.                | push 0xe553a458	; VirtualAlloc
+            FFD5                 | ..                   | call ebp
+            93                   | .                    | xchg ebx, eax
+            53                   | S                    | push ebx
         */
     
         strings:
@@ -37,15 +37,15 @@
     
         /*
             6A00                 | j.                   | push byte 0
-        56                   | V                    | push esi
-        53                   | S                    | push ebx
-        57                   | W                    | push edi
-        6802D9C85F           | h..._                | push 0x5fc8d902	; recv
-        FFD5                 | ..                   | call ebp
-        01C3                 | ..                   | add ebx, eax
-        29C6                 | ).                   | sub esi, eax
-        75EE                 | u.                   | jnz read_more
-        C3                   | .                    | ret
+            56                   | V                    | push esi
+            53                   | S                    | push ebx
+            57                   | W                    | push edi
+            6802D9C85F           | h..._                | push 0x5fc8d902	; recv
+            FFD5                 | ..                   | call ebp
+            01C3                 | ..                   | add ebx, eax
+            29C6                 | ).                   | sub esi, eax
+            75EE                 | u.                   | jnz read_more
+            C3                   | .                    | ret
         */
     
         strings:

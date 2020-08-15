@@ -6,13 +6,13 @@
     
         /*
             68636D6400           | hcmd.                | push 0x00646d63
-        89E3                 | ..                   | mov ebx, esp
-        57                   | W                    | push edi
-        57                   | W                    | push edi
-        57                   | W                    | push edi
-        31F6                 | 1.                   | xor esi, esi
-        6A12                 | j.                   | push byte 18
-        59                   | Y                    | pop ecx
+            89E3                 | ..                   | mov ebx, esp
+            57                   | W                    | push edi
+            57                   | W                    | push edi
+            57                   | W                    | push edi
+            31F6                 | 1.                   | xor esi, esi
+            6A12                 | j.                   | push byte 18
+            59                   | Y                    | pop ecx
         */
     
         strings:
@@ -30,31 +30,31 @@
     
         /*
             56                   | V                    | push esi
-        E2FD                 | ..                   | loop push_loop
-        66C744243C0101       | f.D$<..              | mov word [esp + 60], 0x0101
-        8D442410             | .D$.                 | lea eax, [esp + 16]
-        C60044               | ..D                  | mov byte [eax], 68
-        54                   | T                    | push esp
-        50                   | P                    | push eax
-        56                   | V                    | push esi
-        56                   | V                    | push esi
-        56                   | V                    | push esi
-        46                   | F                    | inc esi
-        56                   | V                    | push esi
-        4E                   | N                    | dec esi
-        56                   | V                    | push esi
-        56                   | V                    | push esi
-        53                   | S                    | push ebx
-        56                   | V                    | push esi
-        6879CC3F86           | hy.?.                | push 0x863fcc79	; CreateProcessA
-        FFD5                 | ..                   | call ebp
-        89E0                 | ..                   | mov eax, esp
-        4E                   | N                    | dec esi
-        56                   | V                    | push esi
-        46                   | F                    | inc esi
-        FF30                 | .0                   | push dword [eax]
-        6808871D60           | h...`                | push 0x601d8708	; WaitForSingleObject
-        FFD5                 | ..                   | call ebp
+            E2FD                 | ..                   | loop push_loop
+            66C744243C0101       | f.D$<..              | mov word [esp + 60], 0x0101
+            8D442410             | .D$.                 | lea eax, [esp + 16]
+            C60044               | ..D                  | mov byte [eax], 68
+            54                   | T                    | push esp
+            50                   | P                    | push eax
+            56                   | V                    | push esi
+            56                   | V                    | push esi
+            56                   | V                    | push esi
+            46                   | F                    | inc esi
+            56                   | V                    | push esi
+            4E                   | N                    | dec esi
+            56                   | V                    | push esi
+            56                   | V                    | push esi
+            53                   | S                    | push ebx
+            56                   | V                    | push esi
+            6879CC3F86           | hy.?.                | push 0x863fcc79	; CreateProcessA
+            FFD5                 | ..                   | call ebp
+            89E0                 | ..                   | mov eax, esp
+            4E                   | N                    | dec esi
+            56                   | V                    | push esi
+            46                   | F                    | inc esi
+            FF30                 | .0                   | push dword [eax]
+            6808871D60           | h...`                | push 0x601d8708	; WaitForSingleObject
+            FFD5                 | ..                   | call ebp
         */
     
         strings:

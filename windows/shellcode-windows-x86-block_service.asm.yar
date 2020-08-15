@@ -6,34 +6,34 @@
     
         /*
             6A00                 | j.                   | push byte 0x0
-        6870693332           | hpi32                | push 0x32336970
-        6861647661           | hadva                | push 0x61766461
-        54                   | T                    | push esp
-        684C772607           | hLw&.                | push 0x726774c	; LoadLibraryA
-        FFD5                 | ..                   | call ebp
-        6849434500           | hICE.                | push 0x00454349
-        6853455256           | hSERV                | push 0x56524553
-        89E1                 | ..                   | mov ecx, esp
-        8D85D0000000         | ......               | lea eax, [ebp+0xd0]
-        6A00                 | j.                   | push 0x00000000
-        50                   | P                    | push eax
-        51                   | Q                    | push ecx
-        89E0                 | ..                   | mov eax,esp
-        6A00                 | j.                   | push 0x00000000
-        50                   | P                    | push eax
-        68FAF772CB           | h..r.                | push 0xcb72f7fa	; StartServiceCtrlDispatcherA
-        FFD5                 | ..                   | call ebp
-        6A00                 | j.                   | push 0x00000000
-        68F0B5A256           | h...V                | push 0x56a2b5f0	; ExitProcess
-        FFD5                 | ..                   | call ebp
-        58                   | X                    | pop eax
-        58                   | X                    | pop eax
-        58                   | X                    | pop eax
-        58                   | X                    | pop eax
-        31C0                 | 1.                   | xor eax,eax
-        C3                   | .                    | ret
-        FC                   | .                    | cld
-        E800000000           | .....                | call me
+            6870693332           | hpi32                | push 0x32336970
+            6861647661           | hadva                | push 0x61766461
+            54                   | T                    | push esp
+            684C772607           | hLw&.                | push 0x726774c	; LoadLibraryA
+            FFD5                 | ..                   | call ebp
+            6849434500           | hICE.                | push 0x00454349
+            6853455256           | hSERV                | push 0x56524553
+            89E1                 | ..                   | mov ecx, esp
+            8D85D0000000         | ......               | lea eax, [ebp+0xd0]
+            6A00                 | j.                   | push 0x00000000
+            50                   | P                    | push eax
+            51                   | Q                    | push ecx
+            89E0                 | ..                   | mov eax,esp
+            6A00                 | j.                   | push 0x00000000
+            50                   | P                    | push eax
+            68FAF772CB           | h..r.                | push 0xcb72f7fa	; StartServiceCtrlDispatcherA
+            FFD5                 | ..                   | call ebp
+            6A00                 | j.                   | push 0x00000000
+            68F0B5A256           | h...V                | push 0x56a2b5f0	; ExitProcess
+            FFD5                 | ..                   | call ebp
+            58                   | X                    | pop eax
+            58                   | X                    | pop eax
+            58                   | X                    | pop eax
+            58                   | X                    | pop eax
+            31C0                 | 1.                   | xor eax,eax
+            C3                   | .                    | ret
+            FC                   | .                    | cld
+            E800000000           | .....                | call me
         */
     
         strings:
@@ -51,30 +51,30 @@
     
         /*
             5D                   | ]                    | pop ebp
-        81EDD6000000         | ......               | sub ebp, 0xd6
-        6849434600           | hICF.                | push 0x00464349
-        6853455256           | hSERV                | push 0x56524553
-        89E1                 | ..                   | mov ecx, esp
-        8D85C9000000         | ......               | lea eax, [ebp+0xc9]
-        6A00                 | j.                   | push 0x00000000
-        50                   | P                    | push eax
-        51                   | Q                    | push ecx
-        680BAA4452           | h..DR                | push 0x5244aa0b	; RegisterServiceCtrlHandlerExA
-        FFD5                 | ..                   | call ebp
-        6A00                 | j.                   | push 0x00000000
-        6A00                 | j.                   | push 0x00000000
-        6A00                 | j.                   | push 0x00000000
-        6A00                 | j.                   | push 0x00000000
-        6A00                 | j.                   | push 0x00000000
-        6A00                 | j.                   | push 0x00000000
-        6A04                 | j.                   | push 0x00000004
-        6A10                 | j.                   | push 0x00000010
-        89E1                 | ..                   | mov ecx, esp
-        6A00                 | j.                   | push 0x00000000
-        51                   | Q                    | push ecx
-        50                   | P                    | push eax
-        68C655377D           | h.U7}                | push 0x7d3755c6	; SetServiceStatus
-        FFD5                 | ..                   | call ebp
+            81EDD6000000         | ......               | sub ebp, 0xd6
+            6849434600           | hICF.                | push 0x00464349
+            6853455256           | hSERV                | push 0x56524553
+            89E1                 | ..                   | mov ecx, esp
+            8D85C9000000         | ......               | lea eax, [ebp+0xc9]
+            6A00                 | j.                   | push 0x00000000
+            50                   | P                    | push eax
+            51                   | Q                    | push ecx
+            680BAA4452           | h..DR                | push 0x5244aa0b	; RegisterServiceCtrlHandlerExA
+            FFD5                 | ..                   | call ebp
+            6A00                 | j.                   | push 0x00000000
+            6A00                 | j.                   | push 0x00000000
+            6A00                 | j.                   | push 0x00000000
+            6A00                 | j.                   | push 0x00000000
+            6A00                 | j.                   | push 0x00000000
+            6A00                 | j.                   | push 0x00000000
+            6A04                 | j.                   | push 0x00000004
+            6A10                 | j.                   | push 0x00000010
+            89E1                 | ..                   | mov ecx, esp
+            6A00                 | j.                   | push 0x00000000
+            51                   | Q                    | push ecx
+            50                   | P                    | push eax
+            68C655377D           | h.U7}                | push 0x7d3755c6	; SetServiceStatus
+            FFD5                 | ..                   | call ebp
         */
     
         strings:

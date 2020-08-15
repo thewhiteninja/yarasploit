@@ -6,15 +6,15 @@
     
         /*
             53                   | S                    | push ebx
-        6A02                 | j.                   | push byte 0x2
-        6A02                 | j.                   | push byte 0x2
-        43                   | C                    | inc ebx
-        6A66                 | jf                   | push byte 0x66
-        58                   | X                    | pop eax
-        99                   | .                    | cdq
-        89E1                 | ..                   | mov ecx, esp
-        CD80                 | ..                   | int 0x80
-        96                   | .                    | xchg eax, esi
+            6A02                 | j.                   | push byte 0x2
+            6A02                 | j.                   | push byte 0x2
+            43                   | C                    | inc ebx
+            6A66                 | jf                   | push byte 0x66
+            58                   | X                    | pop eax
+            99                   | .                    | cdq
+            89E1                 | ..                   | mov ecx, esp
+            CD80                 | ..                   | int 0x80
+            96                   | .                    | xchg eax, esi
         */
     
         strings:
@@ -32,17 +32,17 @@
     
         /*
             5B                   | [                    | pop ebx
-        52                   | R                    | push edx
-        6668BFBF             | fh..                 | push word 0xbfbf
-        6653                 | fS                   | push bx
-        89E1                 | ..                   | mov ecx, esp
-        6A66                 | jf                   | push byte 0x66
-        58                   | X                    | pop eax
-        50                   | P                    | push eax
-        51                   | Q                    | push ecx
-        56                   | V                    | push esi
-        89E1                 | ..                   | mov ecx, esp
-        CD80                 | ..                   | int 0x80
+            52                   | R                    | push edx
+            6668BFBF             | fh..                 | push word 0xbfbf
+            6653                 | fS                   | push bx
+            89E1                 | ..                   | mov ecx, esp
+            6A66                 | jf                   | push byte 0x66
+            58                   | X                    | pop eax
+            50                   | P                    | push eax
+            51                   | Q                    | push ecx
+            56                   | V                    | push esi
+            89E1                 | ..                   | mov ecx, esp
+            CD80                 | ..                   | int 0x80
         */
     
         strings:
@@ -60,11 +60,11 @@
     
         /*
             5B                   | [                    | pop ebx
-        B60C                 | ..                   | mov dh, 0xc
-        B003                 | ..                   | mov al, 0x3
-        CD80                 | ..                   | int 0x80
-        89DF                 | ..                   | mov edi, ebx
-        FFE1                 | ..                   | jmp ecx
+            B60C                 | ..                   | mov dh, 0xc
+            B003                 | ..                   | mov al, 0x3
+            CD80                 | ..                   | int 0x80
+            89DF                 | ..                   | mov edi, ebx
+            FFE1                 | ..                   | jmp ecx
         */
     
         strings:

@@ -6,15 +6,15 @@
     
         /*
             31D2                 | 1.                   | xor edx, edx
-        52                   | R                    | push edx
-        89E5                 | ..                   | mov ebp, esp
-        6A07                 | j.                   | push byte 0x07
-        5B                   | [                    | pop ebx
-        6A10                 | j.                   | push byte 0x10
-        54                   | T                    | push esp
-        55                   | U                    | push ebp
-        52                   | R                    | push edx
-        89E1                 | ..                   | mov ecx, esp
+            52                   | R                    | push edx
+            89E5                 | ..                   | mov ebp, esp
+            6A07                 | j.                   | push byte 0x07
+            5B                   | [                    | pop ebx
+            6A10                 | j.                   | push byte 0x10
+            54                   | T                    | push esp
+            55                   | U                    | push ebp
+            52                   | R                    | push edx
+            89E1                 | ..                   | mov ecx, esp
         */
     
         strings:
@@ -32,14 +32,14 @@
     
         /*
             FF01                 | ..                   | inc dword [ecx]
-        6A66                 | jf                   | push byte 0x66
-        58                   | X                    | pop eax
-        CD80                 | ..                   | int 0x80
-        66817D02115C         | f.}..\               | cmp word [ebp + 2], 0x5c11
-        75F1                 | u.                   | jne getpeername_loop
-        5B                   | [                    | pop ebx
-        6A02                 | j.                   | push byte 0x02
-        59                   | Y                    | pop ecx
+            6A66                 | jf                   | push byte 0x66
+            58                   | X                    | pop eax
+            CD80                 | ..                   | int 0x80
+            66817D02115C         | f.}..\               | cmp word [ebp + 2], 0x5c11
+            75F1                 | u.                   | jne getpeername_loop
+            5B                   | [                    | pop ebx
+            6A02                 | j.                   | push byte 0x02
+            59                   | Y                    | pop ecx
         */
     
         strings:
@@ -57,18 +57,18 @@
     
         /*
             B03F                 | .?                   | mov al, 0x3f
-        CD80                 | ..                   | int 0x80
-        49                   | I                    | dec ecx
-        79F9                 | y.                   | jns dup2_loop
-        52                   | R                    | push edx
-        682F2F7368           | h//sh                | push dword 0x68732f2f
-        682F62696E           | h/bin                | push dword 0x6e69622f
-        89E3                 | ..                   | mov ebx, esp
-        52                   | R                    | push edx
-        53                   | S                    | push ebx
-        89E1                 | ..                   | mov ecx, esp
-        B00B                 | ..                   | mov al, 0x0b
-        CD80                 | ..                   | int 0x80
+            CD80                 | ..                   | int 0x80
+            49                   | I                    | dec ecx
+            79F9                 | y.                   | jns dup2_loop
+            52                   | R                    | push edx
+            682F2F7368           | h//sh                | push dword 0x68732f2f
+            682F62696E           | h/bin                | push dword 0x6e69622f
+            89E3                 | ..                   | mov ebx, esp
+            52                   | R                    | push edx
+            53                   | S                    | push ebx
+            89E1                 | ..                   | mov ecx, esp
+            B00B                 | ..                   | mov al, 0x0b
+            CD80                 | ..                   | int 0x80
         */
     
         strings:

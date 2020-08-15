@@ -6,11 +6,11 @@
     
         /*
             60                   | `                    | pushad
-        89E5                 | ..                   | mov ebp, esp
-        31C0                 | 1.                   | xor eax, eax
-        648B5030             | d.P0                 | mov edx, [fs:eax+48]
-        8B520C               | .R.                  | mov edx, [edx+12]
-        8B5214               | .R.                  | mov edx, [edx+20]
+            89E5                 | ..                   | mov ebp, esp
+            31C0                 | 1.                   | xor eax, eax
+            648B5030             | d.P0                 | mov edx, [fs:eax+48]
+            8B520C               | .R.                  | mov edx, [edx+12]
+            8B5214               | .R.                  | mov edx, [edx+20]
         */
     
         strings:
@@ -28,8 +28,8 @@
     
         /*
             8B7228               | .r(                  | mov esi, [edx+40]
-        0FB74A26             | ..J&                 | movzx ecx, word [edx+38]
-        31FF                 | 1.                   | xor edi, edi
+            0FB74A26             | ..J&                 | movzx ecx, word [edx+38]
+            31FF                 | 1.                   | xor edi, edi
         */
     
         strings:
@@ -47,9 +47,9 @@
     
         /*
             AC                   | .                    | lodsb
-        3C61                 | <a                   | cmp al, 'a'
-        7C02                 | |.                   | jl not_lowercase
-        2C20                 | ,                    | sub al, 0x20
+            3C61                 | <a                   | cmp al, 'a'
+            7C02                 | |.                   | jl not_lowercase
+            2C20                 | ,                    | sub al, 0x20
         */
     
         strings:
@@ -67,19 +67,19 @@
     
         /*
             C1CF0D               | ...                  | ror edi, 13
-        01C7                 | ..                   | add edi, eax
-        E2F2                 | ..                   | loop loop_modname
-        52                   | R                    | push edx
-        57                   | W                    | push edi
-        8B5210               | .R.                  | mov edx, [edx+16]
-        8B4A3C               | .J<                  | mov ecx, [edx+60]
-        8B4C1178             | .L.x                 | mov ecx, [ecx+edx+120]
-        E348                 | .H                   | jecxz get_next_mod1
-        01D1                 | ..                   | add ecx, edx
-        51                   | Q                    | push ecx
-        8B5920               | .Y                   | mov ebx, [ecx+32]
-        01D3                 | ..                   | add ebx, edx
-        8B4918               | .I.                  | mov ecx, [ecx+24]
+            01C7                 | ..                   | add edi, eax
+            E2F2                 | ..                   | loop loop_modname
+            52                   | R                    | push edx
+            57                   | W                    | push edi
+            8B5210               | .R.                  | mov edx, [edx+16]
+            8B4A3C               | .J<                  | mov ecx, [edx+60]
+            8B4C1178             | .L.x                 | mov ecx, [ecx+edx+120]
+            E348                 | .H                   | jecxz get_next_mod1
+            01D1                 | ..                   | add ecx, edx
+            51                   | Q                    | push ecx
+            8B5920               | .Y                   | mov ebx, [ecx+32]
+            01D3                 | ..                   | add ebx, edx
+            8B4918               | .I.                  | mov ecx, [ecx+24]
         */
     
         strings:
@@ -97,10 +97,10 @@
     
         /*
             E33A                 | .:                   | jecxz get_next_mod
-        49                   | I                    | dec ecx
-        8B348B               | .4.                  | mov esi, [ebx+ecx*4]
-        01D6                 | ..                   | add esi, edx
-        31FF                 | 1.                   | xor edi, edi
+            49                   | I                    | dec ecx
+            8B348B               | .4.                  | mov esi, [ebx+ecx*4]
+            01D6                 | ..                   | add esi, edx
+            31FF                 | 1.                   | xor edi, edi
         */
     
         strings:
@@ -118,21 +118,21 @@
     
         /*
             AC                   | .                    | lodsb
-        C1CF0D               | ...                  | ror edi, 13
-        01C7                 | ..                   | add edi, eax
-        38E0                 | 8.                   | cmp al, ah
-        75F6                 | u.                   | jne loop_funcname
-        037DF8               | .}.                  | add edi, [ebp-8]
-        3B7D24               | ;}$                  | cmp edi, [ebp+36]
-        75E4                 | u.                   | jnz get_next_func
-        58                   | X                    | pop eax
-        8B5824               | .X$                  | mov ebx, [eax+36]
-        01D3                 | ..                   | add ebx, edx
-        668B0C4B             | f..K                 | mov cx, [ebx+2*ecx]
-        8B581C               | .X.                  | mov ebx, [eax+28]
-        01D3                 | ..                   | add ebx, edx
-        8B048B               | ...                  | mov eax, [ebx+4*ecx]
-        01D0                 | ..                   | add eax, edx
+            C1CF0D               | ...                  | ror edi, 13
+            01C7                 | ..                   | add edi, eax
+            38E0                 | 8.                   | cmp al, ah
+            75F6                 | u.                   | jne loop_funcname
+            037DF8               | .}.                  | add edi, [ebp-8]
+            3B7D24               | ;}$                  | cmp edi, [ebp+36]
+            75E4                 | u.                   | jnz get_next_func
+            58                   | X                    | pop eax
+            8B5824               | .X$                  | mov ebx, [eax+36]
+            01D3                 | ..                   | add ebx, edx
+            668B0C4B             | f..K                 | mov cx, [ebx+2*ecx]
+            8B581C               | .X.                  | mov ebx, [eax+28]
+            01D3                 | ..                   | add ebx, edx
+            8B048B               | ...                  | mov eax, [ebx+4*ecx]
+            01D0                 | ..                   | add eax, edx
         */
     
         strings:
@@ -150,13 +150,13 @@
     
         /*
             89442424             | .D$$                 | mov [esp+36], eax
-        5B                   | [                    | pop ebx
-        5B                   | [                    | pop ebx
-        61                   | a                    | popad
-        59                   | Y                    | pop ecx
-        5A                   | Z                    | pop edx
-        51                   | Q                    | push ecx
-        FFE0                 | ..                   | jmp eax
+            5B                   | [                    | pop ebx
+            5B                   | [                    | pop ebx
+            61                   | a                    | popad
+            59                   | Y                    | pop ecx
+            5A                   | Z                    | pop edx
+            51                   | Q                    | push ecx
+            FFE0                 | ..                   | jmp eax
         */
     
         strings:
@@ -174,9 +174,9 @@
     
         /*
             5F                   | _                    | pop edi
-        5A                   | Z                    | pop edx
-        8B12                 | ..                   | mov edx, [edx]
-        EB8D                 | ..                   | jmp short next_mod
+            5A                   | Z                    | pop edx
+            8B12                 | ..                   | mov edx, [edx]
+            EB8D                 | ..                   | jmp short next_mod
         */
     
         strings:

@@ -6,16 +6,16 @@
     
         /*
             6A01                 | j.                   | push byte 0x1
-        5B                   | [                    | pop ebx
-        53                   | S                    | push ebx
-        6A03                 | j.                   | push byte 0x3
-        6A02                 | j.                   | push byte 0x2
-        6A66                 | jf                   | push byte 0x66
-        58                   | X                    | pop eax
-        99                   | .                    | cdq
-        89E1                 | ..                   | mov ecx, esp
-        CD80                 | ..                   | int 0x80
-        93                   | .                    | xchg eax, ebx
+            5B                   | [                    | pop ebx
+            53                   | S                    | push ebx
+            6A03                 | j.                   | push byte 0x3
+            6A02                 | j.                   | push byte 0x2
+            6A66                 | jf                   | push byte 0x66
+            58                   | X                    | pop eax
+            99                   | .                    | cdq
+            89E1                 | ..                   | mov ecx, esp
+            CD80                 | ..                   | int 0x80
+            93                   | .                    | xchg eax, ebx
         */
     
         strings:
@@ -33,12 +33,12 @@
     
         /*
             B003                 | ..                   | mov al, 0x3
-        B60C                 | ..                   | mov dh, 0xc
-        CD80                 | ..                   | int 0x80
-        6A1C                 | j.                   | push byte 0x1c
-        5A                   | Z                    | pop edx
-        01D1                 | ..                   | add ecx, edx
-        FFE1                 | ..                   | jmp ecx
+            B60C                 | ..                   | mov dh, 0xc
+            CD80                 | ..                   | int 0x80
+            6A1C                 | j.                   | push byte 0x1c
+            5A                   | Z                    | pop edx
+            01D1                 | ..                   | add ecx, edx
+            FFE1                 | ..                   | jmp ecx
         */
     
         strings:

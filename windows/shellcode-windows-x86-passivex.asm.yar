@@ -6,7 +6,7 @@
     
         /*
             FC                   | .                    | cld
-        E877000000           | .w...                | call get_find_function
+            E877000000           | .w...                | call get_find_function
         */
     
         strings:
@@ -24,13 +24,13 @@
     
         /*
             60                   | `                    | pushad
-        8B6C2424             | .l$$                 | mov ebp, [esp + 0x24]
-        8B453C               | .E<                  | mov eax, [ebp + 0x3c]
-        8B7C0578             | .|.x                 | mov edi, [ebp + eax + 0x78]
-        01EF                 | ..                   | add edi, ebp
-        8B4F18               | .O.                  | mov ecx, [edi + 0x18]
-        8B5F20               | ._                   | mov ebx, [edi + 0x20]
-        01EB                 | ..                   | add ebx, ebp
+            8B6C2424             | .l$$                 | mov ebp, [esp + 0x24]
+            8B453C               | .E<                  | mov eax, [ebp + 0x3c]
+            8B7C0578             | .|.x                 | mov edi, [ebp + eax + 0x78]
+            01EF                 | ..                   | add edi, ebp
+            8B4F18               | .O.                  | mov ecx, [edi + 0x18]
+            8B5F20               | ._                   | mov ebx, [edi + 0x20]
+            01EB                 | ..                   | add ebx, ebp
         */
     
         strings:
@@ -48,9 +48,9 @@
     
         /*
             E332                 | .2                   | jecxz find_function_finished
-        49                   | I                    | dec ecx
-        8B348B               | .4.                  | mov esi, [ebx + ecx * 4]
-        01EE                 | ..                   | add esi, ebp
+            49                   | I                    | dec ecx
+            8B348B               | .4.                  | mov esi, [ebx + ecx * 4]
+            01EE                 | ..                   | add esi, ebp
         */
     
         strings:
@@ -68,11 +68,11 @@
     
         /*
             AC                   | .                    | lodsb
-        84C0                 | ..                   | test al, al
-        7407                 | t.                   | jz compute_hash_finished
-        C1CA0D               | ...                  | ror edx, 0xd
-        01C2                 | ..                   | add edx, eax
-        EBF4                 | ..                   | jmp compute_hash_again
+            84C0                 | ..                   | test al, al
+            7407                 | t.                   | jz compute_hash_finished
+            C1CA0D               | ...                  | ror edx, 0xd
+            01C2                 | ..                   | add edx, eax
+            EBF4                 | ..                   | jmp compute_hash_again
         */
     
         strings:
@@ -90,37 +90,19 @@
     
         /*
             3B542428             | ;T$(                 | cmp edx, [esp + 0x28]
-        75E3                 | u.                   | jnz find_function_loop
-        8B5F24               | ._$                  | mov ebx, [edi + 0x24]
-        01EB                 | ..                   | add ebx, ebp
-        668B0C4B             | f..K                 | mov cx, [ebx + 2 * ecx]
-        8B5F1C               | ._.                  | mov ebx, [edi + 0x1c]
-        01EB                 | ..                   | add ebx, ebp
-        8B048B               | ...                  | mov eax, [ebx + 4 * ecx]
-        01E8                 | ..                   | add eax, ebp
-        8944241C             | .D$.                 | mov [esp + 0x1c], eax
+            75E3                 | u.                   | jnz find_function_loop
+            8B5F24               | ._$                  | mov ebx, [edi + 0x24]
+            01EB                 | ..                   | add ebx, ebp
+            668B0C4B             | f..K                 | mov cx, [ebx + 2 * ecx]
+            8B5F1C               | ._.                  | mov ebx, [edi + 0x1c]
+            01EB                 | ..                   | add ebx, ebp
+            8B048B               | ...                  | mov eax, [ebx + 4 * ecx]
+            01E8                 | ..                   | add eax, ebp
+            8944241C             | .D$.                 | mov [esp + 0x1c], eax
         */
     
         strings:
             $a   = { 3b 54 24 28 75 e3 8b 5f 24 01 eb 66 8b 0c 4b 8b 5f 1c 01 eb 8b 04 8b 01 e8 89 44 24 1c }
-    
-        condition:
-            any of them
-    }
-    
-    
-    rule passivex_find_function_finished_x86
-    {
-        meta:
-            desc = "Metasploit::windows::x86::passivex::find_function_finished"
-    
-        /*
-            61                   | a                    | popad
-        C20800               | ...                  | retn 8
-        */
-    
-        strings:
-            $a   = { 61 c2 08 00 }
     
         condition:
             any of them
@@ -134,9 +116,9 @@
     
         /*
             31D2                 | 1.                   | xor edx, edx
-        648B4230             | d.B0                 | mov eax, [fs:edx+0x30]
-        85C0                 | ..                   | test eax, eax
-        780C                 | x.                   | js find_kernel32_9x
+            648B4230             | d.B0                 | mov eax, [fs:edx+0x30]
+            85C0                 | ..                   | test eax, eax
+            780C                 | x.                   | js find_kernel32_9x
         */
     
         strings:
@@ -154,10 +136,10 @@
     
         /*
             8B400C               | .@.                  | mov eax, [eax + 0x0c]
-        8B701C               | .p.                  | mov esi, [eax + 0x1c]
-        AD                   | .                    | lodsd
-        8B4008               | .@.                  | mov eax, [eax + 0x8]
-        EB09                 | ..                   | jmp short find_kernel32_finished
+            8B701C               | .p.                  | mov esi, [eax + 0x1c]
+            AD                   | .                    | lodsd
+            8B4008               | .@.                  | mov eax, [eax + 0x8]
+            EB09                 | ..                   | jmp short find_kernel32_finished
         */
     
         strings:
@@ -175,8 +157,8 @@
     
         /*
             8B4034               | .@4                  | mov eax, [eax + 0x34]
-        83C07C               | ..|                  | add eax, byte 0x7c
-        8B403C               | .@<                  | mov eax, [eax + 0x3c]
+            83C07C               | ..|                  | add eax, byte 0x7c
+            8B403C               | .@<                  | mov eax, [eax + 0x3c]
         */
     
         strings:
@@ -194,17 +176,17 @@
     
         /*
             687ED8E273           | h~..s                | push 0x73e2d87e
-        50                   | P                    | push eax
-        6872FEB316           | hr...                | push 0x16b3fe72
-        50                   | P                    | push eax
-        688E4E0EEC           | h.N..                | push 0xec0e4e8e
-        50                   | P                    | push eax
-        FFD7                 | ..                   | call edi
-        96                   | .                    | xchg eax, esi
-        FFD7                 | ..                   | call edi
-        894500               | .E.                  | mov [ebp], eax
-        FFD7                 | ..                   | call edi
-        894504               | .E.                  | mov [ebp + 0x4], eax
+            50                   | P                    | push eax
+            6872FEB316           | hr...                | push 0x16b3fe72
+            50                   | P                    | push eax
+            688E4E0EEC           | h.N..                | push 0xec0e4e8e
+            50                   | P                    | push eax
+            FFD7                 | ..                   | call edi
+            96                   | .                    | xchg eax, esi
+            FFD7                 | ..                   | call edi
+            894500               | .E.                  | mov [ebp], eax
+            FFD7                 | ..                   | call edi
+            894504               | .E.                  | mov [ebp + 0x4], eax
         */
     
         strings:
@@ -222,10 +204,10 @@
     
         /*
             52                   | R                    | push edx
-        6870693332           | hpi32                | push 0x32336970
-        6861647661           | hadva                | push 0x61766461
-        54                   | T                    | push esp
-        FFD6                 | ..                   | call esi
+            6870693332           | hpi32                | push 0x32336970
+            6861647661           | hadva                | push 0x61766461
+            54                   | T                    | push esp
+            FFD6                 | ..                   | call esi
         */
     
         strings:
@@ -243,14 +225,14 @@
     
         /*
             68A92B9202           | h.+..                | push 0x02922ba9
-        50                   | P                    | push eax
-        68DD9A1C2D           | h...-                | push 0x2d1c9add
-        50                   | P                    | push eax
-        FFD7                 | ..                   | call edi
-        894508               | .E.                  | mov [ebp + 0x8], eax
-        FFD7                 | ..                   | call edi
-        97                   | .                    | xchg eax, edi
-        87F3                 | ..                   | xchg esi, ebx
+            50                   | P                    | push eax
+            68DD9A1C2D           | h...-                | push 0x2d1c9add
+            50                   | P                    | push eax
+            FFD7                 | ..                   | call edi
+            894508               | .E.                  | mov [ebp + 0x8], eax
+            FFD7                 | ..                   | call edi
+            97                   | .                    | xchg eax, edi
+            87F3                 | ..                   | xchg esi, ebx
         */
     
         strings:
@@ -268,13 +250,13 @@
     
         /*
             54                   | T                    | push esp
-        56                   | V                    | push esi
-        6801000080           | h....                | push 0x80000001
-        FFD7                 | ..                   | call edi
-        5B                   | [                    | pop ebx
-        83C644               | ..D                  | add esi, byte (reg_values - strings)
-        50                   | P                    | push eax
-        89E7                 | ..                   | mov edi, esp
+            56                   | V                    | push esi
+            6801000080           | h....                | push 0x80000001
+            FFD7                 | ..                   | call edi
+            5B                   | [                    | pop ebx
+            83C644               | ..D                  | add esi, byte (reg_values - strings)
+            50                   | P                    | push eax
+            89E7                 | ..                   | mov edi, esp
         */
     
         strings:
@@ -292,19 +274,19 @@
     
         /*
             803E63               | .>c                  | cmp byte [esi], 'c'
-        741B                 | t.                   | jz initialize_structs
-        50                   | P                    | push eax
-        AD                   | .                    | lodsd
-        50                   | P                    | push eax
-        89E0                 | ..                   | mov eax, esp
-        6A04                 | j.                   | push byte 0x4
-        57                   | W                    | push edi
-        6A04                 | j.                   | push byte 0x4
-        6A00                 | j.                   | push byte 0x0
-        50                   | P                    | push eax
-        53                   | S                    | push ebx
-        FF5508               | .U.                  | call [ebp + 0x8]
-        EBE8                 | ..                   | jmp set_values
+            741B                 | t.                   | jz initialize_structs
+            50                   | P                    | push eax
+            AD                   | .                    | lodsd
+            50                   | P                    | push eax
+            89E0                 | ..                   | mov eax, esp
+            6A04                 | j.                   | push byte 0x4
+            57                   | W                    | push edi
+            6A04                 | j.                   | push byte 0x4
+            6A00                 | j.                   | push byte 0x0
+            50                   | P                    | push eax
+            53                   | S                    | push ebx
+            FF5508               | .U.                  | call [ebp + 0x8]
+            EBE8                 | ..                   | jmp set_values
         */
     
         strings:
@@ -322,7 +304,7 @@
     
         /*
             8A0D3000FE7F         | ..0...               | mov cl, byte [0x7ffe0030]
-        880E                 | ..                   | mov byte [esi], cl
+            880E                 | ..                   | mov byte [esi], cl
         */
     
         strings:
@@ -340,20 +322,20 @@
     
         /*
             6A54                 | jT                   | push byte 0x54
-        59                   | Y                    | pop ecx
-        29CC                 | ).                   | sub esp, ecx
-        89E7                 | ..                   | mov edi, esp
-        57                   | W                    | push edi
-        F3AA                 | ..                   | rep stosb
-        5F                   | _                    | pop edi
-        C60744               | ..D                  | mov byte [edi], 0x44
-        FE472C               | .G,                  | inc byte [edi + 0x2c]
-        FE472D               | .G-                  | inc byte [edi + 0x2d]
-        68756C7400           | hult.                | push 0x00746c75
-        6844656661           | hDefa                | push 0x61666544
-        687461305C           | hta0\                | push 0x5c306174
-        6857696E53           | hWinS                | push 0x536e6957
-        896708               | .g.                  | mov [edi + 8], esp
+            59                   | Y                    | pop ecx
+            29CC                 | ).                   | sub esp, ecx
+            89E7                 | ..                   | mov edi, esp
+            57                   | W                    | push edi
+            F3AA                 | ..                   | rep stosb
+            5F                   | _                    | pop edi
+            C60744               | ..D                  | mov byte [edi], 0x44
+            FE472C               | .G,                  | inc byte [edi + 0x2c]
+            FE472D               | .G-                  | inc byte [edi + 0x2d]
+            68756C7400           | hult.                | push 0x00746c75
+            6844656661           | hDefa                | push 0x61666544
+            687461305C           | hta0\                | push 0x5c306174
+            6857696E53           | hWinS                | push 0x536e6957
+            896708               | .g.                  | mov [edi + 8], esp
         */
     
         strings:
@@ -371,17 +353,17 @@
     
         /*
             8D5F44               | ._D                  | lea ebx, [edi + 0x44]
-        53                   | S                    | push ebx
-        57                   | W                    | push edi
-        50                   | P                    | push eax
-        50                   | P                    | push eax
-        6A10                 | j.                   | push byte 0x10
-        50                   | P                    | push eax
-        50                   | P                    | push eax
-        50                   | P                    | push eax
-        56                   | V                    | push esi
-        50                   | P                    | push eax
-        FF5500               | .U.                  | call [ebp]
+            53                   | S                    | push ebx
+            57                   | W                    | push edi
+            50                   | P                    | push eax
+            50                   | P                    | push eax
+            6A10                 | j.                   | push byte 0x10
+            50                   | P                    | push eax
+            50                   | P                    | push eax
+            50                   | P                    | push eax
+            56                   | V                    | push esi
+            50                   | P                    | push eax
+            FF5500               | .U.                  | call [ebp]
         */
     
         strings:

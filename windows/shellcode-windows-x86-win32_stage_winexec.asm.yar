@@ -6,16 +6,16 @@
     
         /*
             53                   | S                    | push ebx
-        55                   | U                    | push ebp
-        56                   | V                    | push esi
-        57                   | W                    | push edi
-        8B6C2418             | .l$.                 | mov ebp, [esp + 24]
-        8B453C               | .E<                  | mov eax, [ebp + 0x3c]
-        8B540578             | .T.x                 | mov edx, [ebp + eax + 120]
-        01EA                 | ..                   | add edx, ebp
-        8B4A18               | .J.                  | mov ecx, [edx + 24]
-        8B5A20               | .Z                   | mov ebx, [edx + 32]
-        01EB                 | ..                   | add ebx, ebp
+            55                   | U                    | push ebp
+            56                   | V                    | push esi
+            57                   | W                    | push edi
+            8B6C2418             | .l$.                 | mov ebp, [esp + 24]
+            8B453C               | .E<                  | mov eax, [ebp + 0x3c]
+            8B540578             | .T.x                 | mov edx, [ebp + eax + 120]
+            01EA                 | ..                   | add edx, ebp
+            8B4A18               | .J.                  | mov ecx, [edx + 24]
+            8B5A20               | .Z                   | mov ebx, [edx + 32]
+            01EB                 | ..                   | add ebx, ebp
         */
     
         strings:
@@ -33,11 +33,11 @@
     
         /*
             E332                 | .2                   | jecxz lntfnd
-        49                   | I                    | dec ecx
-        8B348B               | .4.                  | mov esi, [ebx + ecx * 4]
-        01EE                 | ..                   | add esi, ebp
-        31FF                 | 1.                   | xor edi, edi
-        FC                   | .                    | cld
+            49                   | I                    | dec ecx
+            8B348B               | .4.                  | mov esi, [ebx + ecx * 4]
+            01EE                 | ..                   | add esi, ebp
+            31FF                 | 1.                   | xor edi, edi
+            FC                   | .                    | cld
         */
     
         strings:
@@ -55,12 +55,12 @@
     
         /*
             31C0                 | 1.                   | xor eax, eax
-        AC                   | .                    | lodsb
-        38E0                 | 8.                   | cmp al, ah
-        7407                 | t.                   | je lfnd
-        C1CF0D               | ...                  | ror edi, 13
-        01C7                 | ..                   | add edi, eax
-        EBF2                 | ..                   | jmp short lhshlp
+            AC                   | .                    | lodsb
+            38E0                 | 8.                   | cmp al, ah
+            7407                 | t.                   | je lfnd
+            C1CF0D               | ...                  | ror edi, 13
+            01C7                 | ..                   | add edi, eax
+            EBF2                 | ..                   | jmp short lhshlp
         */
     
         strings:
@@ -78,15 +78,15 @@
     
         /*
             3B7C2414             | ;|$.                 | cmp edi, [esp + 20]
-        75E1                 | u.                   | jnz lfnlp
-        8B5A24               | .Z$                  | mov ebx, [edx + 36]
-        01EB                 | ..                   | add ebx, ebp
-        668B0C4B             | f..K                 | mov cx, [ebx + 2 * ecx]
-        8B5A1C               | .Z.                  | mov ebx, [edx + 28]
-        01EB                 | ..                   | add ebx, ebp
-        8B048B               | ...                  | mov eax, [ebx + 4 * ecx]
-        01E8                 | ..                   | add eax, ebp
-        EB02                 | ..                   | jmp short ldone
+            75E1                 | u.                   | jnz lfnlp
+            8B5A24               | .Z$                  | mov ebx, [edx + 36]
+            01EB                 | ..                   | add ebx, ebp
+            668B0C4B             | f..K                 | mov cx, [ebx + 2 * ecx]
+            8B5A1C               | .Z.                  | mov ebx, [edx + 28]
+            01EB                 | ..                   | add ebx, ebp
+            8B048B               | ...                  | mov eax, [ebx + 4 * ecx]
+            01E8                 | ..                   | add eax, ebp
+            EB02                 | ..                   | jmp short ldone
         */
     
         strings:
@@ -104,10 +104,10 @@
     
         /*
             5F                   | _                    | pop edi
-        5E                   | ^                    | pop esi
-        5D                   | ]                    | pop ebp
-        5B                   | [                    | pop ebx
-        C20800               | ...                  | ret 8
+            5E                   | ^                    | pop esi
+            5D                   | ]                    | pop ebp
+            5B                   | [                    | pop ebx
+            C20800               | ...                  | ret 8
         */
     
         strings:
@@ -125,21 +125,21 @@
     
         /*
             5E                   | ^                    | pop esi
-        6A30                 | j0                   | push byte 0x30
-        59                   | Y                    | pop ecx
-        648B19               | d..                  | mov ebx, [fs:ecx]
-        8B5B0C               | .[.                  | mov ebx, [ebx + 0x0c]
-        8B5B1C               | .[.                  | mov ebx, [ebx + 0x1c]
-        8B1B                 | ..                   | mov ebx, [ebx]
-        8B5B08               | .[.                  | mov ebx, [ebx + 0x08]
-        53                   | S                    | push ebx
-        688E4E0EEC           | h.N..                | push 0xec0e4e8e
-        FFD6                 | ..                   | call esi
-        89C7                 | ..                   | mov edi, eax
-        53                   | S                    | push ebx
-        6854CAAF91           | hT...                | push 0x91afca54
-        FFD6                 | ..                   | call esi
-        EB18                 | ..                   | jmp short getcmd
+            6A30                 | j0                   | push byte 0x30
+            59                   | Y                    | pop ecx
+            648B19               | d..                  | mov ebx, [fs:ecx]
+            8B5B0C               | .[.                  | mov ebx, [ebx + 0x0c]
+            8B5B1C               | .[.                  | mov ebx, [ebx + 0x1c]
+            8B1B                 | ..                   | mov ebx, [ebx]
+            8B5B08               | .[.                  | mov ebx, [ebx + 0x08]
+            53                   | S                    | push ebx
+            688E4E0EEC           | h.N..                | push 0xec0e4e8e
+            FFD6                 | ..                   | call esi
+            89C7                 | ..                   | mov edi, eax
+            53                   | S                    | push ebx
+            6854CAAF91           | hT...                | push 0x91afca54
+            FFD6                 | ..                   | call esi
+            EB18                 | ..                   | jmp short getcmd
         */
     
         strings:
@@ -157,9 +157,9 @@
     
         /*
             53                   | S                    | push ebx
-        6898FE8A0E           | h....                | push 0x0e8afe98
-        FFD6                 | ..                   | call esi
-        FFD0                 | ..                   | call eax
+            6898FE8A0E           | h....                | push 0x0e8afe98
+            FFD6                 | ..                   | call esi
+            FFD0                 | ..                   | call eax
         */
     
         strings:
@@ -177,11 +177,11 @@
     
         /*
             53                   | S                    | push ebx
-        687ED8E273           | h~..s                | push 0x73e2d87e
-        FFD6                 | ..                   | call esi
-        6A00                 | j.                   | push byte 0
-        FFD0                 | ..                   | call eax
-        FFD0                 | ..                   | call eax
+            687ED8E273           | h~..s                | push 0x73e2d87e
+            FFD6                 | ..                   | call esi
+            6A00                 | j.                   | push byte 0
+            FFD0                 | ..                   | call eax
+            FFD0                 | ..                   | call eax
         */
     
         strings:
@@ -199,7 +199,7 @@
     
         /*
             6A00                 | j.                   | push byte 0
-        E8E1FFFFFF           | .....                | call winexec
+            E8E1FFFFFF           | .....                | call winexec
         */
     
         strings:

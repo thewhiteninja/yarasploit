@@ -6,13 +6,13 @@
     
         /*
             BBE01D2A0A           | ...*.                | mov ebx, 0x0a2a1de0
-        68A695BD9D           | h....                | push 0x9dbd95a6	; GetVersion
-        FFD5                 | ..                   | call ebp
-        3C06                 | <.                   | cmp al, byte 6
-        7C0A                 | |.                   | jl short goodbye
-        80FBE0               | ...                  | cmp bl, 0xe0
-        7505                 | u.                   | jne short goodbye
-        BB4713726F           | .G.ro                | mov ebx, 0x6f721347
+            68A695BD9D           | h....                | push 0x9dbd95a6	; GetVersion
+            FFD5                 | ..                   | call ebp
+            3C06                 | <.                   | cmp al, byte 6
+            7C0A                 | |.                   | jl short goodbye
+            80FBE0               | ...                  | cmp bl, 0xe0
+            7505                 | u.                   | jne short goodbye
+            BB4713726F           | .G.ro                | mov ebx, 0x6f721347
         */
     
         strings:
@@ -30,8 +30,8 @@
     
         /*
             6A00                 | j.                   | push byte 0
-        53                   | S                    | push ebx
-        FFD5                 | ..                   | call ebp
+            53                   | S                    | push ebx
+            FFD5                 | ..                   | call ebp
         */
     
         strings:

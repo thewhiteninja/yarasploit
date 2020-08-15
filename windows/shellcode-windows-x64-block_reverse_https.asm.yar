@@ -6,12 +6,12 @@
     
         /*
             6A00                 | j.                   | push byte 0
-        49BE77696E696E657400 | I.wininet.           | mov r14, 'wininet'
-        4156                 | AV                   | push r14
-        4989E6               | I..                  | mov r14, rsp
-        4C89F1               | L..                  | mov rcx, r14
-        41BA4C772607         | A.Lw&.               | mov r10, 0x0726774c
-        FFD5                 | ..                   | call rbp
+            49BE77696E696E657400 | I.wininet.           | mov r14, 'wininet'
+            4156                 | AV                   | push r14
+            4989E6               | I..                  | mov r14, rsp
+            4C89F1               | L..                  | mov rcx, r14
+            41BA4C772607         | A.Lw&.               | mov r10, 0x0726774c
+            FFD5                 | ..                   | call rbp
         */
     
         strings:
@@ -29,16 +29,16 @@
     
         /*
             6A00                 | j.                   | push byte 0
-        6A00                 | j.                   | push byte 0
-        4889E1               | H..                  | mov rcx, rsp
-        4831D2               | H1.                  | xor rdx, rdx
-        4D31C0               | M1.                  | xor r8, r8
-        4D31C9               | M1.                  | xor r9, r9
-        4150                 | AP                   | push r8
-        4150                 | AP                   | push r8
-        41BA3A5679A7         | A.:Vy.               | mov r10, 0xa779563a
-        FFD5                 | ..                   | call rbp
-        E981000000           | .....                | jmp dbl_get_server_host
+            6A00                 | j.                   | push byte 0
+            4889E1               | H..                  | mov rcx, rsp
+            4831D2               | H1.                  | xor rdx, rdx
+            4D31C0               | M1.                  | xor r8, r8
+            4D31C9               | M1.                  | xor r9, r9
+            4150                 | AP                   | push r8
+            4150                 | AP                   | push r8
+            41BA3A5679A7         | A.:Vy.               | mov r10, 0xa779563a
+            FFD5                 | ..                   | call rbp
+            E981000000           | .....                | jmp dbl_get_server_host
         */
     
         strings:
@@ -56,16 +56,16 @@
     
         /*
             5A                   | Z                    | pop rdx
-        4889C1               | H..                  | mov rcx, rax
-        41B8????0000         | A.\...               | mov r8, 4444	; Port
-        4D31C9               | M1.                  | xor r9, r9
-        4151                 | AQ                   | push r9
-        4151                 | AQ                   | push r9
-        6A03                 | j.                   | push 3
-        4151                 | AQ                   | push r9
-        41BA57899FC6         | A.W...               | mov r10, 0xc69f8957
-        FFD5                 | ..                   | call rbp
-        EB64                 | .d                   | jmp get_server_uri
+            4889C1               | H..                  | mov rcx, rax
+            41B8????0000         | A.\...               | mov r8, 4444	; Port
+            4D31C9               | M1.                  | xor r9, r9
+            4151                 | AQ                   | push r9
+            4151                 | AQ                   | push r9
+            6A03                 | j.                   | push 3
+            4151                 | AQ                   | push r9
+            41BA57899FC6         | A.W...               | mov r10, 0xc69f8957
+            FFD5                 | ..                   | call rbp
+            EB64                 | .d                   | jmp get_server_uri
         */
     
         strings:
@@ -83,16 +83,16 @@
     
         /*
             4889C1               | H..                  | mov rcx, rax
-        4831D2               | H1.                  | xor rdx, rdx
-        4158                 | AX                   | pop r8
-        4D31C9               | M1.                  | xor r9, r9
-        52                   | R                    | push rdx
-        680032A084           | h.2..                | push qword (0x0000000080000000 | 0x0000000004000000 | 0x0000000000800000 | 0x0000000000200000 | 0x0000000000001000 |0x0000000000002000 |0x0000000000000200)
-        52                   | R                    | push rdx
-        52                   | R                    | push rdx
-        41BAEB552E3B         | A..U.;               | mov r10, 0x3b2e55eb
-        FFD5                 | ..                   | call rbp
-        4889C6               | H..                  | mov rsi, rax
+            4831D2               | H1.                  | xor rdx, rdx
+            4158                 | AX                   | pop r8
+            4D31C9               | M1.                  | xor r9, r9
+            52                   | R                    | push rdx
+            680032A084           | h.2..                | push qword (0x0000000080000000 | 0x0000000004000000 | 0x0000000000800000 | 0x0000000000200000 | 0x0000000000001000 |0x0000000000002000 |0x0000000000000200)
+            52                   | R                    | push rdx
+            52                   | R                    | push rdx
+            41BAEB552E3B         | A..U.;               | mov r10, 0x3b2e55eb
+            FFD5                 | ..                   | call rbp
+            4889C6               | H..                  | mov rsi, rax
         */
     
         strings:
@@ -110,13 +110,13 @@
     
         /*
             4889F1               | H..                  | mov rcx, rsi
-        BA1F000000           | .....                | mov rdx, 31
-        6A00                 | j.                   | push byte 0
-        6880330000           | h.3..                | push qword 0x00003380
-        4989E0               | I..                  | mov r8, rsp
-        41B904000000         | A.....               | mov r9, 4
-        41BA75469E86         | A.uF..               | mov r10, 0x869e4675
-        FFD5                 | ..                   | call rbp
+            BA1F000000           | .....                | mov rdx, 31
+            6A00                 | j.                   | push byte 0
+            6880330000           | h.3..                | push qword 0x00003380
+            4989E0               | I..                  | mov r8, rsp
+            41B904000000         | A.....               | mov r9, 4
+            41BA75469E86         | A.uF..               | mov r10, 0x869e4675
+            FFD5                 | ..                   | call rbp
         */
     
         strings:
@@ -134,15 +134,15 @@
     
         /*
             4889F1               | H..                  | mov rcx, rsi
-        4831D2               | H1.                  | xor rdx, rdx
-        4D31C0               | M1.                  | xor r8, r8
-        4D31C9               | M1.                  | xor r9, r9
-        52                   | R                    | push rdx
-        52                   | R                    | push rdx
-        41BA2D06187B         | A.-..{               | mov r10, 0x7b18062d
-        FFD5                 | ..                   | call rbp
-        85C0                 | ..                   | test eax,eax
-        751D                 | u.                   | jnz short allocate_memory
+            4831D2               | H1.                  | xor rdx, rdx
+            4D31C0               | M1.                  | xor r8, r8
+            4D31C9               | M1.                  | xor r9, r9
+            52                   | R                    | push rdx
+            52                   | R                    | push rdx
+            41BA2D06187B         | A.-..{               | mov r10, 0x7b18062d
+            FFD5                 | ..                   | call rbp
+            85C0                 | ..                   | test eax,eax
+            751D                 | u.                   | jnz short allocate_memory
         */
     
         strings:
@@ -160,8 +160,8 @@
     
         /*
             48FFCF               | H..                  | dec rdi
-        7410                 | t.                   | jz failure
-        EBBF                 | ..                   | jmp short internetsetoption
+            7410                 | t.                   | jz failure
+            EBBF                 | ..                   | jmp short internetsetoption
         */
     
         strings:
@@ -179,7 +179,7 @@
     
         /*
             41BEF0B5A256         | A....V               | mov r14, 0x56a2b5f0
-        FFD5                 | ..                   | call rbp
+            FFD5                 | ..                   | call rbp
         */
     
         strings:
@@ -197,11 +197,11 @@
     
         /*
             4831C9               | H1.                  | xor rcx, rcx
-        BA00004000           | ...@.                | mov rdx, 0x00400000
-        41B800100000         | A.....               | mov r8, 0x1000
-        41B940000000         | A.@...               | mov r9, 0x40
-        41BA58A453E5         | A.X.S.               | mov r10, 0xe553a458
-        FFD5                 | ..                   | call rbp
+            BA00004000           | ...@.                | mov rdx, 0x00400000
+            41B800100000         | A.....               | mov r8, 0x1000
+            41B940000000         | A.@...               | mov r9, 0x40
+            41BA58A453E5         | A.X.S.               | mov r10, 0xe553a458
+            FFD5                 | ..                   | call rbp
         */
     
         strings:
@@ -219,9 +219,9 @@
     
         /*
             4893                 | H.                   | xchg rax, rbx
-        53                   | S                    | push rbx
-        53                   | S                    | push rbx
-        4889E7               | H..                  | mov rdi, rsp
+            53                   | S                    | push rbx
+            53                   | S                    | push rbx
+            4889E7               | H..                  | mov rdi, rsp
         */
     
         strings:
@@ -239,20 +239,20 @@
     
         /*
             4889F1               | H..                  | mov rcx, rsi
-        4889DA               | H..                  | mov rdx, rbx
-        41B800200000         | A.. ..               | mov r8, 8192
-        4989F9               | I..                  | mov r9, rdi
-        41BA129689E2         | A.....               | mov r10, 0xe2899612
-        FFD5                 | ..                   | call rbp
-        4883C420             | H..                  | add rsp, 32
-        85C0                 | ..                   | test eax,eax
-        74B6                 | t.                   | jz failure
-        66678B07             | fg..                 | mov ax, word [edi]
-        4801C3               | H..                  | add rbx, rax
-        4885C0               | H..                  | test rax,rax
-        75D5                 | u.                   | jnz download_more
-        58                   | X                    | pop rax
-        58                   | X                    | pop rax
+            4889DA               | H..                  | mov rdx, rbx
+            41B800200000         | A.. ..               | mov r8, 8192
+            4989F9               | I..                  | mov r9, rdi
+            41BA129689E2         | A.....               | mov r10, 0xe2899612
+            FFD5                 | ..                   | call rbp
+            4883C420             | H..                  | add rsp, 32
+            85C0                 | ..                   | test eax,eax
+            74B6                 | t.                   | jz failure
+            66678B07             | fg..                 | mov ax, word [edi]
+            4801C3               | H..                  | add rbx, rax
+            4885C0               | H..                  | test rax,rax
+            75D5                 | u.                   | jnz download_more
+            58                   | X                    | pop rax
+            58                   | X                    | pop rax
         */
     
         strings:

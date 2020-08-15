@@ -6,36 +6,36 @@
     
         /*
             6833320000           | h32..                | push 0x00003233
-        687773325F           | hws2_                | push 0x5f327377
-        54                   | T                    | push esp
-        684C772607           | hLw&.                | push 0x0726774c	; LoadLibraryA
-        FFD5                 | ..                   | call ebp
-        B804020000           | .....                | mov eax, 0x0204
-        29C4                 | ).                   | sub esp, eax
-        48                   | H                    | dec eax
-        48                   | H                    | dec eax
-        54                   | T                    | push esp
-        50                   | P                    | push eax
-        6829806B00           | h).k.                | push 0x006b8029	; WSAStartup
-        FFD5                 | ..                   | call ebp
-        50                   | P                    | push eax
-        50                   | P                    | push eax
-        50                   | P                    | push eax
-        6A06                 | j.                   | push byte 6
-        40                   | @                    | inc eax
-        50                   | P                    | push eax
-        6A17                 | j.                   | push byte 23
-        68EA0FDFE0           | h....                | push 0xe0df0fea	; WSASocketA
-        FFD5                 | ..                   | call ebp
-        89C7                 | ..                   | mov edi, eax
-        6A1C                 | j.                   | push byte 28
-        E81C000000           | .....                | call ipv6_connect
-        1700                 | ..                   | #ommited# dw 0x0017
-        115C                 | .\                   | #ommited# dw 0x5c11
-        00000000             | ....                 | #ommited# dd 0x00000000
-        B1BBBBBBBBBBBBBB     | ........             | #ommited# dq 0xbbbbbbbbbbbbbbb1
-        C1CCCCCCCCCCCCCC     | ........             | #ommited# dq 0xccccccccccccccc1
-        A1AAAAAA             | ....                 | #ommited# dd 0xaaaaaaa1
+            687773325F           | hws2_                | push 0x5f327377
+            54                   | T                    | push esp
+            684C772607           | hLw&.                | push 0x0726774c	; LoadLibraryA
+            FFD5                 | ..                   | call ebp
+            B804020000           | .....                | mov eax, 0x0204
+            29C4                 | ).                   | sub esp, eax
+            48                   | H                    | dec eax
+            48                   | H                    | dec eax
+            54                   | T                    | push esp
+            50                   | P                    | push eax
+            6829806B00           | h).k.                | push 0x006b8029	; WSAStartup
+            FFD5                 | ..                   | call ebp
+            50                   | P                    | push eax
+            50                   | P                    | push eax
+            50                   | P                    | push eax
+            6A06                 | j.                   | push byte 6
+            40                   | @                    | inc eax
+            50                   | P                    | push eax
+            6A17                 | j.                   | push byte 23
+            68EA0FDFE0           | h....                | push 0xe0df0fea	; WSASocketA
+            FFD5                 | ..                   | call ebp
+            89C7                 | ..                   | mov edi, eax
+            6A1C                 | j.                   | push byte 28
+            E81C000000           | .....                | call ipv6_connect
+            1700                 | ..                   | #ommited# dw 0x0017
+            115C                 | .\                   | #ommited# dw 0x5c11
+            00000000             | ....                 | #ommited# dd 0x00000000
+            B1BBBBBBBBBBBBBB     | ........             | #ommited# dq 0xbbbbbbbbbbbbbbb1
+            C1CCCCCCCCCCCCCC     | ........             | #ommited# dq 0xccccccccccccccc1
+            A1AAAAAA             | ....                 | #ommited# dd 0xaaaaaaa1
         */
     
         strings:
@@ -53,9 +53,9 @@
     
         /*
             57                   | W                    | push edi
-        6899A57461           | h..ta                | push 0x6174a599	; connect
-        FFD5                 | ..                   | call ebp
-        89E6                 | ..                   | mov esi, esp
+            6899A57461           | h..ta                | push 0x6174a599	; connect
+            FFD5                 | ..                   | call ebp
+            89E6                 | ..                   | mov esi, esp
         */
     
         strings:

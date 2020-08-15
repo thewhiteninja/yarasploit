@@ -6,163 +6,163 @@
     
         /*
             83EC40               | ..@                  | sub esp,0x40
-        FC                   | .                    | cld
-        89FB                 | ..                   | mov ebx,edi
-        E84B000000           | .K...                | call 0x56
-        60                   | `                    | pusha
-        8B6C2424             | .l$$                 | mov ebp,[esp+0x24]
-        8B453C               | .E<                  | mov eax,[ebp+0x3c]
-        8B7C0578             | .|.x                 | mov edi,[ebp+eax+0x78]
-        01EF                 | ..                   | add edi,ebp
-        8B4F18               | .O.                  | mov ecx,[edi+0x18]
-        8B5F20               | ._                   | mov ebx,[edi+0x20]
-        01EB                 | ..                   | add ebx,ebp
-        49                   | I                    | dec ecx
-        8B348B               | .4.                  | mov esi,[ebx+ecx*4]
-        01EE                 | ..                   | add esi,ebp
-        31C0                 | 1.                   | xor eax,eax
-        99                   | .                    | cdq
-        AC                   | .                    | lodsb
-        84C0                 | ..                   | test al,al
-        0F8406000000         | ......               | jz 0x39
-        C1CA0D               | ...                  | ror edx,0xd
-        01C2                 | ..                   | add edx,eax
-        EBF3                 | ..                   | jmp short 0x2d
-        3B542428             | ;T$(                 | cmp edx,[esp+0x28]
-        0F85E0FFFFFF         | ......               | jnz 0x24
-        8B5F24               | ._$                  | mov ebx,[edi+0x24]
-        01EB                 | ..                   | add ebx,ebp
-        668B0C4B             | f..K                 | mov cx,[ebx+ecx*2]
-        8B5F1C               | ._.                  | mov ebx,[edi+0x1c]
-        01EB                 | ..                   | add ebx,ebp
-        032C8B               | .,.                  | add ebp,[ebx+ecx*4]
-        896C241C             | .l$.                 | mov [esp+0x1c],ebp
-        61                   | a                    | popa
-        C3                   | .                    | ret
-        64A130000000         | d.0...               | mov eax,[fs:0x30]
-        8B400C               | .@.                  | mov eax,[eax+0xc]
-        8B701C               | .p.                  | mov esi,[eax+0x1c]
-        AD                   | .                    | lodsd
-        8B4008               | .@.                  | mov eax,[eax+0x8]
-        50                   | P                    | push eax
-        89E6                 | ..                   | mov esi,esp
-        688E4E0EEC           | h.N..                | push dword 0xec0e4e8e
-        FF36                 | .6                   | push dword [esi]
-        FF5604               | .V.                  | call near [esi+0x4]
-        666A00               | fj.                  | push word 0x0
-        66683332             | fh32                 | push word 0x3233
-        687773325F           | hws2_                | push dword 0x5f327377
-        89E5                 | ..                   | mov ebp,esp
-        55                   | U                    | push ebp
-        FFD0                 | ..                   | call eax
-        894608               | .F.                  | mov [esi+0x8],eax
-        68B61918E7           | h....                | push dword 0xe71819b6
-        FF7608               | .v.                  | push dword [esi+0x8]
-        FF5604               | .V.                  | call near [esi+0x4]
-        89460C               | .F.                  | mov [esi+0xc],eax
-        6A00                 | j.                   | push byte +0x0
-        6A04                 | j.                   | push byte +0x4
-        55                   | U                    | push ebp
-        53                   | S                    | push ebx
-        FF560C               | .V.                  | call near [esi+0xc]
-        8B7D00               | .}.                  | mov edi,[ebp+0x0]
-        E807000000           | .....                | call 0xb2
-        43                   | C                    | inc ebx
-        3A5C746D             | :\tm                 | cmp bl,[esp+esi*2+0x6d]
-        0F8026000000         | ..&...               | jo 0xdc
-        650F8859000000       | e..Y...              | gs js 0x116
-        005889               | .X.                  | add [eax-0x77],bl
-        46                   | F                    | inc esi
-        1068A5               | .h.                  | adc [eax-0x5b],ch
-        17                   | .                    | pop ss
-        007CFF36             | .|.6                 | add [edi+edi*8+0x36],bh
-        FF5604               | .V.                  | call near [esi+0x4]
-        6A00                 | j.                   | push byte +0x0
-        6A06                 | j.                   | push byte +0x6
-        6A04                 | j.                   | push byte +0x4
-        6A00                 | j.                   | push byte +0x0
-        6A07                 | j.                   | push byte +0x7
-        68000000E0           | h....                | push dword 0xe0000000
-        FF7610               | .v.                  | push dword [esi+0x10]
-        FFD0                 | ..                   | call eax
-        894614               | .F.                  | mov [esi+0x14],eax
-        81EC04080000         | ......               | sub esp,0x804
-        89E5                 | ..                   | mov ebp,esp
-        681F790AE8           | h.y..                | push dword 0xe80a791f
-        FF36                 | .6                   | push dword [esi]
-        FF5604               | .V.                  | call near [esi+0x4]
-        894618               | .F.                  | mov [esi+0x18],eax
-        6A00                 | j.                   | push byte +0x0
-        6800080000           | h....                | push dword 0x800
-        55                   | U                    | push ebp
-        53                   | S                    | push ebx
-        FF560C               | .V.                  | call near [esi+0xc]
-        29C7                 | ).                   | sub edi,eax
-        50                   | P                    | push eax
-        89E1                 | ..                   | mov ecx,esp
-        6A00                 | j.                   | push byte +0x0
-        51                   | Q                    | push ecx
-        50                   | P                    | push eax
-        55                   | U                    | push ebp
-        FF7614               | .v.                  | push dword [esi+0x14]
-        FF5618               | .V.                  | call near [esi+0x18]
-        58                   | X                    | pop eax
-        85FF                 | ..                   | test edi,edi
-        0F85CFFFFFFF         | ......               | jnz 0xec
-        68FB97FD0F           | h....                | push dword 0xffd97fb
-        FF36                 | .6                   | push dword [esi]
-        FF5604               | .V.                  | call near [esi+0x4]
-        FF7614               | .v.                  | push dword [esi+0x14]
-        FFD0                 | ..                   | call eax
-        6A50                 | jP                   | push byte +0x50
-        59                   | Y                    | pop ecx
-        29CC                 | ).                   | sub esp,ecx
-        89E7                 | ..                   | mov edi,esp
-        6A44                 | jD                   | push byte +0x44
-        89E2                 | ..                   | mov edx,esp
-        31C0                 | 1.                   | xor eax,eax
-        F3AA                 | ..                   | rep stosb
-        FE422D               | .B-                  | inc byte [edx+0x2d]
-        FE422C               | .B,                  | inc byte [edx+0x2c]
-        93                   | .                    | xchg eax,ebx
-        8D7A38               | .z8                  | lea edi,[edx+0x38]
-        AB                   | .                    | stosd
-        AB                   | .                    | stosd
-        AB                   | .                    | stosd
-        6872FEB316           | hr...                | push dword 0x16b3fe72
-        FF36                 | .6                   | push dword [esi]
-        FF5604               | .V.                  | call near [esi+0x4]
-        57                   | W                    | push edi
-        52                   | R                    | push edx
-        51                   | Q                    | push ecx
-        51                   | Q                    | push ecx
-        51                   | Q                    | push ecx
-        6A01                 | j.                   | push byte +0x1
-        51                   | Q                    | push ecx
-        51                   | Q                    | push ecx
-        FF7610               | .v.                  | push dword [esi+0x10]
-        51                   | Q                    | push ecx
-        FFD0                 | ..                   | call eax
-        68ADD905CE           | h....                | push dword 0xce05d9ad
-        FF36                 | .6                   | push dword [esi]
-        FF5604               | .V.                  | call near [esi+0x4]
-        6AFF                 | j.                   | push byte -0x1
-        FF37                 | .7                   | push dword [edi]
-        FFD0                 | ..                   | call eax
-        6825B0FFC2           | h%...                | push dword 0xc2ffb025
-        FF36                 | .6                   | push dword [esi]
-        FF5604               | .V.                  | call near [esi+0x4]
-        FF7610               | .v.                  | push dword [esi+0x10]
-        FFD0                 | ..                   | call eax
-        68E779C679           | h.y.y                | push dword 0x79c679e7
-        FF7608               | .v.                  | push dword [esi+0x8]
-        FF5604               | .V.                  | call near [esi+0x4]
-        FF77FC               | .w.                  | push dword [edi-0x4]
-        FFD0                 | ..                   | call eax
-        68F08A045F           | h..._                | push dword 0x5f048af0
-        FF36                 | .6                   | push dword [esi]
-        FF5604               | .V.                  | call near [esi+0x4]
-        FFD0                 | ..                   | call eax
+            FC                   | .                    | cld
+            89FB                 | ..                   | mov ebx,edi
+            E84B000000           | .K...                | call 0x56
+            60                   | `                    | pusha
+            8B6C2424             | .l$$                 | mov ebp,[esp+0x24]
+            8B453C               | .E<                  | mov eax,[ebp+0x3c]
+            8B7C0578             | .|.x                 | mov edi,[ebp+eax+0x78]
+            01EF                 | ..                   | add edi,ebp
+            8B4F18               | .O.                  | mov ecx,[edi+0x18]
+            8B5F20               | ._                   | mov ebx,[edi+0x20]
+            01EB                 | ..                   | add ebx,ebp
+            49                   | I                    | dec ecx
+            8B348B               | .4.                  | mov esi,[ebx+ecx*4]
+            01EE                 | ..                   | add esi,ebp
+            31C0                 | 1.                   | xor eax,eax
+            99                   | .                    | cdq
+            AC                   | .                    | lodsb
+            84C0                 | ..                   | test al,al
+            0F8406000000         | ......               | jz 0x39
+            C1CA0D               | ...                  | ror edx,0xd
+            01C2                 | ..                   | add edx,eax
+            EBF3                 | ..                   | jmp short 0x2d
+            3B542428             | ;T$(                 | cmp edx,[esp+0x28]
+            0F85E0FFFFFF         | ......               | jnz 0x24
+            8B5F24               | ._$                  | mov ebx,[edi+0x24]
+            01EB                 | ..                   | add ebx,ebp
+            668B0C4B             | f..K                 | mov cx,[ebx+ecx*2]
+            8B5F1C               | ._.                  | mov ebx,[edi+0x1c]
+            01EB                 | ..                   | add ebx,ebp
+            032C8B               | .,.                  | add ebp,[ebx+ecx*4]
+            896C241C             | .l$.                 | mov [esp+0x1c],ebp
+            61                   | a                    | popa
+            C3                   | .                    | ret
+            64A130000000         | d.0...               | mov eax,[fs:0x30]
+            8B400C               | .@.                  | mov eax,[eax+0xc]
+            8B701C               | .p.                  | mov esi,[eax+0x1c]
+            AD                   | .                    | lodsd
+            8B4008               | .@.                  | mov eax,[eax+0x8]
+            50                   | P                    | push eax
+            89E6                 | ..                   | mov esi,esp
+            688E4E0EEC           | h.N..                | push dword 0xec0e4e8e
+            FF36                 | .6                   | push dword [esi]
+            FF5604               | .V.                  | call near [esi+0x4]
+            666A00               | fj.                  | push word 0x0
+            66683332             | fh32                 | push word 0x3233
+            687773325F           | hws2_                | push dword 0x5f327377
+            89E5                 | ..                   | mov ebp,esp
+            55                   | U                    | push ebp
+            FFD0                 | ..                   | call eax
+            894608               | .F.                  | mov [esi+0x8],eax
+            68B61918E7           | h....                | push dword 0xe71819b6
+            FF7608               | .v.                  | push dword [esi+0x8]
+            FF5604               | .V.                  | call near [esi+0x4]
+            89460C               | .F.                  | mov [esi+0xc],eax
+            6A00                 | j.                   | push byte +0x0
+            6A04                 | j.                   | push byte +0x4
+            55                   | U                    | push ebp
+            53                   | S                    | push ebx
+            FF560C               | .V.                  | call near [esi+0xc]
+            8B7D00               | .}.                  | mov edi,[ebp+0x0]
+            E807000000           | .....                | call 0xb2
+            43                   | C                    | inc ebx
+            3A5C746D             | :\tm                 | cmp bl,[esp+esi*2+0x6d]
+            0F8026000000         | ..&...               | jo 0xdc
+            650F8859000000       | e..Y...              | gs js 0x116
+            005889               | .X.                  | add [eax-0x77],bl
+            46                   | F                    | inc esi
+            1068A5               | .h.                  | adc [eax-0x5b],ch
+            17                   | .                    | pop ss
+            007CFF36             | .|.6                 | add [edi+edi*8+0x36],bh
+            FF5604               | .V.                  | call near [esi+0x4]
+            6A00                 | j.                   | push byte +0x0
+            6A06                 | j.                   | push byte +0x6
+            6A04                 | j.                   | push byte +0x4
+            6A00                 | j.                   | push byte +0x0
+            6A07                 | j.                   | push byte +0x7
+            68000000E0           | h....                | push dword 0xe0000000
+            FF7610               | .v.                  | push dword [esi+0x10]
+            FFD0                 | ..                   | call eax
+            894614               | .F.                  | mov [esi+0x14],eax
+            81EC04080000         | ......               | sub esp,0x804
+            89E5                 | ..                   | mov ebp,esp
+            681F790AE8           | h.y..                | push dword 0xe80a791f
+            FF36                 | .6                   | push dword [esi]
+            FF5604               | .V.                  | call near [esi+0x4]
+            894618               | .F.                  | mov [esi+0x18],eax
+            6A00                 | j.                   | push byte +0x0
+            6800080000           | h....                | push dword 0x800
+            55                   | U                    | push ebp
+            53                   | S                    | push ebx
+            FF560C               | .V.                  | call near [esi+0xc]
+            29C7                 | ).                   | sub edi,eax
+            50                   | P                    | push eax
+            89E1                 | ..                   | mov ecx,esp
+            6A00                 | j.                   | push byte +0x0
+            51                   | Q                    | push ecx
+            50                   | P                    | push eax
+            55                   | U                    | push ebp
+            FF7614               | .v.                  | push dword [esi+0x14]
+            FF5618               | .V.                  | call near [esi+0x18]
+            58                   | X                    | pop eax
+            85FF                 | ..                   | test edi,edi
+            0F85CFFFFFFF         | ......               | jnz 0xec
+            68FB97FD0F           | h....                | push dword 0xffd97fb
+            FF36                 | .6                   | push dword [esi]
+            FF5604               | .V.                  | call near [esi+0x4]
+            FF7614               | .v.                  | push dword [esi+0x14]
+            FFD0                 | ..                   | call eax
+            6A50                 | jP                   | push byte +0x50
+            59                   | Y                    | pop ecx
+            29CC                 | ).                   | sub esp,ecx
+            89E7                 | ..                   | mov edi,esp
+            6A44                 | jD                   | push byte +0x44
+            89E2                 | ..                   | mov edx,esp
+            31C0                 | 1.                   | xor eax,eax
+            F3AA                 | ..                   | rep stosb
+            FE422D               | .B-                  | inc byte [edx+0x2d]
+            FE422C               | .B,                  | inc byte [edx+0x2c]
+            93                   | .                    | xchg eax,ebx
+            8D7A38               | .z8                  | lea edi,[edx+0x38]
+            AB                   | .                    | stosd
+            AB                   | .                    | stosd
+            AB                   | .                    | stosd
+            6872FEB316           | hr...                | push dword 0x16b3fe72
+            FF36                 | .6                   | push dword [esi]
+            FF5604               | .V.                  | call near [esi+0x4]
+            57                   | W                    | push edi
+            52                   | R                    | push edx
+            51                   | Q                    | push ecx
+            51                   | Q                    | push ecx
+            51                   | Q                    | push ecx
+            6A01                 | j.                   | push byte +0x1
+            51                   | Q                    | push ecx
+            51                   | Q                    | push ecx
+            FF7610               | .v.                  | push dword [esi+0x10]
+            51                   | Q                    | push ecx
+            FFD0                 | ..                   | call eax
+            68ADD905CE           | h....                | push dword 0xce05d9ad
+            FF36                 | .6                   | push dword [esi]
+            FF5604               | .V.                  | call near [esi+0x4]
+            6AFF                 | j.                   | push byte -0x1
+            FF37                 | .7                   | push dword [edi]
+            FFD0                 | ..                   | call eax
+            6825B0FFC2           | h%...                | push dword 0xc2ffb025
+            FF36                 | .6                   | push dword [esi]
+            FF5604               | .V.                  | call near [esi+0x4]
+            FF7610               | .v.                  | push dword [esi+0x10]
+            FFD0                 | ..                   | call eax
+            68E779C679           | h.y.y                | push dword 0x79c679e7
+            FF7608               | .v.                  | push dword [esi+0x8]
+            FF5604               | .V.                  | call near [esi+0x4]
+            FF77FC               | .w.                  | push dword [edi-0x4]
+            FFD0                 | ..                   | call eax
+            68F08A045F           | h..._                | push dword 0x5f048af0
+            FF36                 | .6                   | push dword [esi]
+            FF5604               | .V.                  | call near [esi+0x4]
+            FFD0                 | ..                   | call eax
         */
     
         strings:

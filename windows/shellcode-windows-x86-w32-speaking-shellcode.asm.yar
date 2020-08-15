@@ -6,11 +6,11 @@
     
         /*
             31F6                 | 1.                   | xor esi, esi
-        648B7630             | d.v0                 | mov esi, [fs:esi + 0x30]
-        8B760C               | .v.                  | mov esi, [esi + 0x0c]
-        8B761C               | .v.                  | mov esi, [esi + 0x1c]
-        56                   | V                    | push esi
-        66BEAA1A             | f...                 | mov si, hash_kernel32_loadlibrarya
+            648B7630             | d.v0                 | mov esi, [fs:esi + 0x30]
+            8B760C               | .v.                  | mov esi, [esi + 0x0c]
+            8B761C               | .v.                  | mov esi, [esi + 0x1c]
+            56                   | V                    | push esi
+            66BEAA1A             | f...                 | mov si, hash_kernel32_loadlibrarya
         */
     
         strings:
@@ -28,8 +28,8 @@
     
         /*
             5F                   | _                    | pop edi
-        8B6F08               | .o.                  | mov ebp, [edi + 0x08]
-        FF37                 | .7                   | push dword [edi]
+            8B6F08               | .o.                  | mov ebp, [edi + 0x08]
+            FF37                 | .7                   | push dword [edi]
         */
     
         strings:
@@ -47,10 +47,10 @@
     
         /*
             8B5D3C               | .]<                  | mov ebx, [ebp + 0x3c]
-        8B5C1D78             | .\.x                 | mov ebx, [ebp + ebx + 0x78]
-        01EB                 | ..                   | add ebx, ebp
-        8B4B18               | .K.                  | mov ecx, [ebx + 0x18]
-        67E3EB               | g..                  | jcxz next_module
+            8B5C1D78             | .\.x                 | mov ebx, [ebp + ebx + 0x78]
+            01EB                 | ..                   | add ebx, ebp
+            8B4B18               | .K.                  | mov ecx, [ebx + 0x18]
+            67E3EB               | g..                  | jcxz next_module
         */
     
         strings:
@@ -68,11 +68,11 @@
     
         /*
             8B7B20               | .{                   | mov edi, [ebx + 0x20]
-        01EF                 | ..                   | add edi, ebp
-        8B7C8FFC             | .|..                 | mov edi, [edi + ecx * 4 - 4]
-        01EF                 | ..                   | add edi, ebp
-        31C0                 | 1.                   | xor eax, eax
-        99                   | .                    | cdq
+            01EF                 | ..                   | add edi, ebp
+            8B7C8FFC             | .|..                 | mov edi, [edi + ecx * 4 - 4]
+            01EF                 | ..                   | add edi, ebp
+            31C0                 | 1.                   | xor eax, eax
+            99                   | .                    | cdq
         */
     
         strings:
@@ -90,14 +90,14 @@
     
         /*
             3217                 | 2.                   | xor dl, [edi]
-        66C1CA01             | f...                 | ror dx, byte hash_ror_value
-        AE                   | .                    | scasb
-        75F7                 | u.                   | jne hash_loop
-        49                   | I                    | dec ecx
-        6639F2               | f9.                  | cmp dx, si
-        7405                 | t.                   | je found_function
-        67E3CB               | g..                  | jcxz next_module
-        EBDE                 | ..                   | jmp next_function_loop
+            66C1CA01             | f...                 | ror dx, byte hash_ror_value
+            AE                   | .                    | scasb
+            75F7                 | u.                   | jne hash_loop
+            49                   | I                    | dec ecx
+            6639F2               | f9.                  | cmp dx, si
+            7405                 | t.                   | je found_function
+            67E3CB               | g..                  | jcxz next_module
+            EBDE                 | ..                   | jmp next_function_loop
         */
     
         strings:
@@ -115,17 +115,17 @@
     
         /*
             8B7324               | .s$                  | mov esi, [ebx + 0x24]
-        01EE                 | ..                   | add esi, ebp
-        0FB7344E             | ..4N                 | movzx esi, word [esi + 2 * ecx]
-        8B431C               | .C.                  | mov eax, [ebx + 0x1c]
-        01E8                 | ..                   | add eax, ebp
-        8B3CB0               | .<.                  | mov edi, [eax + 4 * esi]
-        01EF                 | ..                   | add edi, ebp
-        31F6                 | 1.                   | xor esi, esi
-        6681FADAF0           | f....                | cmp dx, hash_ole32_coinitialize
-        7418                 | t.                   | je ole32_coinitialize
-        6681FA6927           | f..i'                | cmp dx, hash_ole32_cocreateinstance
-        741A                 | t.                   | je ole32_cocreateinstance
+            01EE                 | ..                   | add esi, ebp
+            0FB7344E             | ..4N                 | movzx esi, word [esi + 2 * ecx]
+            8B431C               | .C.                  | mov eax, [ebx + 0x1c]
+            01E8                 | ..                   | add eax, ebp
+            8B3CB0               | .<.                  | mov edi, [eax + 4 * esi]
+            01EF                 | ..                   | add edi, ebp
+            31F6                 | 1.                   | xor esi, esi
+            6681FADAF0           | f....                | cmp dx, hash_ole32_coinitialize
+            7418                 | t.                   | je ole32_coinitialize
+            6681FA6927           | f..i'                | cmp dx, hash_ole32_cocreateinstance
+            741A                 | t.                   | je ole32_cocreateinstance
         */
     
         strings:
@@ -143,12 +143,12 @@
     
         /*
             6A32                 | j2                   | push byte '2'
-        686F6C6533           | hole3                | push ((('3') << 24) + (('e') << 16) + (('l') << 8) + ('o'))
-        54                   | T                    | push esp
-        FFD7                 | ..                   | call edi
-        95                   | .                    | xchg eax, ebp
-        66BEDAF0             | f...                 | mov si, hash_ole32_coinitialize
-        EB9B                 | ..                   | jmp get_proc_address_loop
+            686F6C6533           | hole3                | push ((('3') << 24) + (('e') << 16) + (('l') << 8) + ('o'))
+            54                   | T                    | push esp
+            FFD7                 | ..                   | call edi
+            95                   | .                    | xchg eax, ebp
+            66BEDAF0             | f...                 | mov si, hash_ole32_coinitialize
+            EB9B                 | ..                   | jmp get_proc_address_loop
         */
     
         strings:
@@ -166,9 +166,9 @@
     
         /*
             56                   | V                    | push esi
-        FFD7                 | ..                   | call edi
-        66BE6927             | f.i'                 | mov si, hash_ole32_cocreateinstance
-        EB92                 | ..                   | jmp get_proc_address_loop
+            FFD7                 | ..                   | call edi
+            66BE6927             | f.i'                 | mov si, hash_ole32_cocreateinstance
+            EB92                 | ..                   | jmp get_proc_address_loop
         */
     
         strings:
@@ -186,30 +186,30 @@
     
         /*
             686E0422D4           | hn.".                | push 0xd422046e
-        68A1ECEF99           | h....                | push 0x99efeca1
-        68B9729249           | h.r.I                | push 0x499272b9
-        6874DF446C           | ht.Dl                | push 0x6c44df74
-        89E0                 | ..                   | mov eax, esp
-        684F797396           | hOys.                | push 0x9673794f
-        689EE301C0           | h....                | push 0xc001e39e
-        FF4C2402             | .L$.                 | dec dword [esp+2]
-        689133D211           | h.3..                | push 0x11d23391
-        6877937496           | hw.t.                | push 0x96749377
-        89E3                 | ..                   | mov ebx, esp
-        56                   | V                    | push esi
-        54                   | T                    | push esp
-        50                   | P                    | push eax
-        6A17                 | j.                   | push byte 0x17
-        56                   | V                    | push esi
-        53                   | S                    | push ebx
-        FFD7                 | ..                   | call edi
-        5B                   | [                    | pop ebx
-        686F672075           | hog u                | push ((('u') << 24) + ((' ') << 16) + (('g') << 8) + ('o'))
-        686F702074           | hop t                | push ((('t') << 24) + ((' ') << 16) + (('p') << 8) + ('o'))
-        6821646E68           | h!dnh                | push ((('h') << 24) + (('n') << 16) + (('d') << 8) + ('!'))
-        96                   | .                    | xchg eax, esi
-        89E6                 | ..                   | mov esi, esp
-        50                   | P                    | push eax
+            68A1ECEF99           | h....                | push 0x99efeca1
+            68B9729249           | h.r.I                | push 0x499272b9
+            6874DF446C           | ht.Dl                | push 0x6c44df74
+            89E0                 | ..                   | mov eax, esp
+            684F797396           | hOys.                | push 0x9673794f
+            689EE301C0           | h....                | push 0xc001e39e
+            FF4C2402             | .L$.                 | dec dword [esp+2]
+            689133D211           | h.3..                | push 0x11d23391
+            6877937496           | hw.t.                | push 0x96749377
+            89E3                 | ..                   | mov ebx, esp
+            56                   | V                    | push esi
+            54                   | T                    | push esp
+            50                   | P                    | push eax
+            6A17                 | j.                   | push byte 0x17
+            56                   | V                    | push esi
+            53                   | S                    | push ebx
+            FFD7                 | ..                   | call edi
+            5B                   | [                    | pop ebx
+            686F672075           | hog u                | push ((('u') << 24) + ((' ') << 16) + (('g') << 8) + ('o'))
+            686F702074           | hop t                | push ((('t') << 24) + ((' ') << 16) + (('p') << 8) + ('o'))
+            6821646E68           | h!dnh                | push ((('h') << 24) + (('n') << 16) + (('d') << 8) + ('!'))
+            96                   | .                    | xchg eax, esi
+            89E6                 | ..                   | mov esi, esp
+            50                   | P                    | push eax
         */
     
         strings:
@@ -227,19 +227,19 @@
     
         /*
             AC                   | .                    | lodsb
-        6650                 | fP                   | push ax
-        3C75                 | <u                   | cmp al, 'u'
-        75F9                 | u.                   | jne unicode_loop
-        89E1                 | ..                   | mov ecx, esp
-        31C0                 | 1.                   | xor eax, eax
-        50                   | P                    | push eax
-        50                   | P                    | push eax
-        51                   | Q                    | push ecx
-        53                   | S                    | push ebx
-        8B13                 | ..                   | mov edx, [ebx]
-        8B4A50               | .JP                  | mov ecx, [edx+0x50]
-        FFD1                 | ..                   | call ecx
-        CC                   | .                    | int3
+            6650                 | fP                   | push ax
+            3C75                 | <u                   | cmp al, 'u'
+            75F9                 | u.                   | jne unicode_loop
+            89E1                 | ..                   | mov ecx, esp
+            31C0                 | 1.                   | xor eax, eax
+            50                   | P                    | push eax
+            50                   | P                    | push eax
+            51                   | Q                    | push ecx
+            53                   | S                    | push ebx
+            8B13                 | ..                   | mov edx, [ebx]
+            8B4A50               | .JP                  | mov ecx, [edx+0x50]
+            FFD1                 | ..                   | call ecx
+            CC                   | .                    | int3
         */
     
         strings:

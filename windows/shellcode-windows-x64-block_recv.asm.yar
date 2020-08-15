@@ -6,26 +6,26 @@
     
         /*
             4883EC10             | H...                 | sub rsp, 16
-        4889E2               | H..                  | mov rdx, rsp
-        4D31C9               | M1.                  | xor r9, r9
-        6A04                 | j.                   | push byte 4
-        4158                 | AX                   | pop r8
-        4889F9               | H..                  | mov rcx, rdi
-        41BA02D9C85F         | A...._               | mov r10d, 0x5fc8d902
-        FFD5                 | ..                   | call rbp
-        4883C420             | H..                  | add rsp, 32
-        5E                   | ^                    | pop rsi
-        89F6                 | ..                   | mov esi, esi
-        6A40                 | j@                   | push byte 0x40
-        4159                 | AY                   | pop r9
-        6800100000           | h....                | push 0x1000
-        4158                 | AX                   | pop r8
-        4889F2               | H..                  | mov rdx, rsi
-        4831C9               | H1.                  | xor rcx, rcx
-        41BA58A453E5         | A.X.S.               | mov r10d, 0xe553a458
-        FFD5                 | ..                   | call rbp
-        4889C3               | H..                  | mov rbx, rax
-        4989C7               | I..                  | mov r15, rax
+            4889E2               | H..                  | mov rdx, rsp
+            4D31C9               | M1.                  | xor r9, r9
+            6A04                 | j.                   | push byte 4
+            4158                 | AX                   | pop r8
+            4889F9               | H..                  | mov rcx, rdi
+            41BA02D9C85F         | A...._               | mov r10d, 0x5fc8d902
+            FFD5                 | ..                   | call rbp
+            4883C420             | H..                  | add rsp, 32
+            5E                   | ^                    | pop rsi
+            89F6                 | ..                   | mov esi, esi
+            6A40                 | j@                   | push byte 0x40
+            4159                 | AY                   | pop r9
+            6800100000           | h....                | push 0x1000
+            4158                 | AX                   | pop r8
+            4889F2               | H..                  | mov rdx, rsi
+            4831C9               | H1.                  | xor rcx, rcx
+            41BA58A453E5         | A.X.S.               | mov r10d, 0xe553a458
+            FFD5                 | ..                   | call rbp
+            4889C3               | H..                  | mov rbx, rax
+            4989C7               | I..                  | mov r15, rax
         */
     
         strings:
@@ -43,16 +43,16 @@
     
         /*
             4D31C9               | M1.                  | xor r9, r9
-        4989F0               | I..                  | mov r8, rsi
-        4889DA               | H..                  | mov rdx, rbx
-        4889F9               | H..                  | mov rcx, rdi
-        41BA02D9C85F         | A...._               | mov r10d, 0x5fc8d902
-        FFD5                 | ..                   | call rbp
-        4801C3               | H..                  | add rbx, rax
-        4829C6               | H).                  | sub rsi, rax
-        4885F6               | H..                  | test rsi, rsi
-        75E1                 | u.                   | jnz short read_more
-        41FFE7               | A..                  | jmp r15
+            4989F0               | I..                  | mov r8, rsi
+            4889DA               | H..                  | mov rdx, rbx
+            4889F9               | H..                  | mov rcx, rdi
+            41BA02D9C85F         | A...._               | mov r10d, 0x5fc8d902
+            FFD5                 | ..                   | call rbp
+            4801C3               | H..                  | add rbx, rax
+            4829C6               | H).                  | sub rsi, rax
+            4885F6               | H..                  | test rsi, rsi
+            75E1                 | u.                   | jnz short read_more
+            41FFE7               | A..                  | jmp r15
         */
     
         strings:

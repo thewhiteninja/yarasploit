@@ -6,12 +6,12 @@
     
         /*
             6A40                 | j@                   | push byte 0x40
-        6800100000           | h....                | push 0x1000
-        6800100000           | h....                | push 0x1000
-        6A00                 | j.                   | push 0
-        6858A453E5           | hX.S.                | push 0xe553a458	; VirtualAlloc
-        FFD5                 | ..                   | call ebp
-        C3                   | .                    | ret
+            6800100000           | h....                | push 0x1000
+            6800100000           | h....                | push 0x1000
+            6A00                 | j.                   | push 0
+            6858A453E5           | hX.S.                | push 0xe553a458	; VirtualAlloc
+            FFD5                 | ..                   | call ebp
+            C3                   | .                    | ret
         */
     
         strings:
@@ -29,9 +29,9 @@
     
         /*
             E8E3FFFFFF           | .....                | call alloc_memory
-        50                   | P                    | push eax
-        FECB                 | ..                   | dec bl
-        75F6                 | u.                   | jnz alloc_loop
+            50                   | P                    | push eax
+            FECB                 | ..                   | dec bl
+            75F6                 | u.                   | jnz alloc_loop
         */
     
         strings:
@@ -49,12 +49,12 @@
     
         /*
             6872656300           | hrec.                | push 0x00636572
-        687073746F           | hpsto                | push 0x6f747370
-        54                   | T                    | push esp
-        684C772607           | hLw&.                | push 0x0726774c	; LoadLibraryA
-        FFD5                 | ..                   | call ebp
-        5A                   | Z                    | pop edx
-        5A                   | Z                    | pop edx
+            687073746F           | hpsto                | push 0x6f747370
+            54                   | T                    | push esp
+            684C772607           | hLw&.                | push 0x0726774c	; LoadLibraryA
+            FFD5                 | ..                   | call ebp
+            5A                   | Z                    | pop edx
+            5A                   | Z                    | pop edx
         */
     
         strings:
@@ -72,13 +72,13 @@
     
         /*
             5F                   | _                    | pop edi
-        57                   | W                    | push edi
-        6A00                 | j.                   | push 0
-        6A00                 | j.                   | push 0
-        6A00                 | j.                   | push 0
-        57                   | W                    | push edi
-        68DBBD6426           | h..d&                | push 0x2664bddb	; PStoreCreateInstance
-        FFD5                 | ..                   | call ebp
+            57                   | W                    | push edi
+            6A00                 | j.                   | push 0
+            6A00                 | j.                   | push 0
+            6A00                 | j.                   | push 0
+            57                   | W                    | push edi
+            68DBBD6426           | h..d&                | push 0x2664bddb	; PStoreCreateInstance
+            FFD5                 | ..                   | call ebp
         */
     
         strings:
@@ -96,18 +96,18 @@
     
         /*
             58                   | X                    | pop eax
-        5A                   | Z                    | pop edx
-        52                   | R                    | push edx
-        50                   | P                    | push eax
-        52                   | R                    | push edx
-        6A00                 | j.                   | push 0
-        6A00                 | j.                   | push 0
-        8B00                 | ..                   | mov eax, [eax]
-        50                   | P                    | push eax
-        8B10                 | ..                   | mov edx, [eax]
-        8B5238               | .R8                  | mov edx, [edx+0x38]
-        FFD2                 | ..                   | call edx
-        BF00817E5E           | ...~^                | mov edi, 0x5e7e8100
+            5A                   | Z                    | pop edx
+            52                   | R                    | push edx
+            50                   | P                    | push eax
+            52                   | R                    | push edx
+            6A00                 | j.                   | push 0
+            6A00                 | j.                   | push 0
+            8B00                 | ..                   | mov eax, [eax]
+            50                   | P                    | push eax
+            8B10                 | ..                   | mov edx, [eax]
+            8B5238               | .R8                  | mov edx, [edx+0x38]
+            FFD2                 | ..                   | call edx
+            BF00817E5E           | ...~^                | mov edi, 0x5e7e8100
         */
     
         strings:
@@ -125,25 +125,25 @@
     
         /*
             58                   | X                    | pop eax
-        5A                   | Z                    | pop edx
-        59                   | Y                    | pop ecx
-        51                   | Q                    | push ecx
-        52                   | R                    | push edx
-        50                   | P                    | push eax
-        6A00                 | j.                   | push 0
-        51                   | Q                    | push ecx
-        6A01                 | j.                   | push 1
-        8B12                 | ..                   | mov edx, [edx]
-        52                   | R                    | push edx
-        8B12                 | ..                   | mov edx, [edx]
-        8B520C               | .R.                  | mov edx, [edx+0x0c]
-        FFD2                 | ..                   | call edx
-        8B442408             | .D$.                 | mov eax, [esp+8]
-        8B00                 | ..                   | mov eax, [eax]
-        85C0                 | ..                   | test eax, eax
-        0F84B1000000         | ......               | jz no_auth
-        39C7                 | 9.                   | cmp edi, eax
-        75D9                 | u.                   | jne enumpstoretypes.raw_next
+            5A                   | Z                    | pop edx
+            59                   | Y                    | pop ecx
+            51                   | Q                    | push ecx
+            52                   | R                    | push edx
+            50                   | P                    | push eax
+            6A00                 | j.                   | push 0
+            51                   | Q                    | push ecx
+            6A01                 | j.                   | push 1
+            8B12                 | ..                   | mov edx, [edx]
+            52                   | R                    | push edx
+            8B12                 | ..                   | mov edx, [edx]
+            8B520C               | .R.                  | mov edx, [edx+0x0c]
+            FFD2                 | ..                   | call edx
+            8B442408             | .D$.                 | mov eax, [esp+8]
+            8B00                 | ..                   | mov eax, [eax]
+            85C0                 | ..                   | test eax, eax
+            0F84B1000000         | ......               | jz no_auth
+            39C7                 | 9.                   | cmp edi, eax
+            75D9                 | u.                   | jne enumpstoretypes.raw_next
         */
     
         strings:
@@ -161,22 +161,22 @@
     
         /*
             58                   | X                    | pop eax
-        5A                   | Z                    | pop edx
-        59                   | Y                    | pop ecx
-        5F                   | _                    | pop edi
-        57                   | W                    | push edi
-        51                   | Q                    | push ecx
-        52                   | R                    | push edx
-        50                   | P                    | push eax
-        57                   | W                    | push edi
-        6A00                 | j.                   | push 0
-        51                   | Q                    | push ecx
-        6A00                 | j.                   | push 0
-        8B00                 | ..                   | mov eax, [eax]
-        50                   | P                    | push eax
-        8B10                 | ..                   | mov edx, [eax]
-        8B523C               | .R<                  | mov edx, [edx+0x3c]
-        FFD2                 | ..                   | call edx
+            5A                   | Z                    | pop edx
+            59                   | Y                    | pop ecx
+            5F                   | _                    | pop edi
+            57                   | W                    | push edi
+            51                   | Q                    | push ecx
+            52                   | R                    | push edx
+            50                   | P                    | push eax
+            57                   | W                    | push edi
+            6A00                 | j.                   | push 0
+            51                   | Q                    | push ecx
+            6A00                 | j.                   | push 0
+            8B00                 | ..                   | mov eax, [eax]
+            50                   | P                    | push eax
+            8B10                 | ..                   | mov edx, [eax]
+            8B523C               | .R<                  | mov edx, [edx+0x3c]
+            FFD2                 | ..                   | call edx
         */
     
         strings:
@@ -194,15 +194,15 @@
     
         /*
             8B44240C             | .D$.                 | mov eax, [esp+0x0c]
-        8B542410             | .T$.                 | mov edx, [esp+0x10]
-        6A00                 | j.                   | push 0
-        52                   | R                    | push edx
-        6A01                 | j.                   | push 1
-        8B00                 | ..                   | mov eax, [eax]
-        50                   | P                    | push eax
-        8B10                 | ..                   | mov edx, [eax]
-        8B520C               | .R.                  | mov edx, [edx+0x0c]
-        FFD2                 | ..                   | call edx
+            8B542410             | .T$.                 | mov edx, [esp+0x10]
+            6A00                 | j.                   | push 0
+            52                   | R                    | push edx
+            6A01                 | j.                   | push 1
+            8B00                 | ..                   | mov eax, [eax]
+            50                   | P                    | push eax
+            8B10                 | ..                   | mov edx, [eax]
+            8B520C               | .R.                  | mov edx, [edx+0x0c]
+            FFD2                 | ..                   | call edx
         */
     
         strings:
@@ -220,23 +220,23 @@
     
         /*
             58                   | X                    | pop eax
-        59                   | Y                    | pop ecx
-        5A                   | Z                    | pop edx
-        52                   | R                    | push edx
-        51                   | Q                    | push ecx
-        50                   | P                    | push eax
-        8B4C2410             | .L$.                 | mov ecx, [esp+0x10]
-        8B7C2414             | .|$.                 | mov edi, [esp+0x14]
-        57                   | W                    | push edi
-        6A00                 | j.                   | push 0
-        51                   | Q                    | push ecx
-        52                   | R                    | push edx
-        6A00                 | j.                   | push 0
-        8B00                 | ..                   | mov eax, [eax]
-        50                   | P                    | push eax
-        8B10                 | ..                   | mov edx, [eax]
-        8B5254               | .RT                  | mov edx, [edx+0x54]
-        FFD2                 | ..                   | call edx
+            59                   | Y                    | pop ecx
+            5A                   | Z                    | pop edx
+            52                   | R                    | push edx
+            51                   | Q                    | push ecx
+            50                   | P                    | push eax
+            8B4C2410             | .L$.                 | mov ecx, [esp+0x10]
+            8B7C2414             | .|$.                 | mov edi, [esp+0x14]
+            57                   | W                    | push edi
+            6A00                 | j.                   | push 0
+            51                   | Q                    | push ecx
+            52                   | R                    | push edx
+            6A00                 | j.                   | push 0
+            8B00                 | ..                   | mov eax, [eax]
+            50                   | P                    | push eax
+            8B10                 | ..                   | mov edx, [eax]
+            8B5254               | .RT                  | mov edx, [edx+0x54]
+            FFD2                 | ..                   | call edx
         */
     
         strings:
@@ -254,15 +254,15 @@
     
         /*
             8B442414             | .D$.                 | mov eax, [esp+0x14]
-        8B4C2418             | .L$.                 | mov ecx, [esp+0x18]
-        6A00                 | j.                   | push 0
-        51                   | Q                    | push ecx
-        6A01                 | j.                   | push 1
-        8B00                 | ..                   | mov eax, [eax]
-        50                   | P                    | push eax
-        8B10                 | ..                   | mov edx, [eax]
-        8B520C               | .R.                  | mov edx, [edx+0x0c]
-        FFD2                 | ..                   | call edx
+            8B4C2418             | .L$.                 | mov ecx, [esp+0x18]
+            6A00                 | j.                   | push 0
+            51                   | Q                    | push ecx
+            6A01                 | j.                   | push 1
+            8B00                 | ..                   | mov eax, [eax]
+            50                   | P                    | push eax
+            8B10                 | ..                   | mov edx, [eax]
+            8B520C               | .R.                  | mov edx, [edx+0x0c]
+            FFD2                 | ..                   | call edx
         */
     
         strings:
@@ -280,26 +280,26 @@
     
         /*
             58                   | X                    | pop eax
-        50                   | P                    | push eax
-        6A00                 | j.                   | push 0
-        6A00                 | j.                   | push 0
-        8B4C2424             | .L$$                 | mov ecx, [esp+0x24]
-        51                   | Q                    | push ecx
-        8B4C242C             | .L$,                 | mov ecx, [esp+0x2c]
-        51                   | Q                    | push ecx
-        8B4C2428             | .L$(                 | mov ecx, [esp+0x28]
-        8B09                 | ..                   | mov ecx, [ecx]
-        51                   | Q                    | push ecx
-        8B4C2424             | .L$$                 | mov ecx, [esp+0x24]
-        51                   | Q                    | push ecx
-        8B4C2420             | .L$                  | mov ecx, [esp+0x20]
-        51                   | Q                    | push ecx
-        6A00                 | j.                   | push 0
-        8B00                 | ..                   | mov eax, [eax]
-        50                   | P                    | push eax
-        8B10                 | ..                   | mov edx, [eax]
-        8B5244               | .RD                  | mov edx, [edx+0x44]
-        FFD2                 | ..                   | call edx
+            50                   | P                    | push eax
+            6A00                 | j.                   | push 0
+            6A00                 | j.                   | push 0
+            8B4C2424             | .L$$                 | mov ecx, [esp+0x24]
+            51                   | Q                    | push ecx
+            8B4C242C             | .L$,                 | mov ecx, [esp+0x2c]
+            51                   | Q                    | push ecx
+            8B4C2428             | .L$(                 | mov ecx, [esp+0x28]
+            8B09                 | ..                   | mov ecx, [ecx]
+            51                   | Q                    | push ecx
+            8B4C2424             | .L$$                 | mov ecx, [esp+0x24]
+            51                   | Q                    | push ecx
+            8B4C2420             | .L$                  | mov ecx, [esp+0x20]
+            51                   | Q                    | push ecx
+            6A00                 | j.                   | push 0
+            8B00                 | ..                   | mov eax, [eax]
+            50                   | P                    | push eax
+            8B10                 | ..                   | mov edx, [eax]
+            8B5244               | .RD                  | mov edx, [edx+0x44]
+            FFD2                 | ..                   | call edx
         */
     
         strings:
@@ -317,12 +317,12 @@
     
         /*
             8B44241C             | .D$.                 | mov eax, [esp+0x1c]
-        8B00                 | ..                   | mov eax, [eax]
-        50                   | P                    | push eax
-        B13A                 | .:                   | mov cl, byte 0x3a
-        8A10                 | ..                   | mov dl, byte [eax]
-        38D1                 | 8.                   | cmp cl, dl
-        740C                 | t.                   | jz no_auth
+            8B00                 | ..                   | mov eax, [eax]
+            50                   | P                    | push eax
+            B13A                 | .:                   | mov cl, byte 0x3a
+            8A10                 | ..                   | mov dl, byte [eax]
+            38D1                 | 8.                   | cmp cl, dl
+            740C                 | t.                   | jz no_auth
         */
     
         strings:
@@ -340,12 +340,12 @@
     
         /*
             40                   | @                    | inc eax
-        8A10                 | ..                   | mov dl, byte [eax]
-        38D1                 | 8.                   | cmp cl, dl
-        75F9                 | u.                   | jnz loop_split
-        C60000               | ...                  | mov [eax], byte 0x00
-        40                   | @                    | inc eax
-        50                   | P                    | push eax
+            8A10                 | ..                   | mov dl, byte [eax]
+            38D1                 | 8.                   | cmp cl, dl
+            75F9                 | u.                   | jnz loop_split
+            C60000               | ...                  | mov [eax], byte 0x00
+            40                   | @                    | inc eax
+            50                   | P                    | push eax
         */
     
         strings:

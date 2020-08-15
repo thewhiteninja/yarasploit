@@ -6,14 +6,14 @@
     
         /*
             BBE01D2A0A           | ...*.                | mov ebx, 0x0a2a1de0
-        41BAA695BD9D         | A.....               | mov r10d, 0x9dbd95a6
-        FFD5                 | ..                   | call rbp
-        4883C428             | H..(                 | add rsp, 40
-        3C06                 | <.                   | cmp al, byte 6
-        7C0A                 | |.                   | jl short goodbye
-        80FBE0               | ...                  | cmp bl, 0xe0
-        7505                 | u.                   | jne short goodbye
-        BB4713726F           | .G.ro                | mov ebx, 0x6f721347
+            41BAA695BD9D         | A.....               | mov r10d, 0x9dbd95a6
+            FFD5                 | ..                   | call rbp
+            4883C428             | H..(                 | add rsp, 40
+            3C06                 | <.                   | cmp al, byte 6
+            7C0A                 | |.                   | jl short goodbye
+            80FBE0               | ...                  | cmp bl, 0xe0
+            7505                 | u.                   | jne short goodbye
+            BB4713726F           | .G.ro                | mov ebx, 0x6f721347
         */
     
         strings:
@@ -31,9 +31,9 @@
     
         /*
             6A00                 | j.                   | push byte 0
-        59                   | Y                    | pop rcx
-        4189DA               | A..                  | mov r10d, ebx
-        FFD5                 | ..                   | call rbp
+            59                   | Y                    | pop rcx
+            4189DA               | A..                  | mov r10d, ebx
+            FFD5                 | ..                   | call rbp
         */
     
         strings:

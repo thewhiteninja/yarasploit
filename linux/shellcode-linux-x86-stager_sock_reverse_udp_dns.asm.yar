@@ -1,22 +1,4 @@
 
-    rule stager_sock_reverse_udp_dns__start_x86
-    {
-        meta:
-            desc = "Metasploit::linux::x86::stager_sock_reverse_udp_dns::_start"
-    
-        /*
-            31DB                 | 1.                   | xor ebx, ebx
-        F7E3                 | ..                   | mul ebx
-        */
-    
-        strings:
-            $a   = { 31 db f7 e3 }
-    
-        condition:
-            any of them
-    }
-    
-    
     rule stager_sock_reverse_udp_dns_socket_x86
     {
         meta:
@@ -24,13 +6,13 @@
     
         /*
             53                   | S                    | push ebx
-        6A02                 | j.                   | push byte 0x2
-        6A02                 | j.                   | push byte 0x2
-        43                   | C                    | inc ebx
-        B066                 | .f                   | mov al, 0x66
-        89E1                 | ..                   | mov ecx, esp
-        CD80                 | ..                   | int 0x80
-        97                   | .                    | xchg eax, edi
+            6A02                 | j.                   | push byte 0x2
+            6A02                 | j.                   | push byte 0x2
+            43                   | C                    | inc ebx
+            B066                 | .f                   | mov al, 0x66
+            89E1                 | ..                   | mov ecx, esp
+            CD80                 | ..                   | int 0x80
+            97                   | .                    | xchg eax, edi
         */
     
         strings:
@@ -48,20 +30,20 @@
     
         /*
             5B                   | [                    | pop ebx
-        68????????           | h....                | push dword 0x0100007f	; Host
-        B635                 | .5                   | mov dh, 0x35
-        6652                 | fR                   | push dx
-        6653                 | fS                   | push bx
-        89E1                 | ..                   | mov ecx, esp
-        6A66                 | jf                   | push byte 0x66
-        58                   | X                    | pop eax
-        50                   | P                    | push eax
-        51                   | Q                    | push ecx
-        57                   | W                    | push edi
-        89E1                 | ..                   | mov ecx, esp
-        43                   | C                    | inc ebx
-        CD80                 | ..                   | int 0x80
-        99                   | .                    | cdq
+            68????????           | h....                | push dword 0x0100007f	; Host
+            B635                 | .5                   | mov dh, 0x35
+            6652                 | fR                   | push dx
+            6653                 | fS                   | push bx
+            89E1                 | ..                   | mov ecx, esp
+            6A66                 | jf                   | push byte 0x66
+            58                   | X                    | pop eax
+            50                   | P                    | push eax
+            51                   | Q                    | push ecx
+            57                   | W                    | push edi
+            89E1                 | ..                   | mov ecx, esp
+            43                   | C                    | inc ebx
+            CD80                 | ..                   | int 0x80
+            99                   | .                    | cdq
         */
     
         strings:
@@ -79,24 +61,24 @@
     
         /*
             5B                   | [                    | pop ebx
-        42                   | B                    | inc edx
-        6652                 | fR                   | push dx
-        6652                 | fR                   | push dx
-        4A                   | J                    | dec edx
-        6652                 | fR                   | push dx
-        6803636F6D           | h.com                | push dword 0x6d6f6303
-        B103                 | ..                   | mov cl, 0x3
-        51                   | Q                    | push ecx
-        52                   | R                    | push edx
-        FEC6                 | ..                   | inc dh
-        52                   | R                    | push edx
-        B604                 | ..                   | mov dh, 0x4
-        6652                 | fR                   | push dx
-        86C6                 | ..                   | xchg al, dh
-        6656                 | fV                   | push si
-        89E1                 | ..                   | mov ecx, esp
-        B219                 | ..                   | mov dl, 0x19
-        CD80                 | ..                   | int 0x80
+            42                   | B                    | inc edx
+            6652                 | fR                   | push dx
+            6652                 | fR                   | push dx
+            4A                   | J                    | dec edx
+            6652                 | fR                   | push dx
+            6803636F6D           | h.com                | push dword 0x6d6f6303
+            B103                 | ..                   | mov cl, 0x3
+            51                   | Q                    | push ecx
+            52                   | R                    | push edx
+            FEC6                 | ..                   | inc dh
+            52                   | R                    | push edx
+            B604                 | ..                   | mov dh, 0x4
+            6652                 | fR                   | push dx
+            86C6                 | ..                   | xchg al, dh
+            6656                 | fV                   | push si
+            89E1                 | ..                   | mov ecx, esp
+            B219                 | ..                   | mov dl, 0x19
+            CD80                 | ..                   | int 0x80
         */
     
         strings:
@@ -114,10 +96,10 @@
     
         /*
             B60C                 | ..                   | mov dh, 0xc
-        B003                 | ..                   | mov al, 0x3
-        CD80                 | ..                   | int 0x80
-        83C10D               | ...                  | add ecx, byte 0xd
-        FFE1                 | ..                   | jmp ecx
+            B003                 | ..                   | mov al, 0x3
+            CD80                 | ..                   | int 0x80
+            83C10D               | ...                  | add ecx, byte 0xd
+            FFE1                 | ..                   | jmp ecx
         */
     
         strings:

