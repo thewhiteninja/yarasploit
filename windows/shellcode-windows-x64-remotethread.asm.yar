@@ -32,9 +32,9 @@
             51                   | Q                    | push rcx
             56                   | V                    | push rsi
             4831D2               | H1.                  | xor rdx, rdx
-            65488B5260           | eH.R`                | mov rdx, [gs:rdx+96]
-            488B5218             | H.R.                 | mov rdx, [rdx+24]
-            488B5220             | H.R                  | mov rdx, [rdx+32]
+            65488B5260           | eH.R`                | mov rdx, [gs:rdx+0x60]
+            488B5218             | H.R.                 | mov rdx, [rdx+0x18]
+            488B5220             | H.R                  | mov rdx, [rdx+0x20]
         */
     
         strings:
@@ -51,8 +51,8 @@
             desc = "Metasploit::windows::x64::remotethread::next_mod"
     
         /*
-            488B7250             | H.rP                 | mov rsi, [rdx+80]
-            480FB74A4A           | H..JJ                | movzx rcx, word [rdx+74]
+            488B7250             | H.rP                 | mov rsi, [rdx+0x50]
+            480FB74A4A           | H..JJ                | movzx rcx, word [rdx+0x4a]
             4D31C9               | M1.                  | xor r9, r9
         */
     
@@ -91,23 +91,23 @@
             desc = "Metasploit::windows::x64::remotethread::not_lowercase"
     
         /*
-            41C1C90D             | A...                 | ror r9d, 13
+            41C1C90D             | A...                 | ror r9d, 0xd
             4101C1               | A..                  | add r9d, eax
             E2ED                 | ..                   | loop loop_modname
             52                   | R                    | push rdx
             4151                 | AQ                   | push r9
-            488B5220             | H.R                  | mov rdx, [rdx+32]
-            8B423C               | .B<                  | mov eax, dword [rdx+60]
+            488B5220             | H.R                  | mov rdx, [rdx+0x20]
+            8B423C               | .B<                  | mov eax, dword [rdx+0x3c]
             4801D0               | H..                  | add rax, rdx
-            668178180B02         | f.x...               | cmp word [rax+24], 0x020b
+            668178180B02         | f.x...               | cmp word [rax+0x18], 0x020b
             7572                 | ur                   | jne get_next_mod1
-            8B8088000000         | ......               | mov eax, dword [rax+136]
+            8B8088000000         | ......               | mov eax, dword [rax+0x88]
             4885C0               | H..                  | test rax, rax
             7467                 | tg                   | jz get_next_mod1
             4801D0               | H..                  | add rax, rdx
             50                   | P                    | push rax
-            8B4818               | .H.                  | mov ecx, dword [rax+24]
-            448B4020             | D.@                  | mov r8d, dword [rax+32]
+            8B4818               | .H.                  | mov ecx, dword [rax+0x18]
+            448B4020             | D.@                  | mov r8d, dword [rax+0x20]
             4901D0               | I..                  | add r8, rdx
         */
     
@@ -127,7 +127,7 @@
         /*
             E356                 | .V                   | jrcxz get_next_mod
             48FFC9               | H..                  | dec rcx
-            418B3488             | A.4.                 | mov esi, dword [r8+rcx*4]
+            418B3488             | A.4.                 | mov esi, dword [r8+rcx*0x4]
             4801D6               | H..                  | add rsi, rdx
             4D31C9               | M1.                  | xor r9, r9
         */
@@ -148,20 +148,20 @@
         /*
             4831C0               | H1.                  | xor rax, rax
             AC                   | .                    | lodsb
-            41C1C90D             | A...                 | ror r9d, 13
+            41C1C90D             | A...                 | ror r9d, 0xd
             4101C1               | A..                  | add r9d, eax
             38E0                 | 8.                   | cmp al, ah
             75F1                 | u.                   | jne loop_funcname
-            4C034C2408           | L.L$.                | add r9, [rsp+8]
+            4C034C2408           | L.L$.                | add r9, [rsp+0x8]
             4539D1               | E9.                  | cmp r9d, r10d
             75D8                 | u.                   | jnz get_next_func
             58                   | X                    | pop rax
-            448B4024             | D.@$                 | mov r8d, dword [rax+36]
+            448B4024             | D.@$                 | mov r8d, dword [rax+0x24]
             4901D0               | I..                  | add r8, rdx
-            66418B0C48           | fA..H                | mov cx, [r8+2*rcx]
-            448B401C             | D.@.                 | mov r8d, dword [rax+28]
+            66418B0C48           | fA..H                | mov cx, [r8+0x2*rcx]
+            448B401C             | D.@.                 | mov r8d, dword [rax+0x1c]
             4901D0               | I..                  | add r8, rdx
-            418B0488             | A...                 | mov eax, dword [r8+4*rcx]
+            418B0488             | A...                 | mov eax, dword [r8+0x4*rcx]
             4801D0               | H..                  | add rax, rdx
         */
     
@@ -187,7 +187,7 @@
             4158                 | AX                   | pop r8
             4159                 | AY                   | pop r9
             415A                 | AZ                   | pop r10
-            4883EC20             | H..                  | sub rsp, 32
+            4883EC20             | H..                  | sub rsp, 0x20
             4152                 | AR                   | push r10
             FFE0                 | ..                   | jmp rax
         */
