@@ -8297,6 +8297,24 @@ rule advapi32_LsaICLookupSidsWithCreds
 }
 
     
+rule advapi32_LsaInvokeTrustScanner
+{
+    meta:
+        desc = "Metasploit::API::advapi32::LsaInvokeTrustScanner"
+
+    /*
+        68E50FFA4D           | push 0x4dfa0fe5
+        FFD5                 | call ebp
+    */
+
+    strings:
+        $a   = { 68 e5 0f fa 4d ff d5 }
+
+    condition:
+        any of them
+}
+
+    
 rule advapi32_LsaLookupNames
 {
     meta:
@@ -8621,6 +8639,24 @@ rule advapi32_LsaQueryForestTrustInformation
 }
 
     
+rule advapi32_LsaQueryForestTrustInformation2
+{
+    meta:
+        desc = "Metasploit::API::advapi32::LsaQueryForestTrustInformation2"
+
+    /*
+        6816542C68           | push 0x682c5416
+        FFD5                 | call ebp
+    */
+
+    strings:
+        $a   = { 68 16 54 2c 68 ff d5 }
+
+    condition:
+        any of them
+}
+
+    
 rule advapi32_LsaQueryInfoTrustedDomain
 {
     meta:
@@ -8831,6 +8867,24 @@ rule advapi32_LsaSetForestTrustInformation
 
     strings:
         $a   = { 68 74 67 78 8b ff d5 }
+
+    condition:
+        any of them
+}
+
+    
+rule advapi32_LsaSetForestTrustInformation2
+{
+    meta:
+        desc = "Metasploit::API::advapi32::LsaSetForestTrustInformation2"
+
+    /*
+        686C443E36           | push 0x363e446c
+        FFD5                 | call ebp
+    */
+
+    strings:
+        $a   = { 68 6c 44 3e 36 ff d5 }
 
     condition:
         any of them

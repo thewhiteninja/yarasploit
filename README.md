@@ -7,5 +7,7 @@
 
 YaraSploit is a collection of [Yara][1] rules generated from [Metasploit][2] framework shellcodes.
 
+Build from Metasploit 6.3.42 on Windows 10 19045.
+
 [1]: https://github.com/VirusTotal/yara
 [2]: https://www.metasploit.com/

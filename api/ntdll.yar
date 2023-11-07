@@ -3563,6 +3563,24 @@ rule ntdll_NtAccessCheckByTypeResultListAndAuditAlarmByHandle
 }
 
     
+rule ntdll_NtAcquireCrossVmMutant
+{
+    meta:
+        desc = "Metasploit::API::ntdll::NtAcquireCrossVmMutant"
+
+    /*
+        68D97EBC2A           | push 0x2abc7ed9
+        FFD5                 | call ebp
+    */
+
+    strings:
+        $a   = { 68 d9 7e bc 2a ff d5 }
+
+    condition:
+        any of them
+}
+
+    
 rule ntdll_NtAcquireProcessActivityReference
 {
     meta:
@@ -3809,6 +3827,24 @@ rule ntdll_NtAllocateUserPhysicalPages
 
     strings:
         $a   = { 68 89 3c 62 3d ff d5 }
+
+    condition:
+        any of them
+}
+
+    
+rule ntdll_NtAllocateUserPhysicalPagesEx
+{
+    meta:
+        desc = "Metasploit::API::ntdll::NtAllocateUserPhysicalPagesEx"
+
+    /*
+        684E7763F4           | push 0xf463774e
+        FFD5                 | call ebp
+    */
+
+    strings:
+        $a   = { 68 4e 77 63 f4 ff d5 }
 
     condition:
         any of them
@@ -4769,6 +4805,24 @@ rule ntdll_NtContinue
 }
 
     
+rule ntdll_NtContinueEx
+{
+    meta:
+        desc = "Metasploit::API::ntdll::NtContinueEx"
+
+    /*
+        683704F13C           | push 0x3cf10437
+        FFD5                 | call ebp
+    */
+
+    strings:
+        $a   = { 68 37 04 f1 3c ff d5 }
+
+    condition:
+        any of them
+}
+
+    
 rule ntdll_NtConvertBetweenAuxiliaryCounterAndPerformanceCounter
 {
     meta:
@@ -4787,6 +4841,24 @@ rule ntdll_NtConvertBetweenAuxiliaryCounterAndPerformanceCounter
 }
 
     
+rule ntdll_NtCopyFileChunk
+{
+    meta:
+        desc = "Metasploit::API::ntdll::NtCopyFileChunk"
+
+    /*
+        6889C7F038           | push 0x38f0c789
+        FFD5                 | call ebp
+    */
+
+    strings:
+        $a   = { 68 89 c7 f0 38 ff d5 }
+
+    condition:
+        any of them
+}
+
+    
 rule ntdll_NtCreateCrossVmEvent
 {
     meta:
@@ -4799,6 +4871,24 @@ rule ntdll_NtCreateCrossVmEvent
 
     strings:
         $a   = { 68 9f f5 84 05 ff d5 }
+
+    condition:
+        any of them
+}
+
+    
+rule ntdll_NtCreateCrossVmMutant
+{
+    meta:
+        desc = "Metasploit::API::ntdll::NtCreateCrossVmMutant"
+
+    /*
+        68253DE19A           | push 0x9ae13d25
+        FFD5                 | call ebp
+    */
+
+    strings:
+        $a   = { 68 25 3d e1 9a ff d5 }
 
     condition:
         any of them
@@ -5879,6 +5969,24 @@ rule ntdll_NtDeviceIoControlFile
 
     strings:
         $a   = { 68 95 37 5e 28 ff d5 }
+
+    condition:
+        any of them
+}
+
+    
+rule ntdll_NtDirectGraphicsCall
+{
+    meta:
+        desc = "Metasploit::API::ntdll::NtDirectGraphicsCall"
+
+    /*
+        688B6BE6F9           | push 0xf9e66b8b
+        FFD5                 | call ebp
+    */
+
+    strings:
+        $a   = { 68 8b 6b e6 f9 ff d5 }
 
     condition:
         any of them
@@ -8099,6 +8207,24 @@ rule ntdll_NtProtectVirtualMemory
 }
 
     
+rule ntdll_NtPssCaptureVaSpaceBulk
+{
+    meta:
+        desc = "Metasploit::API::ntdll::NtPssCaptureVaSpaceBulk"
+
+    /*
+        68F9BB4B62           | push 0x624bbbf9
+        FFD5                 | call ebp
+    */
+
+    strings:
+        $a   = { 68 f9 bb 4b 62 ff d5 }
+
+    condition:
+        any of them
+}
+
+    
 rule ntdll_NtPulseEvent
 {
     meta:
@@ -9191,6 +9317,24 @@ rule ntdll_NtQueueApcThreadEx
 
     strings:
         $a   = { 68 dd fb ff ce ff d5 }
+
+    condition:
+        any of them
+}
+
+    
+rule ntdll_NtQueueApcThreadEx2
+{
+    meta:
+        desc = "Metasploit::API::ntdll::NtQueueApcThreadEx2"
+
+    /*
+        687E9A9E64           | push 0x649e9a7e
+        FFD5                 | call ebp
+    */
+
+    strings:
+        $a   = { 68 7e 9a 9e 64 ff d5 }
 
     condition:
         any of them
@@ -13247,6 +13391,24 @@ rule ntdll_RtlAreBitsClear
 }
 
     
+rule ntdll_RtlAreBitsClearEx
+{
+    meta:
+        desc = "Metasploit::API::ntdll::RtlAreBitsClearEx"
+
+    /*
+        682AEE0C15           | push 0x150cee2a
+        FFD5                 | call ebp
+    */
+
+    strings:
+        $a   = { 68 2a ee 0c 15 ff d5 }
+
+    condition:
+        any of them
+}
+
+    
 rule ntdll_RtlAreBitsSet
 {
     meta:
@@ -13475,6 +13637,24 @@ rule ntdll_RtlCaptureContext
 
     strings:
         $a   = { 68 a2 23 de 64 ff d5 }
+
+    condition:
+        any of them
+}
+
+    
+rule ntdll_RtlCaptureContext2
+{
+    meta:
+        desc = "Metasploit::API::ntdll::RtlCaptureContext2"
+
+    /*
+        686F49C3A2           | push 0xa2c3496f
+        FFD5                 | call ebp
+    */
+
+    strings:
+        $a   = { 68 6f 49 c3 a2 ff d5 }
 
     condition:
         any of them
@@ -13715,6 +13895,24 @@ rule ntdll_RtlClearAllBits
 }
 
     
+rule ntdll_RtlClearAllBitsEx
+{
+    meta:
+        desc = "Metasploit::API::ntdll::RtlClearAllBitsEx"
+
+    /*
+        684F93A24C           | push 0x4ca2934f
+        FFD5                 | call ebp
+    */
+
+    strings:
+        $a   = { 68 4f 93 a2 4c ff d5 }
+
+    condition:
+        any of them
+}
+
+    
 rule ntdll_RtlClearBit
 {
     meta:
@@ -13733,6 +13931,24 @@ rule ntdll_RtlClearBit
 }
 
     
+rule ntdll_RtlClearBitEx
+{
+    meta:
+        desc = "Metasploit::API::ntdll::RtlClearBitEx"
+
+    /*
+        68222C047B           | push 0x7b042c22
+        FFD5                 | call ebp
+    */
+
+    strings:
+        $a   = { 68 22 2c 04 7b ff d5 }
+
+    condition:
+        any of them
+}
+
+    
 rule ntdll_RtlClearBits
 {
     meta:
@@ -13745,6 +13961,24 @@ rule ntdll_RtlClearBits
 
     strings:
         $a   = { 68 64 7e a4 82 ff d5 }
+
+    condition:
+        any of them
+}
+
+    
+rule ntdll_RtlClearBitsEx
+{
+    meta:
+        desc = "Metasploit::API::ntdll::RtlClearBitsEx"
+
+    /*
+        68E0EDF344           | push 0x44f3ede0
+        FFD5                 | call ebp
+    */
+
+    strings:
+        $a   = { 68 e0 ed f3 44 ff d5 }
 
     condition:
         any of them
@@ -14141,6 +14375,24 @@ rule ntdll_RtlConstructCrossVmEventPath
 
     strings:
         $a   = { 68 e1 8b 00 9a ff d5 }
+
+    condition:
+        any of them
+}
+
+    
+rule ntdll_RtlConstructCrossVmMutexPath
+{
+    meta:
+        desc = "Metasploit::API::ntdll::RtlConstructCrossVmMutexPath"
+
+    /*
+        68C3CDDC98           | push 0x98dccdc3
+        FFD5                 | call ebp
+    */
+
+    strings:
+        $a   = { 68 c3 cd dc 98 ff d5 }
 
     condition:
         any of them
@@ -16181,6 +16433,24 @@ rule ntdll_RtlDisableThreadProfiling
 }
 
     
+rule ntdll_RtlDisownModuleHeapAllocation
+{
+    meta:
+        desc = "Metasploit::API::ntdll::RtlDisownModuleHeapAllocation"
+
+    /*
+        68B287D75B           | push 0x5bd787b2
+        FFD5                 | call ebp
+    */
+
+    strings:
+        $a   = { 68 b2 87 d7 5b ff d5 }
+
+    condition:
+        any of them
+}
+
+    
 rule ntdll_RtlDllShutdownInProgress
 {
     meta:
@@ -17459,6 +17729,24 @@ rule ntdll_RtlFindClearBitsAndSet
 }
 
     
+rule ntdll_RtlFindClearBitsEx
+{
+    meta:
+        desc = "Metasploit::API::ntdll::RtlFindClearBitsEx"
+
+    /*
+        68084DE016           | push 0x16e04d08
+        FFD5                 | call ebp
+    */
+
+    strings:
+        $a   = { 68 08 4d e0 16 ff d5 }
+
+    condition:
+        any of them
+}
+
+    
 rule ntdll_RtlFindClearRuns
 {
     meta:
@@ -17651,6 +17939,42 @@ rule ntdll_RtlFindSetBitsAndClear
 
     strings:
         $a   = { 68 78 be 76 44 ff d5 }
+
+    condition:
+        any of them
+}
+
+    
+rule ntdll_RtlFindSetBitsAndClearEx
+{
+    meta:
+        desc = "Metasploit::API::ntdll::RtlFindSetBitsAndClearEx"
+
+    /*
+        68D0F283B9           | push 0xb983f2d0
+        FFD5                 | call ebp
+    */
+
+    strings:
+        $a   = { 68 d0 f2 83 b9 ff d5 }
+
+    condition:
+        any of them
+}
+
+    
+rule ntdll_RtlFindSetBitsEx
+{
+    meta:
+        desc = "Metasploit::API::ntdll::RtlFindSetBitsEx"
+
+    /*
+        68FCC59BB2           | push 0xb29bc5fc
+        FFD5                 | call ebp
+    */
+
+    strings:
+        $a   = { 68 fc c5 9b b2 ff d5 }
 
     condition:
         any of them
@@ -18065,6 +18389,24 @@ rule ntdll_RtlFreeThreadActivationContextStack
 
     strings:
         $a   = { 68 41 a7 1e 96 ff d5 }
+
+    condition:
+        any of them
+}
+
+    
+rule ntdll_RtlFreeUTF8String
+{
+    meta:
+        desc = "Metasploit::API::ntdll::RtlFreeUTF8String"
+
+    /*
+        680D1B6755           | push 0x55671b0d
+        FFD5                 | call ebp
+    */
+
+    strings:
+        $a   = { 68 0d 1b 67 55 ff d5 }
 
     condition:
         any of them
@@ -19187,6 +19529,24 @@ rule ntdll_RtlGetProductInfo
 }
 
     
+rule ntdll_RtlGetReturnAddressHijackTarget
+{
+    meta:
+        desc = "Metasploit::API::ntdll::RtlGetReturnAddressHijackTarget"
+
+    /*
+        689199ABBB           | push 0xbbab9991
+        FFD5                 | call ebp
+    */
+
+    strings:
+        $a   = { 68 91 99 ab bb ff d5 }
+
+    condition:
+        any of them
+}
+
+    
 rule ntdll_RtlGetSaclSecurityDescriptor
 {
     meta:
@@ -19343,6 +19703,24 @@ rule ntdll_RtlGetSystemPreferredUILanguages
 
     strings:
         $a   = { 68 74 bd d2 4c ff d5 }
+
+    condition:
+        any of them
+}
+
+    
+rule ntdll_RtlGetSystemTimeAndBias
+{
+    meta:
+        desc = "Metasploit::API::ntdll::RtlGetSystemTimeAndBias"
+
+    /*
+        6847650BE6           | push 0xe60b6547
+        FFD5                 | call ebp
+    */
+
+    strings:
+        $a   = { 68 47 65 0b e6 ff d5 }
 
     condition:
         any of them
@@ -20063,6 +20441,42 @@ rule ntdll_RtlInitStrongEnumerationHashTable
 
     strings:
         $a   = { 68 19 67 46 ac ff d5 }
+
+    condition:
+        any of them
+}
+
+    
+rule ntdll_RtlInitUTF8String
+{
+    meta:
+        desc = "Metasploit::API::ntdll::RtlInitUTF8String"
+
+    /*
+        684D278553           | push 0x5385274d
+        FFD5                 | call ebp
+    */
+
+    strings:
+        $a   = { 68 4d 27 85 53 ff d5 }
+
+    condition:
+        any of them
+}
+
+    
+rule ntdll_RtlInitUTF8StringEx
+{
+    meta:
+        desc = "Metasploit::API::ntdll::RtlInitUTF8StringEx"
+
+    /*
+        6814281E7D           | push 0x7d1e2814
+        FFD5                 | call ebp
+    */
+
+    strings:
+        $a   = { 68 14 28 1e 7d ff d5 }
 
     condition:
         any of them
@@ -21707,6 +22121,24 @@ rule ntdll_RtlIsValidProcessTrustLabelSid
 }
 
     
+rule ntdll_RtlIsZeroMemory
+{
+    meta:
+        desc = "Metasploit::API::ntdll::RtlIsZeroMemory"
+
+    /*
+        68930E880A           | push 0x0a880e93
+        FFD5                 | call ebp
+    */
+
+    strings:
+        $a   = { 68 93 0e 88 0a ff d5 }
+
+    condition:
+        any of them
+}
+
+    
 rule ntdll_RtlKnownExceptionFilter
 {
     meta:
@@ -22553,6 +22985,24 @@ rule ntdll_RtlNormalizeProcessParams
 }
 
     
+rule ntdll_RtlNormalizeSecurityDescriptor
+{
+    meta:
+        desc = "Metasploit::API::ntdll::RtlNormalizeSecurityDescriptor"
+
+    /*
+        6885EDC494           | push 0x94c4ed85
+        FFD5                 | call ebp
+    */
+
+    strings:
+        $a   = { 68 85 ed c4 94 ff d5 }
+
+    condition:
+        any of them
+}
+
+    
 rule ntdll_RtlNormalizeString
 {
     meta:
@@ -22565,6 +23015,24 @@ rule ntdll_RtlNormalizeString
 
     strings:
         $a   = { 68 3f 6e d8 9d ff d5 }
+
+    condition:
+        any of them
+}
+
+    
+rule ntdll_RtlNotifyFeatureUsage
+{
+    meta:
+        desc = "Metasploit::API::ntdll::RtlNotifyFeatureUsage"
+
+    /*
+        687F87CAEB           | push 0xebca877f
+        FFD5                 | call ebp
+    */
+
+    strings:
+        $a   = { 68 7f 87 ca eb ff d5 }
 
     condition:
         any of them
@@ -22697,6 +23165,24 @@ rule ntdll_RtlNumberOfClearBits
 }
 
     
+rule ntdll_RtlNumberOfClearBitsEx
+{
+    meta:
+        desc = "Metasploit::API::ntdll::RtlNumberOfClearBitsEx"
+
+    /*
+        68430E51B0           | push 0xb0510e43
+        FFD5                 | call ebp
+    */
+
+    strings:
+        $a   = { 68 43 0e 51 b0 ff d5 }
+
+    condition:
+        any of them
+}
+
+    
 rule ntdll_RtlNumberOfClearBitsInRange
 {
     meta:
@@ -22727,6 +23213,24 @@ rule ntdll_RtlNumberOfSetBits
 
     strings:
         $a   = { 68 d0 b4 04 08 ff d5 }
+
+    condition:
+        any of them
+}
+
+    
+rule ntdll_RtlNumberOfSetBitsEx
+{
+    meta:
+        desc = "Metasploit::API::ntdll::RtlNumberOfSetBitsEx"
+
+    /*
+        680189019D           | push 0x9d018901
+        FFD5                 | call ebp
+    */
+
+    strings:
+        $a   = { 68 01 89 01 9d ff d5 }
 
     condition:
         any of them
@@ -23075,6 +23579,24 @@ rule ntdll_RtlQueryActivationContextApplicationSettings
 }
 
     
+rule ntdll_RtlQueryAllFeatureConfigurations
+{
+    meta:
+        desc = "Metasploit::API::ntdll::RtlQueryAllFeatureConfigurations"
+
+    /*
+        68514E9EA9           | push 0xa99e4e51
+        FFD5                 | call ebp
+    */
+
+    strings:
+        $a   = { 68 51 4e 9e a9 ff d5 }
+
+    condition:
+        any of them
+}
+
+    
 rule ntdll_RtlQueryAtomInAtomTable
 {
     meta:
@@ -23195,6 +23717,60 @@ rule ntdll_RtlQueryEnvironmentVariable_U
 
     strings:
         $a   = { 68 bb ff a0 aa ff d5 }
+
+    condition:
+        any of them
+}
+
+    
+rule ntdll_RtlQueryFeatureConfiguration
+{
+    meta:
+        desc = "Metasploit::API::ntdll::RtlQueryFeatureConfiguration"
+
+    /*
+        684F2A08F2           | push 0xf2082a4f
+        FFD5                 | call ebp
+    */
+
+    strings:
+        $a   = { 68 4f 2a 08 f2 ff d5 }
+
+    condition:
+        any of them
+}
+
+    
+rule ntdll_RtlQueryFeatureConfigurationChangeStamp
+{
+    meta:
+        desc = "Metasploit::API::ntdll::RtlQueryFeatureConfigurationChangeStamp"
+
+    /*
+        688FEE3F1A           | push 0x1a3fee8f
+        FFD5                 | call ebp
+    */
+
+    strings:
+        $a   = { 68 8f ee 3f 1a ff d5 }
+
+    condition:
+        any of them
+}
+
+    
+rule ntdll_RtlQueryFeatureUsageNotificationSubscriptions
+{
+    meta:
+        desc = "Metasploit::API::ntdll::RtlQueryFeatureUsageNotificationSubscriptions"
+
+    /*
+        686C274376           | push 0x7643276c
+        FFD5                 | call ebp
+    */
+
+    strings:
+        $a   = { 68 6c 27 43 76 ff d5 }
 
     condition:
         any of them
@@ -23885,6 +24461,42 @@ rule ntdll_RtlRaiseException
 }
 
     
+rule ntdll_RtlRaiseExceptionForReturnAddressHijack
+{
+    meta:
+        desc = "Metasploit::API::ntdll::RtlRaiseExceptionForReturnAddressHijack"
+
+    /*
+        684F74F616           | push 0x16f6744f
+        FFD5                 | call ebp
+    */
+
+    strings:
+        $a   = { 68 4f 74 f6 16 ff d5 }
+
+    condition:
+        any of them
+}
+
+    
+rule ntdll_RtlRaiseNoncontinuableException
+{
+    meta:
+        desc = "Metasploit::API::ntdll::RtlRaiseNoncontinuableException"
+
+    /*
+        6819812782           | push 0x82278119
+        FFD5                 | call ebp
+    */
+
+    strings:
+        $a   = { 68 19 81 27 82 ff d5 }
+
+    condition:
+        any of them
+}
+
+    
 rule ntdll_RtlRaiseStatus
 {
     meta:
@@ -24077,6 +24689,24 @@ rule ntdll_RtlRealSuccessor
 
     strings:
         $a   = { 68 1c be d5 c8 ff d5 }
+
+    condition:
+        any of them
+}
+
+    
+rule ntdll_RtlRegisterFeatureConfigurationChangeNotification
+{
+    meta:
+        desc = "Metasploit::API::ntdll::RtlRegisterFeatureConfigurationChangeNotification"
+
+    /*
+        689DC172AC           | push 0xac72c19d
+        FFD5                 | call ebp
+    */
+
+    strings:
+        $a   = { 68 9d c1 72 ac ff d5 }
 
     condition:
         any of them
@@ -24659,6 +25289,24 @@ rule ntdll_RtlRestoreSystemBootStatusDefaults
 }
 
     
+rule ntdll_RtlRestoreThreadPreferredUILanguages
+{
+    meta:
+        desc = "Metasploit::API::ntdll::RtlRestoreThreadPreferredUILanguages"
+
+    /*
+        6859AB53CE           | push 0xce53ab59
+        FFD5                 | call ebp
+    */
+
+    strings:
+        $a   = { 68 59 ab 53 ce ff d5 }
+
+    condition:
+        any of them
+}
+
+    
 rule ntdll_RtlRetrieveNtUserPfn
 {
     meta:
@@ -24929,6 +25577,24 @@ rule ntdll_RtlSetAllBits
 }
 
     
+rule ntdll_RtlSetAllBitsEx
+{
+    meta:
+        desc = "Metasploit::API::ntdll::RtlSetAllBitsEx"
+
+    /*
+        689C53378C           | push 0x8c37539c
+        FFD5                 | call ebp
+    */
+
+    strings:
+        $a   = { 68 9c 53 37 8c ff d5 }
+
+    condition:
+        any of them
+}
+
+    
 rule ntdll_RtlSetAttributesSecurityDescriptor
 {
     meta:
@@ -24965,6 +25631,24 @@ rule ntdll_RtlSetBit
 }
 
     
+rule ntdll_RtlSetBitEx
+{
+    meta:
+        desc = "Metasploit::API::ntdll::RtlSetBitEx"
+
+    /*
+        686E25D87F           | push 0x7fd8256e
+        FFD5                 | call ebp
+    */
+
+    strings:
+        $a   = { 68 6e 25 d8 7f ff d5 }
+
+    condition:
+        any of them
+}
+
+    
 rule ntdll_RtlSetBits
 {
     meta:
@@ -24977,6 +25661,24 @@ rule ntdll_RtlSetBits
 
     strings:
         $a   = { 68 fe fe cd 01 ff d5 }
+
+    condition:
+        any of them
+}
+
+    
+rule ntdll_RtlSetBitsEx
+{
+    meta:
+        desc = "Metasploit::API::ntdll::RtlSetBitsEx"
+
+    /*
+        687F14540F           | push 0x0f54147f
+        FFD5                 | call ebp
+    */
+
+    strings:
+        $a   = { 68 7f 14 54 0f ff d5 }
 
     condition:
         any of them
@@ -25175,6 +25877,24 @@ rule ntdll_RtlSetExtendedFeaturesMask
 
     strings:
         $a   = { 68 d2 2b 78 05 ff d5 }
+
+    condition:
+        any of them
+}
+
+    
+rule ntdll_RtlSetFeatureConfigurations
+{
+    meta:
+        desc = "Metasploit::API::ntdll::RtlSetFeatureConfigurations"
+
+    /*
+        6877376089           | push 0x89603777
+        FFD5                 | call ebp
+    */
+
+    strings:
+        $a   = { 68 77 37 60 89 ff d5 }
 
     condition:
         any of them
@@ -25685,6 +26405,24 @@ rule ntdll_RtlSetThreadPreferredUILanguages
 }
 
     
+rule ntdll_RtlSetThreadPreferredUILanguages2
+{
+    meta:
+        desc = "Metasploit::API::ntdll::RtlSetThreadPreferredUILanguages2"
+
+    /*
+        68F239CE98           | push 0x98ce39f2
+        FFD5                 | call ebp
+    */
+
+    strings:
+        $a   = { 68 f2 39 ce 98 ff d5 }
+
+    condition:
+        any of them
+}
+
+    
 rule ntdll_RtlSetThreadSubProcessTag
 {
     meta:
@@ -26129,6 +26867,24 @@ rule ntdll_RtlSubAuthoritySid
 
     strings:
         $a   = { 68 e1 eb 40 ff ff d5 }
+
+    condition:
+        any of them
+}
+
+    
+rule ntdll_RtlSubscribeForFeatureUsageNotification
+{
+    meta:
+        desc = "Metasploit::API::ntdll::RtlSubscribeForFeatureUsageNotification"
+
+    /*
+        68881C76EF           | push 0xef761c88
+        FFD5                 | call ebp
+    */
+
+    strings:
+        $a   = { 68 88 1c 76 ef ff d5 }
 
     condition:
         any of them
@@ -26621,6 +27377,24 @@ rule ntdll_RtlTryEnterCriticalSection
 }
 
     
+rule ntdll_RtlUTF8StringToUnicodeString
+{
+    meta:
+        desc = "Metasploit::API::ntdll::RtlUTF8StringToUnicodeString"
+
+    /*
+        68EF5749F5           | push 0xf54957ef
+        FFD5                 | call ebp
+    */
+
+    strings:
+        $a   = { 68 ef 57 49 f5 ff d5 }
+
+    condition:
+        any of them
+}
+
+    
 rule ntdll_RtlUTF8ToUnicodeN
 {
     meta:
@@ -26813,6 +27587,24 @@ rule ntdll_RtlUnicodeStringToOemString
 
     strings:
         $a   = { 68 2e 25 95 29 ff d5 }
+
+    condition:
+        any of them
+}
+
+    
+rule ntdll_RtlUnicodeStringToUTF8String
+{
+    meta:
+        desc = "Metasploit::API::ntdll::RtlUnicodeStringToUTF8String"
+
+    /*
+        6889754DFF           | push 0xff4d7589
+        FFD5                 | call ebp
+    */
+
+    strings:
+        $a   = { 68 89 75 4d ff ff d5 }
 
     condition:
         any of them
@@ -27047,6 +27839,42 @@ rule ntdll_RtlUnlockModuleSection
 
     strings:
         $a   = { 68 6a 3f 1c 9e ff d5 }
+
+    condition:
+        any of them
+}
+
+    
+rule ntdll_RtlUnregisterFeatureConfigurationChangeNotification
+{
+    meta:
+        desc = "Metasploit::API::ntdll::RtlUnregisterFeatureConfigurationChangeNotification"
+
+    /*
+        686DE65409           | push 0x0954e66d
+        FFD5                 | call ebp
+    */
+
+    strings:
+        $a   = { 68 6d e6 54 09 ff d5 }
+
+    condition:
+        any of them
+}
+
+    
+rule ntdll_RtlUnsubscribeFromFeatureUsageNotifications
+{
+    meta:
+        desc = "Metasploit::API::ntdll::RtlUnsubscribeFromFeatureUsageNotifications"
+
+    /*
+        68149AF7A0           | push 0xa0f79a14
+        FFD5                 | call ebp
+    */
+
+    strings:
+        $a   = { 68 14 9a f7 a0 ff d5 }
 
     condition:
         any of them
@@ -31283,6 +32111,24 @@ rule ntdll_ZwAccessCheckByTypeResultListAndAuditAlarmByHandle
 }
 
     
+rule ntdll_ZwAcquireCrossVmMutant
+{
+    meta:
+        desc = "Metasploit::API::ntdll::ZwAcquireCrossVmMutant"
+
+    /*
+        6809FFBD2A           | push 0x2abdff09
+        FFD5                 | call ebp
+    */
+
+    strings:
+        $a   = { 68 09 ff bd 2a ff d5 }
+
+    condition:
+        any of them
+}
+
+    
 rule ntdll_ZwAcquireProcessActivityReference
 {
     meta:
@@ -31529,6 +32375,24 @@ rule ntdll_ZwAllocateUserPhysicalPages
 
     strings:
         $a   = { 68 a1 fc 62 3d ff d5 }
+
+    condition:
+        any of them
+}
+
+    
+rule ntdll_ZwAllocateUserPhysicalPagesEx
+{
+    meta:
+        desc = "Metasploit::API::ntdll::ZwAllocateUserPhysicalPagesEx"
+
+    /*
+        684E7D93F4           | push 0xf4937d4e
+        FFD5                 | call ebp
+    */
+
+    strings:
+        $a   = { 68 4e 7d 93 f4 ff d5 }
 
     condition:
         any of them
@@ -32489,6 +33353,24 @@ rule ntdll_ZwContinue
 }
 
     
+rule ntdll_ZwContinueEx
+{
+    meta:
+        desc = "Metasploit::API::ntdll::ZwContinueEx"
+
+    /*
+        68F704F73C           | push 0x3cf704f7
+        FFD5                 | call ebp
+    */
+
+    strings:
+        $a   = { 68 f7 04 f7 3c ff d5 }
+
+    condition:
+        any of them
+}
+
+    
 rule ntdll_ZwConvertBetweenAuxiliaryCounterAndPerformanceCounter
 {
     meta:
@@ -32507,6 +33389,24 @@ rule ntdll_ZwConvertBetweenAuxiliaryCounterAndPerformanceCounter
 }
 
     
+rule ntdll_ZwCopyFileChunk
+{
+    meta:
+        desc = "Metasploit::API::ntdll::ZwCopyFileChunk"
+
+    /*
+        688BD3F0B8           | push 0xb8f0d38b
+        FFD5                 | call ebp
+    */
+
+    strings:
+        $a   = { 68 8b d3 f0 b8 ff d5 }
+
+    condition:
+        any of them
+}
+
+    
 rule ntdll_ZwCreateCrossVmEvent
 {
     meta:
@@ -32519,6 +33419,24 @@ rule ntdll_ZwCreateCrossVmEvent
 
     strings:
         $a   = { 68 a0 fb 84 c5 ff d5 }
+
+    condition:
+        any of them
+}
+
+    
+rule ntdll_ZwCreateCrossVmMutant
+{
+    meta:
+        desc = "Metasploit::API::ntdll::ZwCreateCrossVmMutant"
+
+    /*
+        68253DE7CA           | push 0xcae73d25
+        FFD5                 | call ebp
+    */
+
+    strings:
+        $a   = { 68 25 3d e7 ca ff d5 }
 
     condition:
         any of them
@@ -33599,6 +34517,24 @@ rule ntdll_ZwDeviceIoControlFile
 
     strings:
         $a   = { 68 96 37 64 58 ff d5 }
+
+    condition:
+        any of them
+}
+
+    
+rule ntdll_ZwDirectGraphicsCall
+{
+    meta:
+        desc = "Metasploit::API::ntdll::ZwDirectGraphicsCall"
+
+    /*
+        688C71E6B9           | push 0xb9e6718c
+        FFD5                 | call ebp
+    */
+
+    strings:
+        $a   = { 68 8c 71 e6 b9 ff d5 }
 
     condition:
         any of them
@@ -35801,6 +36737,24 @@ rule ntdll_ZwProtectVirtualMemory
 }
 
     
+rule ntdll_ZwPssCaptureVaSpaceBulk
+{
+    meta:
+        desc = "Metasploit::API::ntdll::ZwPssCaptureVaSpaceBulk"
+
+    /*
+        6805BCCB63           | push 0x63cbbc05
+        FFD5                 | call ebp
+    */
+
+    strings:
+        $a   = { 68 05 bc cb 63 ff d5 }
+
+    condition:
+        any of them
+}
+
+    
 rule ntdll_ZwPulseEvent
 {
     meta:
@@ -36893,6 +37847,24 @@ rule ntdll_ZwQueueApcThreadEx
 
     strings:
         $a   = { 68 f5 fb ff d1 ff d5 }
+
+    condition:
+        any of them
+}
+
+    
+rule ntdll_ZwQueueApcThreadEx2
+{
+    meta:
+        desc = "Metasploit::API::ntdll::ZwQueueApcThreadEx2"
+
+    /*
+        687EB25E65           | push 0x655eb27e
+        FFD5                 | call ebp
+    */
+
+    strings:
+        $a   = { 68 7e b2 5e 65 ff d5 }
 
     condition:
         any of them

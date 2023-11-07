@@ -4067,6 +4067,24 @@ rule wininet_InternetSetPerSiteCookieDecisionW
 }
 
     
+rule wininet_InternetSetSecureLegacyServersAppCompat
+{
+    meta:
+        desc = "Metasploit::API::wininet::InternetSetSecureLegacyServersAppCompat"
+
+    /*
+        6807EDE9B6           | push 0xb6e9ed07
+        FFD5                 | call ebp
+    */
+
+    strings:
+        $a   = { 68 07 ed e9 b6 ff d5 }
+
+    condition:
+        any of them
+}
+
+    
 rule wininet_InternetSetStatusCallback
 {
     meta:

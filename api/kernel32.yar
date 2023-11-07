@@ -1511,6 +1511,24 @@ rule kernel32_BasepCopyEncryption
 }
 
     
+rule kernel32_BasepFinishPackageActivationForSxS
+{
+    meta:
+        desc = "Metasploit::API::kernel32::BasepFinishPackageActivationForSxS"
+
+    /*
+        68E345A0F6           | push 0xf6a045e3
+        FFD5                 | call ebp
+    */
+
+    strings:
+        $a   = { 68 e3 45 a0 f6 ff d5 }
+
+    condition:
+        any of them
+}
+
+    
 rule kernel32_BasepFreeActivationContextActivationBlock
 {
     meta:
@@ -1595,6 +1613,24 @@ rule kernel32_BasepGetExeArchType
 
     strings:
         $a   = { 68 53 54 1c 16 ff d5 }
+
+    condition:
+        any of them
+}
+
+    
+rule kernel32_BasepGetPackageActivationTokenForSxS
+{
+    meta:
+        desc = "Metasploit::API::kernel32::BasepGetPackageActivationTokenForSxS"
+
+    /*
+        681F4C84A7           | push 0xa7844c1f
+        FFD5                 | call ebp
+    */
+
+    strings:
+        $a   = { 68 1f 4c 84 a7 ff d5 }
 
     condition:
         any of them
@@ -2261,6 +2297,24 @@ rule kernel32_CheckForReadOnlyResourceFilter
 
     strings:
         $a   = { 68 d3 8c cb 6a ff d5 }
+
+    condition:
+        any of them
+}
+
+    
+rule kernel32_CheckIsMSIXPackage
+{
+    meta:
+        desc = "Metasploit::API::kernel32::CheckIsMSIXPackage"
+
+    /*
+        685DE9A487           | push 0x87a4e95d
+        FFD5                 | call ebp
+    */
+
+    strings:
+        $a   = { 68 5d e9 a4 87 ff d5 }
 
     condition:
         any of them
@@ -16361,6 +16415,24 @@ rule kernel32_IsThreadpoolTimerSet
 }
 
     
+rule kernel32_IsUserCetAvailableInEnvironment
+{
+    meta:
+        desc = "Metasploit::API::kernel32::IsUserCetAvailableInEnvironment"
+
+    /*
+        683B629515           | push 0x1595623b
+        FFD5                 | call ebp
+    */
+
+    strings:
+        $a   = { 68 3b 62 95 15 ff d5 }
+
+    condition:
+        any of them
+}
+
+    
 rule kernel32_IsValidCalDateTime
 {
     meta:
@@ -18251,24 +18323,6 @@ rule kernel32_NlsCheckPolicy
 }
 
     
-rule kernel32_NlsEventDataDescCreate
-{
-    meta:
-        desc = "Metasploit::API::kernel32::NlsEventDataDescCreate"
-
-    /*
-        683B5E54CB           | push 0xcb545e3b
-        FFD5                 | call ebp
-    */
-
-    strings:
-        $a   = { 68 3b 5e 54 cb ff d5 }
-
-    condition:
-        any of them
-}
-
-    
 rule kernel32_NlsGetCacheUpdateCount
 {
     meta:
@@ -18317,24 +18371,6 @@ rule kernel32_NlsUpdateSystemLocale
 
     strings:
         $a   = { 68 92 ce 50 27 ff d5 }
-
-    condition:
-        any of them
-}
-
-    
-rule kernel32_NlsWriteEtwEvent
-{
-    meta:
-        desc = "Metasploit::API::kernel32::NlsWriteEtwEvent"
-
-    /*
-        68489CD7D3           | push 0xd3d79c48
-        FFD5                 | call ebp
-    */
-
-    strings:
-        $a   = { 68 48 9c d7 d3 ff d5 }
 
     condition:
         any of them
@@ -20063,6 +20099,24 @@ rule kernel32_QueueUserAPC
 
     strings:
         $a   = { 68 d6 02 88 3e ff d5 }
+
+    condition:
+        any of them
+}
+
+    
+rule kernel32_QueueUserAPC2
+{
+    meta:
+        desc = "Metasploit::API::kernel32::QueueUserAPC2"
+
+    /*
+        68A17524F4           | push 0xf42475a1
+        FFD5                 | call ebp
+    */
+
+    strings:
+        $a   = { 68 a1 75 24 f4 ff d5 }
 
     condition:
         any of them
@@ -24437,6 +24491,42 @@ rule kernel32_SetProcessDefaultCpuSets
 
     strings:
         $a   = { 68 00 19 4f 6f ff d5 }
+
+    condition:
+        any of them
+}
+
+    
+rule kernel32_SetProcessDynamicEHContinuationTargets
+{
+    meta:
+        desc = "Metasploit::API::kernel32::SetProcessDynamicEHContinuationTargets"
+
+    /*
+        685914EA11           | push 0x11ea1459
+        FFD5                 | call ebp
+    */
+
+    strings:
+        $a   = { 68 59 14 ea 11 ff d5 }
+
+    condition:
+        any of them
+}
+
+    
+rule kernel32_SetProcessDynamicEnforcedCetCompatibleRanges
+{
+    meta:
+        desc = "Metasploit::API::kernel32::SetProcessDynamicEnforcedCetCompatibleRanges"
+
+    /*
+        68340BF9DA           | push 0xdaf90b34
+        FFD5                 | call ebp
+    */
+
+    strings:
+        $a   = { 68 34 0b f9 da ff d5 }
 
     condition:
         any of them

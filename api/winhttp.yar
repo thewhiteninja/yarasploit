@@ -89,6 +89,24 @@ rule winhttp_WinHttpAddRequestHeaders
 }
 
     
+rule winhttp_WinHttpAddRequestHeadersEx
+{
+    meta:
+        desc = "Metasploit::API::winhttp::WinHttpAddRequestHeadersEx"
+
+    /*
+        68F9930A64           | push 0x640a93f9
+        FFD5                 | call ebp
+    */
+
+    strings:
+        $a   = { 68 f9 93 0a 64 ff d5 }
+
+    condition:
+        any of them
+}
+
+    
 rule winhttp_WinHttpAutoProxySvcMain
 {
     meta:
@@ -983,6 +1001,42 @@ rule winhttp_WinHttpSetOption
 
     strings:
         $a   = { 68 d3 58 9d ce ff d5 }
+
+    condition:
+        any of them
+}
+
+    
+rule winhttp_WinHttpSetProxySettingsPerUser
+{
+    meta:
+        desc = "Metasploit::API::winhttp::WinHttpSetProxySettingsPerUser"
+
+    /*
+        683F6C78F0           | push 0xf0786c3f
+        FFD5                 | call ebp
+    */
+
+    strings:
+        $a   = { 68 3f 6c 78 f0 ff d5 }
+
+    condition:
+        any of them
+}
+
+    
+rule winhttp_WinHttpSetSecureLegacyServersAppCompat
+{
+    meta:
+        desc = "Metasploit::API::winhttp::WinHttpSetSecureLegacyServersAppCompat"
+
+    /*
+        6856757EAA           | push 0xaa7e7556
+        FFD5                 | call ebp
+    */
+
+    strings:
+        $a   = { 68 56 75 7e aa ff d5 }
 
     condition:
         any of them
